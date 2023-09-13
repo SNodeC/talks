@@ -1,0 +1,28 @@
+\section{Unterstützte Betribssysteme und Architekturen}
+
+\begin{frame}{Unterstützte Betriebssysteme und Architekturen}{Aktueller Stand}
+  \begin{description}[Hardware und Prozessorarchitekturen]
+    \item [Betriebssysteme]
+    \begin{itemize}
+      \item Aktuell nur Linux mit relativ aktuellen Compilern wegen C++20
+      \begin{itemize}
+        \item GCC v12.2 und später
+        \item Clang 13.0 und später
+      \end{itemize}
+    \end{itemize}
+    \item [Hardware und Prozessorarchitekturen]
+    \begin{itemize}
+      \item x86\_{}64, i386 (u.a. Pentium) (also 32 und 64 Bit clean)
+      \item Raspberry PI (32 und 64 Bit)
+      \item Alle von \alert{OpenWRT} \href{https://openwrt.org/}{\beamergotobutton{https://openwrt.org/}} unterstützten (Wi-Fi) Router Architekturen
+      \begin{itemize}
+        \item Aarch64 (ARM 64-Bit)
+        \item ARM (ARM 32-Bit, Soft- und Hardfloatingpoint)
+        \item MIPS: mips\_24kc, mipsel\_24kc
+        \item PowerPC: 464fp (32-Bit), 8548 (64-Bit)
+        \item RISK v64
+      \end{itemize}
+      \item Apple-M2 \alert{wäre zu testen} (aktuell keine Hardware dafür vorhanden)
+    \end{itemize}
+  \end{description}
+\end{frame}

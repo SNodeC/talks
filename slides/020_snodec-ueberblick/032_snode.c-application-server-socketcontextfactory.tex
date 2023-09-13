@@ -1,0 +1,28 @@
+\subsection{\texttt{SocketContextFactory}s für Server und Client}
+
+\begin{frame}[fragile]{\texttt{SocketContextFactory}s für Server und Client}
+  Server
+  \begin{cppcode}[autogobble=true]
+    #include "EchoServerContext.h"
+    #include <core/socket/stream/SocketContextFactory.h>
+
+    class EchoServerContextFactory : public core::socket::stream::SocketContextFactory {
+      private:
+      core::socket::stream::SocketContext* create(core::socket::stream::SocketConnection* socketConnection) override {
+        return new EchoServerContext(socketConnection);
+      }
+    };
+  \end{cppcode}
+  Client
+  \begin{cppcode}[autogobble=true]
+    #include "EchoClientContext.h"
+    #include <core/socket/stream/SocketContextFactory.h>
+
+    class EchoClientContextFactory : public core::socket::stream::SocketContextFactory {
+      private:
+      core::socket::stream::SocketContext* create(core::socket::stream::SocketConnection* socketConnection) override {
+        return new EchoClientContext(socketConnection);
+      }
+    };
+  \end{cppcode}
+\end{frame}

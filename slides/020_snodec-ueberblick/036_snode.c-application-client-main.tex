@@ -1,0 +1,32 @@
+\subsection{Hauptprogramm des IPv4-Clients}
+
+\begin{frame}[fragile]{Hauptprogramm des IPv4-Clients}
+  \begin{cppcode}[autogobble=true]
+    #include "EchoClientContextFactory.h"
+    #include <core/SNodeC.h>
+    #include <iostream>
+    #include <net/in/stream/legacy/SocketClient.h>
+    #include <string.h>
+    #include <string>
+
+    int main(int argc, char* argv[]) {
+      core::SNodeC::init(argc, argv);
+
+      using EchoClient = net::in::stream::legacy::SocketClient<EchoClientContextFactory>;
+      using SocketAddress = EchoClient::SocketAddress;
+
+      EchoClient echoClient;
+
+      echoClient.connect("localhost", 8001, [](const SocketAddress& socketAddress, int err) -> void {
+        if (err == 0) {
+          std::cout << "Success: Echo connected to " << socketAddress.toString() << std::endl;
+        } else {
+          std::cout << "Error: Echo client connected to " << socketAddress.toString()
+          << ": " << strerror(err) << std::endl;
+        }
+      });
+
+      return core::SNodeC::start();
+    }
+  \end{cppcode}
+\end{frame}

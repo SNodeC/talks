@@ -1,0 +1,39 @@
+\begin{frame}{Aktueller Stand: Eventloop- und Netzwerkschicht}
+  \begin{itemize}
+    \item \alert{Unterst\"utzte Vermittlungsprotokolle} (OSI Schicht 3)
+    \begin{itemize}
+      \item IPv4
+      \item IPv6
+      \item Bluetooth l2cap (Logical Link Control Adaptation Protokoll)
+      \item Bluetooth rfcomm (Radio Frequency Communication)
+    \end{itemize}
+    \item \alert{Transportprotokolle} (OSI Schicht 4)
+    \begin{itemize}
+      \item \alert{Unterst\"utzt}
+      \begin{itemize}
+        \item \alert{SOCK\_STREAM} (bedeutet TCP im Falle von IPv4 und IPv6)
+      \end{itemize}
+      \item \alert{Noch nicht unterst\"utzt}
+      \begin{itemize}
+        \item \alert{SOCK\_DGRAM} (bedeutet UDP im Falle von IPv4 und IPv6)
+      \end{itemize}
+    \end{itemize}
+    \item \alert{Security}
+    \begin{itemize}
+      \item \alert{SSL/TLS} mit server- und clientseitiger Zertifikatspr\"ufung (X.509).
+      \begin{itemize}
+        \item Direkt im Transportlayer implementiert.
+        \item Verwendbar auf jedem Vermittlungsprotokoll.
+      \end{itemize}
+    \end{itemize}
+    \item \alert{Timer}
+    \begin{itemize}
+      \item Singleshot- und Intervalltimer (API wie in node.js)
+    \end{itemize}
+    \item {\alert{API} für darüber liegende Schichten}
+    \begin{itemize}
+      \item \alert{Server}-Klassen (als C++ Template)
+      \item \alert{Client}-Klassen (als C++ Template)
+    \end{itemize}
+  \end{itemize}
+\end{frame}

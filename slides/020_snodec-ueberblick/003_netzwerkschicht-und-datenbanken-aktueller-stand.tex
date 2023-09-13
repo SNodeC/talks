@@ -1,0 +1,22 @@
+﻿\section{Netzwerkschicht und Datenbanken}
+
+\begin{frame}{Netzwerkschicht und Datenbanken}{Aktueller Stand}
+  \begin{itemize}
+    \item \texttt{SocketServer} und \texttt{SocketClients} Klassen (\texttt{ssl/tls} und \texttt{legacy} Versionen) für die Netzwerkprotokolle
+    \begin{itemize}
+      \item \texttt{IPv4}
+      \item \texttt{IPv6} (Dual Stack, Single Stack, IPv4 mapped Addressen, \ldots)
+      \item \texttt{rfcomm} (Bluetooth)
+      \item \texttt{l2cap} (Bluetooth)
+      \item \texttt{unix domain} Sockets
+    \end{itemize}
+    \item Datenbank Unterstützung
+    \begin{itemize}
+      \item \texttt{MariaDBClient} Klasse (ready for use)
+      \begin{itemize}
+        \item "Normale"{} Queries und Execs
+        \item Transaktionen
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{frame}

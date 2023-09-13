@@ -1,0 +1,29 @@
+\subsection{WebSocket Anwendung}
+
+\begin{frame}[fragile]{WebSocket Anwendung}
+  \begin{cppcode}[gobble=4]
+    #include "express/legacy/WebApp.h"
+
+    int main(int argc, char* argv[]) {
+      express::WebApp::init(argc, argv);
+
+      express::legacy::WebApp webApp;
+
+      webApp.get("/", [](express::Request& req, express::Response& res) -> void {
+        if (!res.upgrade(req)) {
+          res.end();
+        }
+      });
+
+      webApp.listen(8080, [](int err) -> void {
+        if (err != 0) {
+          PLOG(ERROR) << "Listen";
+        } else {
+          VLOG(0) << "snode.c listening on port 8080";
+        }
+      });
+
+      return express::WebApp::start();
+    }
+  \end{cppcode}
+\end{frame}

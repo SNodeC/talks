@@ -1,0 +1,32 @@
+\subsection{Hauptprogramm des IPv4-Servers}
+
+\begin{frame}[fragile]{Hauptprogramm des IPv4-Servers}
+  \begin{cppcode}[autogobble=true]
+    #include "EchoServerContextFactory.h"
+    #include <core/SNodeC.h>
+    #include <iostream>
+    #include <net/in/stream/legacy/SocketServer.h>
+    #include <string.h>
+    #include <string>
+
+    int main(int argc, char* argv[]) {
+      core::SNodeC::init(argc, argv);
+
+      using EchoServer = net::in::stream::legacy::SocketServer<EchoServerContextFactory>;
+      using SocketAddress = EchoServer::SocketAddress;
+
+      EchoServer echoServer;
+
+      echoServer.listen(8001, [](const SocketAddress& socketAddress, int err) -> void {
+        if (err == 0) {
+          std::cout << "Success: Echo server listening on " << socketAddress.toString() << std::endl;
+        } else {
+          std::cout << "Error: Echo server listening on " << socketAddress.toString()
+          << ": " << strerror(err) << std::endl;
+        }
+      });
+
+      return core::SNodeC::start();
+    }
+  \end{cppcode}
+\end{frame}

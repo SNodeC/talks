@@ -1,0 +1,20 @@
+\part{Technischer Überblick}
+\section{Aufbau von SNode.C}
+
+\begin{frame}{Aufbau von SNode.C}{Layer-Based Design}
+  {\centering
+    \begin{figure}
+      \begin{tikzpicture}
+        \node[outer sep=0, draw, fill=grassgreen!30, minimum width=10cm, minimum height=1cm] (env) {Eventloop};
+        \draw (env.north) node[anchor=south, outer sep=0, draw, fill=orange!30, minimum width=10cm, minimum height=1cm, align=center] (sc) {Netzwerkschicht\\\texttt{SocketConnection<SCF\footnote{\texttt{SCF \ldots SocketContextFactory}}>}};
+        \draw (sc.north) node[anchor=south, outer sep=0, draw, fill=red!40, minimum width=10cm, minimum height=1cm, align=center] (aps) {Applikationsprotokollschicht\\\texttt{SocketContext}};
+        \draw (aps.north)  node[anchor=south, outer sep=0, draw, fill=blue!40, minimum width=10cm, minimum height=1cm] (app) {Applikation};
+      \end{tikzpicture}
+      \caption{Schichten von SNode.C}
+    \end{figure}
+  }
+  \begin{itemize}
+    \item Die Applikationsprotokollschicht, also \texttt{SocketContext} Objekte können bei schon bestehender Server/Client \texttt{SocketConnection} ausgetauscht werden.
+    \item Verwendung: Z.B. HTTP-\texttt{upgrade} von HTTP-\texttt{SocketContext} zu WebSocket-\texttt{SocketContext}
+  \end{itemize}
+\end{frame}

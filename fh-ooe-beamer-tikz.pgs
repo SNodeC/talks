@@ -1,0 +1,142 @@
+\documentclass[utf8, 10pt]{fh-ooe}
+%\usepackage[orientation=landscape,size=custom,width=17.06,height=9.6,scale=0.4,debug]{beamerposter}
+
+\usepackage{pgfkeys}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{filecontents}
+\usepackage{varwidth}
+\usepackage[euler]{textgreek}
+\usepackage[utf8]{inputenc}
+\usepackage{eurosym}
+\usepackage[ngerman]{babel}
+\usepackage{braket}
+\usepackage{tkz-euclide}
+\usepackage{trfsigns}
+\RequirePackage{svg}
+\RequirePackage{includesvg}
+\usepackage{stackengine}
+
+\usepackage{psfrag}
+
+
+\usepackage{fourieranalyses}
+
+%\usepackage{fontenc}
+%\usepackage{mathtext}
+
+\usepackage[T2A, T1]{fontenc}
+%\usepackage[russian]{babel}
+
+\pgfkeys{/pgf/number format/.cd,1000 sep={\,}}
+
+\usepgfplotslibrary{dateplot}
+
+\usetikzlibrary{positioning,shapes.multipart,shadows,calc,arrows,fit,trees}
+\usetikzlibrary{arrows.meta, quotes}
+\usetikzlibrary{intersections, tikzmark}
+
+\usefonttheme[onlymath]{serif}
+
+\newdimen\height
+\newdimen\width
+\newsavebox{\mybox}
+
+\makeatletter
+\long\def\beamer@part[#1]#2{}
+\long\def\beamer@section[#1]#2{}%
+\def\beamer@subsection[#1]#2{}%
+\def\beamer@subsubsection[#1]#2{}%
+\makeatother
+
+\newlength{\xunit}
+\newlength{\yunit}
+\makeatletter
+\tikzset{get units/.code={\xunit=\pgf@xx%
+    \yunit=\pgf@yy}}
+\makeatother
+
+
+%\makeatletter
+%\newcommand\appendtographicspath[1]{%
+%  \g@addto@macro\Ginput@path{#1}%
+%}
+%\makeatother
+
+\graphicspath{{/home/voc/usr/Hagenberg/MTD/LaTeXSlides/ADS/}}
+
+\long\def\comment#1{}
+
+\newcolumntype{C}[1]{>{\centering}m{#1}}
+
+\setjavasourcepath{/home/voc/usr/Hagenberg/MTD/LaTeXSlides/ADS/java/src}
+
+\setcppsourcepath{/home/voc/usr/Hagenberg/MTD/LaTeXSlides/ADS/cpp}
+
+
+\usetikzlibrary{calc,angles,quotes}
+
+\pgfplotsset{
+  every axis x label/.style={
+    at={
+      (current axis.right of origin)
+    },
+    anchor=west,
+    align=center,
+    font=\footnotesize
+  },
+  every axis y label/.style={
+    at={
+      (current axis.above origin)
+    },
+    anchor=south,
+    align=center,
+    font=\footnotesize
+  },
+  every axis z label/.style={
+    font=\footgnotesize
+  },
+  xtick align=center, 
+  ytick align=center,
+  ztick align=center,
+  tick label style={font=\tiny},
+  axis x line*=center,
+  axis y line*=center,  
+  axis z line*=center,
+  x axis line style={-latex},
+  y axis line style={-latex},
+  z axis line style={-latex},
+%  ylabel style={font=\footnotesize},
+%  xlabel style={font=\footnotesize},
+%  zlabel style={font=\footnotesize},
+  samples=250
+}
+
+\tikzset{
+   invisible/.style={opacity=0,text opacity=0},
+   visible on/.style={alt={#1{}{invisible}}},
+   alt/.code args={<#1>#2#3}{%
+     \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+   }
+}
+
+\pgfkeys{/pgf/number format/.cd,1000 sep={\,}}
+
+\author[voc]{Volker Christian}
+
+\setpath{kapitel-4}
+
+\let\origframe\frame
+\let\endorigframe\endframe
+
+%\renewenvironment{frame}[1]{
+%  \origframe[plain]{}
+%}{
+%  \endorigframe
+%}
+
+\begin{document}[without titlepage]%
+%  \begin{frame}{Frame Title}%
+    <>
+%  \end{frame}%
+\end{document}

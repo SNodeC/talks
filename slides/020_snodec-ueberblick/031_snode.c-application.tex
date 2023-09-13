@@ -1,0 +1,24 @@
+\section{Beispiel Verwendung von SNode.C}
+
+\begin{frame}{Beispiel der Verwendung von SNode.C}
+  \begin{block}{Echo-Applikation}
+  \begin{itemize}
+  \item Stellen Sie sich vor, Sie möchten ein einfaches TCP (stream)/IPv4 (in)-Server/Client-Paar erstellen, das sich gegenseitig unverschlüsselte (legacy) Klartextdaten im Ping-Pong-Verfahren zusendet.
+  \item Der Client beginnt, Textdaten an den Server zu senden, und der Server reflektiert diese Daten an den Client zurück. Der Client empfängt diese reflektierten Daten und sendet sie wieder an den Server zurück. Dieses Daten-Pingpong soll unendlich lange dauern.
+  \end{itemize}
+\end{block}
+  \begin{description}
+    \item [Der Benutzer] muss
+    \begin{itemize}
+      \item Klassen abgeleitet von \texttt{SocketContextFactory} und
+      \item Klassen abgeleitet von \texttt{SocketContext}
+    \end{itemize}
+    für Server und Client bereitstellen.
+    \item [SNode.C] stellt "`ready to use"'
+    \begin{itemize}
+      \item \texttt{SocketServer} und
+      \item \texttt{SocketClient}
+    \end{itemize}
+    Klassen für jedes Netzwerkprotokoll bereit.
+  \end{description}
+\end{frame}
