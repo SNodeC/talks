@@ -1,6 +1,7 @@
 \begin{frame}[fragile]{Beispiel der Verwendung des express-API}
   \begin{cppcode}[autogobble=true]
     #include "express/legacy/WebApp.h"
+    #include <cstring>
 
     int main(int argc, char* argv[]) {
       express::WebApp::init(argc, argv);
@@ -17,12 +18,8 @@
 
       // further routes can be defined
 
-      webApp.listen(8080, [](int err) -> void {
-        if (err != 0) {
-          PLOG(ERROR) << "Listen";
-        } else {
-          VLOG(0) << "snode.c listening on port 8080";
-        }
+      webApp.listen(8080, [](const core::ProgressLog& progressLog) -> void {
+        progressLog.logProgress();
       });
 
       return express::WebApp::start();

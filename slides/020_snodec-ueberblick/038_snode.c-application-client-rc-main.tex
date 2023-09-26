@@ -6,7 +6,7 @@
     #include <core/SNodeC.h>
     #include <iostream>
     #include <net/rc/stream/legacy/SocketClient.h>
-    #include <string.h>
+    #include <cstring>
     #include <string>
 
     int main(int argc, char* argv[]) {
@@ -17,13 +17,8 @@
 
       EchoClient echoClient;
 
-      echoClient.connect("10:3D:1C:AC:BA:9C", 1, [](const SocketAddress& socketAddress, int err) -> void {
-        if (err == 0) {
-          std::cout << "Success: Echo connected to " << socketAddress.toString() << std::endl;
-        } else {
-          std::cout << "Error: Echo client connected to " << socketAddress.toString()
-          << ": " << strerror(err) << std::endl;
-        }
+      echoClient.connect("10:3D:1C:AC:BA:9C", 1, [](const core::ProgressLog& progressLog) -> void {
+        progressLog.logProgress();
       });
 
       return core::SNodeC::start();

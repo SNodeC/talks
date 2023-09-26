@@ -6,7 +6,7 @@
     #include <core/SNodeC.h>
     #include <iostream>
     #include <net/in/stream/legacy/SocketServer.h>
-    #include <string.h>
+    #include <cstring>
     #include <string>
 
     int main(int argc, char* argv[]) {
@@ -17,13 +17,8 @@
 
       EchoServer echoServer;
 
-      echoServer.listen(8001, [](const SocketAddress& socketAddress, int err) -> void {
-        if (err == 0) {
-          std::cout << "Success: Echo server listening on " << socketAddress.toString() << std::endl;
-        } else {
-          std::cout << "Error: Echo server listening on " << socketAddress.toString()
-          << ": " << strerror(err) << std::endl;
-        }
+      echoServer.listen(8001, [](const core::ProgressLog& progressLog) -> void {
+        progressLog.logProgress();
       });
 
       return core::SNodeC::start();
