@@ -1,24 +1,24 @@
-\section{Beispiel Verwendung von SNode.C}
+﻿\section{Example usage of SNode.C}
 
-\begin{frame}{Beispiel der Verwendung von SNode.C}
-  \begin{block}{Echo-Applikation}
-  \begin{itemize}
-  \item Stellen Sie sich vor, Sie möchten ein einfaches TCP (stream)/IPv4 (in)-Server/Client-Paar erstellen, das sich gegenseitig unverschlüsselte (legacy) Klartextdaten im Ping-Pong-Verfahren zusendet.
-  \item Der Client beginnt, Textdaten an den Server zu senden, und der Server reflektiert diese Daten an den Client zurück. Der Client empfängt diese reflektierten Daten und sendet sie wieder an den Server zurück. Dieses Daten-Pingpong soll unendlich lange dauern.
-  \end{itemize}
+\begin{frame}{Example of using SNode.C}
+   \begin{block}{Echo application}
+   \begin{itemize}
+   \item Imagine you want to create a simple TCP (stream)/IPv4 (in) server/client pair that ping-pong legacy plaintext data to each other.
+   \item The client starts sending text data to the server, and the server reflects this data back to the client. The client receives this reflected data and sends it back to the server again. This data ping-pong is supposed to last forever.
+   \end{itemize}
 \end{block}
-  \begin{description}
-    \item [Der Benutzer] muss
-    \begin{itemize}
-      \item Klassen abgeleitet von \texttt{SocketContextFactory} und
-      \item Klassen abgeleitet von \texttt{SocketContext}
-    \end{itemize}
-    für Server und Client bereitstellen.
-    \item [SNode.C] stellt "`ready to use"'
-    \begin{itemize}
-      \item \texttt{SocketServer} und
-      \item \texttt{SocketClient}
-    \end{itemize}
-    Klassen für jedes Netzwerkprotokoll bereit.
-  \end{description}
+   \begin{description}
+     \item [The user] must
+     \begin{itemize}
+       \item classes derived from \texttt{SocketContextFactory} and
+       \item classes derived from \texttt{SocketContext}
+     \end{itemize}
+     provide for server and client.
+     \item [SNode.C] represents "`ready to use"'
+     \begin{itemize}
+       \item \texttt{SocketServer} and
+       \item \texttt{SocketClient}
+     \end{itemize}
+     Classes available for every network protocol.
+   \end{description}
 \end{frame}

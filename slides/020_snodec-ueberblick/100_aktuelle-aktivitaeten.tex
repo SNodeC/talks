@@ -1,26 +1,26 @@
-﻿\part{Aktuelle Aktivitäten}
+﻿\part{Current Activities}
 
-\begin{frame}{Aktuelle Aktivitäten}
-  Hauptaktivität ist aktuell die \alert{Aufnahme} der \alert{\texttt{MQTTBroker/MQTTIntegrator}} Referenzapplikationen in \alert{\texttt{OpenWRT}}, eine auf \alert{Linux} basierende \alert{Open-Source Firmware} für (Wi-Fi) Router.
+\begin{frame}{Current Activities}
+   The main activity is currently the \alert{inclusion} of the \alert{\texttt{MQTTBroker/MQTTIntegrator}} reference applications in \alert{\texttt{OpenWRT}}, an \alert{Open-Source Firmware} based on \alert{Linux} (Wi-Fi) router.
 
-  \color{fh-ooe-red}{Nahezu jede proprietäre Router-Firmware für Heim-Router basiert auf \texttt{OpenWRT}.}
-  \begin{itemize}
-    \item Zwei Libraries waren noch nicht Bestandteil von \texttt{OpenWRT}
-    \begin{itemize}
-      \item \alert{\texttt{Easylogging++}} (Logging Library)
-      \item \alert{\texttt{libucontext}} (kooperatives Multithreading)
-      \begin{itemize}
-        \item ARM: Bug Fix
-        \item Aarch64: Bug Fix
-      \end{itemize}
-      OpenWRT verwendet die \alert{\texttt{musl}} statt der \alert{\texttt{GNU-C}} Library. \texttt{muls} stellt im Gegensatz zur \texttt{GNU-C} Library die Systemaufrufe zum kooperativen Multithreading nicht zur verfügung, da diese seit \texttt{POSIX.1-2008} aus dem Standard genommen wurden.
-    \end{itemize}
-    \item Update auf \alert{\texttt{upstream}} bei zwei Packeten von \texttt{OpenWRT}
-    \begin{itemize}
-      \item \alert{\texttt{File}}
-      \item \alert{\texttt{nlohmann\_json}}
-    \end{itemize}
-    \item Fix \alert{\texttt{segfault}} im \alert{asynchronen API} von \alert{\texttt{libmariadb}} durch hinzufügen des linkens gegen \alert{\texttt{libucontext}} (noch nicht beendet)
-    \item Und letztendlich muss \alert{\texttt{SNode.C}} selbst in OpenWRT aufgenommen werden, da die MQTT-Applicationen auf SNode.C aufsetzen.
-  \end{itemize}
+   \color{fh-ooe-red}{Almost all proprietary router firmware for home routers is based on \texttt{OpenWRT}.}
+   \begin{itemize}
+     \item Two libraries were not yet part of \texttt{OpenWRT}
+     \begin{itemize}
+       \item \alert{\texttt{Easylogging++}} (Logging Library)
+       \item \alert{\texttt{libucontext}} (cooperative multithreading)
+       \begin{itemize}
+         \item ARM: Bug fix
+         \item Aarch64: Bug Fix
+       \end{itemize}
+       OpenWRT uses the \alert{\texttt{musl}} instead of the \alert{\texttt{GNU-C}} library. In contrast to the \texttt{GNU-C} library, \texttt{muls} does not provide the system calls for cooperative multithreading, as these have been removed from the standard since \texttt{POSIX.1-2008}.
+     \end{itemize}
+     \item Update to \alert{\texttt{upstream}} for two packages of \texttt{OpenWRT}
+     \begin{itemize}
+       \item \alert{\texttt{File}}
+       \item \alert{\texttt{nlohmann\_json}}
+     \end{itemize}
+     \item Fix \alert{\texttt{segfault}} in the \alert{asynchronous API} of \alert{\texttt{libmariadb}} by adding linking against \alert{\texttt{libucontext}}
+     \item And ultimately, \alert{\texttt{SNode.C}} itself has to be included in OpenWRT, since the MQTT applications are based on SNode.C.
+   \end{itemize}
 \end{frame}

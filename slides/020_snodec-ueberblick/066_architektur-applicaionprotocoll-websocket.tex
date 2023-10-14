@@ -1,6 +1,6 @@
-\subsection{WebSocket}
+﻿\subsection{WebSocket}
 
-\begin{frame}{WebSocket}{Applikationsprotokolle}
+\begin{frame}{WebSocket}{Application Protocols}
   \begin{center}
     \begin{figure}
       \par\bigskip
@@ -10,14 +10,14 @@
         \draw (wstr.north) node[anchor=south east, outer sep=0, inner sep=0, fill=red!30, draw, minimum width=5cm, minimum height=1cm, align=center] (wss) {WebSocket Server\\\texttt{SocketContextUpgrade}};
         \draw (wss.north east) node[anchor=south, outer sep=0, inner sep=0, fill=blue!30, draw, minimum width=10cm, minimum height=1cm, align=center] (sp) {WebSocket\\\texttt{SubProtocol}};
       \end{tikzpicture}
-      \caption{WebSocket-Applikationsprotokoll im Detail}
+      \caption{WebSocket application protocol in detail}
     \end{figure}
   \end{center}
-  \begin{itemize}
-    \item Die WebSocket Libraries werden bei HTTP-\texttt{upgrade} dynamisch (\texttt{dlopen()}, \ldots) eingebunden.
-    \item Anhand des angeforderten \texttt{SubProtocol}s (z.B.  \texttt{tiktaktoe}, \texttt{echo}, \texttt{mqtt}) werden die entsprechenden \texttt{SubProtocol} Libraries dynamisch geladen.
-    \item Sowohl WS Libraries als auch Subprotocol (SP) Libraries müssen einer Namenskonvention gehorchen um gefunden werden zu können.
-    \item WS sowie SP Libraries müssen \texttt{static} Factory-Factory Funktionen zur Verfügung stellen.
-    \item SP Libraries müssen vom Anwender implementiert werden - abstrakte Basisklasse \texttt{SubProtocol}
-  \end{itemize}
+\begin{itemize}
+     \item The WebSocket libraries are loaded dynamically (\texttt{dlopen()}, \ldots) during an HTTP \texttt{upgrade}.
+     \item Using the requested sub-protocol (e.g. \texttt{tiktaktoe}, \texttt{echo}, \texttt{mqtt}) the corresponding \texttt{SubProtocol} library is dynamically loaded.
+     \item Both WS libraries and sub-protocol (SP) Libraries must obey a naming convention in order to be found.
+     \item WS and SP libraries must provide \texttt{static} factory-factory functions.
+     \item SP libraries must be implemented by the user (abstract base class \texttt{SubProtocol).}
+   \end{itemize}
 \end{frame}

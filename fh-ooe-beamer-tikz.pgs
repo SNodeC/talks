@@ -9,7 +9,7 @@
 \usepackage[euler]{textgreek}
 \usepackage[utf8]{inputenc}
 \usepackage{eurosym}
-\usepackage[ngerman]{babel}
+%\usepackage[ngerman]{babel}
 \usepackage{braket}
 \usepackage{tkz-euclide}
 \usepackage{trfsigns}

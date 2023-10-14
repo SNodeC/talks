@@ -1,12 +1,10 @@
-\subsection{\texttt{SocketContext} für Server}
+﻿\subsection{\texttt{SocketContext} of the Server}
 
-\begin{frame}[fragile]{\texttt{SocketContext} für Server}
-  \begin{cppcode}[autogobble=true]
+\begin{frame}[fragile]{\texttt{SocketContext} of the Server}
+  \begin{cppcode}[autogobble=true, caption={\alert{SocketContext} of the server.},captionpos=b]
     class EchoServerContext : public core::socket::stream::SocketContext {
       public:
-      explicit EchoServerContext(core::socket::stream::SocketConnection* socketConnection)
-      : core::socket::stream::SocketContext(socketConnection) {
-      }
+      using core::socket::stream::SocketContext::SocketContext;
 
       private:
       void onConnected() override {

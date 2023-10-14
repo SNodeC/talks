@@ -1,4 +1,4 @@
-﻿\part{Using SNode.C to Create Complex Server Applications}
+﻿\part{Learn to use SNode.C to "link" a MQTT-Broker Instance to a Webserver Instance}
 \section[nosectionpage]{Which Header File should I Use}
 
 \begin{frame}[fragile]{Which Header File should I Use}
@@ -17,11 +17,12 @@
       \item Unencrypted: \texttt{\textcolor{fh-ooe-red}{[security]}} $\Rightarrow$ \texttt{\textcolor{fh-ooe-red}{legacy}}
       \item SSL/TLS encrypted: \texttt{\textcolor{fh-ooe-red}{[security]}} $\Rightarrow$ \texttt{\textcolor{fh-ooe-red}{tls}}
     \end{itemize}
-    \item[Network:] Four network protocolls are currently supported:
+    \item[Network:] Five network protocolls are currently supported:
     \begin{itemize}
       \item IPv4: \texttt{\textcolor{fh-ooe-red}{[network]}} $\Rightarrow$ \texttt{\textcolor{fh-ooe-red}{in}}
       \item IPv6: \texttt{\textcolor{fh-ooe-red}{[network]}} $\Rightarrow$ \texttt{\textcolor{fh-ooe-red}{in6}}
       \item Bluetooth RFCOM: \texttt{\textcolor{fh-ooe-red}{[network]}} $\Rightarrow$ \texttt{\textcolor{fh-ooe-red}{rc}}
+      \item Bluetooth L2CAP: \texttt{\textcolor{fh-ooe-red}{[network]}} $\Rightarrow$ \texttt{\textcolor{fh-ooe-red}{l2}}
       \item Unix: \texttt{\textcolor{fh-ooe-red}{[network]}} $\Rightarrow$ \texttt{\textcolor{fh-ooe-red}{un}}
     \end{itemize}
   \end{description}

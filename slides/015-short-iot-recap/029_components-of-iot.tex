@@ -2,7 +2,7 @@
 
 \def\insertlecturepartnumbername{\Huge\alert{Overview of IoT Systems}}
 
-\mode<presentation>{\lecture[Recap]{Recap}{Recap}}
+\lecture[Recap]{Recap}{Recap}
 
 \part{A Short Recap of IoT}
 \section{Components of IoT}
@@ -10,11 +10,11 @@
 \begin{frame}{Components of IoT}
   \begin{columns}
     \begin{column}[T]{0.46\textwidth}
-      \begin{description}
-        \item[Sensors]\hfill\\
+      \begin{description}[Microcontroller]
+        \item[Sensors]
         \begin{itemize}
           \item Temerature, humidity, pressure
-          \item Brightness, Acoustics
+          \item Brightness, acoustics
           \item Switches
           \item Chemicals
           \item \ldots
@@ -22,8 +22,8 @@
       \end{description}
     \end{column}
     \begin{column}[T]{0.46\textwidth}
-      \begin{description}
-        \item[Actuators]\hfill\\
+      \begin{description}[Actuators]
+        \item[Actuators]
         \begin{itemize}
           \item Lamps
           \item Motors
@@ -36,9 +36,9 @@
   \end{columns}
   \vspace{0.5cm}
   \begin{columns}
-    \begin{column}[T]{0.46\textwidth}
-      \begin{description}
-        \item[Microcontroller]\hfill\\
+    \begin{column}[T]{0.5\textwidth}
+      \begin{description}[Microcontroller]
+        \item[Microcontroller]
         \begin{itemize}
           \item Controls sensors and actuators
           \item Preprocessing of sensor-data
@@ -51,9 +51,9 @@
         \end{itemize}
       \end{description}
     \end{column}
-    \begin{column}[T]{0.46\textwidth}
-      \begin{description}
-        \item[Gateway]\hfill\\
+    \begin{column}[T]{0.5\textwidth}
+      \begin{description}[Actuators]
+        \item[Gateway]
         \begin{itemize}
           \item Full network capabilities
           \item Collecting data from MC

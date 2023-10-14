@@ -1,6 +1,6 @@
-\subsection{HTTP-Server/Express-\texttt{SocketContext}}
+﻿\subsection{HTTP Server/Express \texttt{SocketContext}}
 
-\begin{frame}{HTTP-Server/Express-\texttt{SocketContext}}{Applikationsprotokolle}
+\begin{frame}{HTTP Server/Express \texttt{SocketContext}}{Application Protocols}
   \begin{center}
     \begin{figure}
       \par\bigskip
@@ -21,11 +21,10 @@
 
         \draw (http-s.north) node[anchor=south, draw, fill=teal!30, outer sep=0, inner sep=0, minimum height=0.5cm, minimum width=5cm] (ex) {Express (\texttt{WebApp})};
       \end{tikzpicture}
-      \caption{HTTP-Applikationprotokollschicht im Detail}
+      \caption{HTTP application protocol layer in detail.}
     \end{figure}
-  \end{center}
-  \begin{itemize}
-    \item Express baut auf den generischen HTTP-Server-\texttt{SocketContext} auf und bietet dem Anwender ein erweitertes API (ähnlich dem von Node.JS/Express) an.
-    \item Express ist somit eine "`Anwendung"' des HTTP-Server-Layers.
-  \end{itemize}
+  \end{center}\begin{itemize}
+     \item Express is based on the generic HTTP server \texttt{SocketContext} and offers the user an extended API (similar to that of Node.JS/Express).
+     \item Express is therefore a sub-framework  (application) of the HTTP server framework.
+   \end{itemize}
 \end{frame}

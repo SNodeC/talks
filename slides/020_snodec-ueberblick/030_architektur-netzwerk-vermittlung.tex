@@ -1,6 +1,6 @@
-\section{Eventloop- und Netzwerkschicht}
+﻿\section{Event Loop and Network Layer}
 
-\begin{frame}{Eventloop- und Netzwerkschicht}{Event-Based Design}
+\begin{frame}{Event Loop and Network Layer}{Event-Based Design}
   \begin{center}
     \begin{figure}
       \par\bigskip
@@ -26,13 +26,13 @@
 %% End SocketConnection
         \draw (llst.north east) node[outer sep=0, inner sep=0, anchor=center, draw, dashed, fill=blue!30, minimum width=2cm, minimum height=0.5cm] (ssl) {\texttt{ssl/tls}};
       \end{tikzpicture}
-      \caption{Die Eventloop- und Netzwerkschicht im Detail.}
+      \caption{The event loop and network layer in detail.}
     \end{figure}
   \end{center}
-  Implementierungsdetails:
+  Implementation details:
   \begin{itemize}
-    \item \alert{Eventloop/Multiplexer/Timer/EventDispatcher}: Konkrete Klassen, Vererbung.
-    \item \alert{Socket, SocketServer, -Client, -Connection und SSL/TLS}: Als Templates implementiert.
-    \item \alert{IPv4, IPv6, unix, rfcomm, l2cap}: Als Template Klassenhierarchie implementiert.
+    \item \alert{Eventloop/Multiplexer/Timer/EventDispatcher}: Concrete classes, inheritance.
+     \item \alert{Socket, SocketServer, -Client, -Connection and SSL/TLS}: Implemented as templates.
+     \item \alert{IPv4, IPv6, unix, rfcomm, l2cap}: Implemented as a template class hierarchy.
   \end{itemize}
 \end{frame}

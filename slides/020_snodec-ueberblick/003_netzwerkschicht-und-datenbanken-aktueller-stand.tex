@@ -1,22 +1,22 @@
-﻿\section{Netzwerkschicht und Datenbanken}
+﻿	\section{Network layer and databases}
 
-\begin{frame}{Netzwerkschicht und Datenbanken}{Aktueller Stand}
-  \begin{itemize}
-    \item \texttt{SocketServer} und \texttt{SocketClients} Klassen (\texttt{ssl/tls} und \texttt{legacy} Versionen) für die Netzwerkprotokolle
-    \begin{itemize}
-      \item \texttt{IPv4}
-      \item \texttt{IPv6} (Dual Stack, Single Stack, IPv4 mapped Addressen, \ldots)
-      \item \texttt{rfcomm} (Bluetooth)
-      \item \texttt{l2cap} (Bluetooth)
-      \item \texttt{unix domain} Sockets
-    \end{itemize}
-    \item Datenbank Unterstützung
-    \begin{itemize}
-      \item \texttt{MariaDBClient} Klasse (ready for use)
-      \begin{itemize}
-        \item "Normale"{} Queries und Execs
-        \item Transaktionen
-      \end{itemize}
-    \end{itemize}
-  \end{itemize}
+\begin{frame}{Network Layer and Databases}{Current Status}
+   \begin{itemize}
+     \item \texttt{SocketServer} and \texttt{SocketClients} classes (\texttt{ssl/tls} and \texttt{legacy} versions) for the network protocols
+     \begin{itemize}
+       \item \texttt{IPv4}
+       \item \texttt{IPv6} (dual stack, single stack, IPv4 mapped addresses, \ldots)
+       \item \texttt{rfcomm} (Bluetooth)
+       \item \texttt{l2cap} (Bluetooth)
+       \item \texttt{unix domain} Sockets
+     \end{itemize}
+     \item Database support
+     \begin{itemize}
+       \item \texttt{MariaDBClient} class (ready for use)
+       \begin{itemize}
+         \item "Normal"{} queries and execs
+         \item transactions
+       \end{itemize}
+     \end{itemize}
+   \end{itemize}
 \end{frame}

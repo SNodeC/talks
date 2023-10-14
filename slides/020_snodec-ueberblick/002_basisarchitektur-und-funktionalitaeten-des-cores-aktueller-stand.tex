@@ -1,26 +1,26 @@
-﻿\part{Aktueller Stand}
-\section{Basisarchitektur und -funktionalitäten des cores}
+﻿\part{Current Status}
+\section{Basic Architecture and Functionalities of the Core}
 
-\begin{frame}{Basisarchitektur und -funktionalitäten des \texttt{core}s}{Aktueller Stand}
-  \begin{itemize}
-    \item Support für alle drei wesentlichen IO-Multiplexer
-    \begin{itemize}
-      \item \texttt{select()}
-      \item \texttt{poll()}
-      \item \texttt{epoll()}
-    \end{itemize}
-    \item \texttt{SingleShot} und \texttt{IntervalTimer} Klassen
-    \item Dateizugriff über Klasse \texttt{File} (zur Zeit nur lesen)
-    \item Template-Basisklassen für konkrete \texttt{SocketServer} und \texttt{SocketClient} Klassen
-    \item Abstrakte Basisklasse \texttt{SocketContext} für Applikationsprotokolle
-    \item Transparente Unterstützung von \texttt{ssl/tls} für \texttt{SocketServer} und \texttt{SocketClient} Templates
-    \item Dynamisches Laden von Plugins (\texttt{dlopen()}, \texttt{dlsym()}, \texttt{dlclose()})
-    \begin{description}[WS-Subprotocols:]
-      \item[HTTP-Upgrade:] \texttt{websocket} (etwas Anderes ist (noch) nicht spezifiziert)
-      \item[WS-Subprotocol:] \texttt{tiktaktoe}, \texttt{echo}, \texttt{mqtt}
-    \end{description}
-    \item Daemonize wenn gewünscht
-    \item Automatisches Bereitstellen von Kommandozeilenparameter und
-    \item Unterstützung von Konfigurationsdateien
-  \end{itemize}
+\begin{frame}{Basic Architecture and Functionalities of the \texttt{Core}}{Current Status}
+   \begin{itemize}
+     \item Support for all \alert{three} main \alert{IO multiplexers}
+     \begin{itemize}
+       \item \texttt{select()}
+       \item \texttt{poll()}
+       \item \texttt{epoll()}
+     \end{itemize}
+     \item \alert{\texttt{SingleShot}} and \alert{\texttt{IntervalTimer}} classes
+     \item \alert{File access} via class \texttt{File} (currently read only)
+     \item \alert{Template} base classes for concrete \texttt{SocketServer} and \texttt{SocketClient} classes
+     \item \alert{Abstract} base class \texttt{SocketContext} for application protocols
+     \item Transparent support of \alert{\texttt{ssl/tls}} for \texttt{SocketServer} and \texttt{SocketClient} templates
+     \item Dynamic loading of \alert{plugins} (\texttt{dlopen()}, \texttt{dlsym()}, \texttt{dlclose()})
+     \begin{description}[WS-Subprotocols:]
+       \item[HTTP upgrade:] \texttt{websocket} (something else is not specified (yet))
+       \item[WS-Subprotocol:] \texttt{tiktaktoe}, \texttt{echo}, \texttt{mqtt}
+     \end{description}
+     \item \alert{Daemonize} if desired
+     \item Automatically provide \alert{command line parameters} and
+     \item \alert{Configuration file} support
+   \end{itemize}
 \end{frame}
