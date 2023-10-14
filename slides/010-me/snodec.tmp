@@ -1,0 +1,199 @@
+﻿\title[SNode.C]{\Huge DACHS23}
+\def\inserttitlehead{\insertdegreehead{} | \insertshorttitle}
+
+\def\insertlecturepartnumbername{}
+
+\mode<presentation>{\lecture[Introducing Myself]{Introducing Myself}{introducing myself}}
+
+\title[SNode.C]{\large A \alert{simple}, lightweight, highly extensible, event driven, layer-based framework for network applications in the spirit of \alert{node}.js written entirely in \alert{C}++}
+
+%\title[SNode.C]{\Huge DACHS23}
+%\def\insertlecturepartnumbername{A simple to use, lightweight, highly extensible, event driven, layer-based framework for network applications in the spirit of node.js written entirely in C++}
+
+\part{Who am I}
+\section{\tt{Me* me = new Me();}}
+%\section[nosectionpage]{Who am I}
+
+\begin{frame}[fragile]{\tt{Me* me = new Me();}}
+  \begin{center}
+    \Large\texttt{\color{magenta} std\color{black}::\color{orange}cout \color{black} $<<$  \color{darkgreen} "0x"{} \color{black}$<<$ \color{magenta} std\color{black}::\color{cyan}hex \color{black} $<<$ \color{magenta} std\color{black}::\color{cyan} setw\color{black} (8) $<<$ \color{magenta} std\color{black}::\color{cyan} setfill\color{black} ('0') $<<$ \color{fh-ooe-red}me \color{black} $<<$ \color{magenta}std\color{black}::\color{cyan}endl;}\\
+    \vskip0.7cm
+    \texttt{\color{blue}0x08154711}
+    \vskip0.7cm
+    \ldots ungleich \texttt{\color{brown}nullptr} $\Rightarrow$ Objekt \texttt{*me} existiert!
+  \end{center}
+\end{frame}
+
+﻿\section{\tt{describe(me);}}
+
+\begin{frame}{\tt{describe(me);}}
+  \setbeamersize{description width=3.5cm}
+  \def\seperator{// $=>$ }
+  \def\seperator{$\Rightarrow$ }
+%  \texttt{
+    \begin{description}
+      \item[\tt{me->photo();}] \seperator \raisebox{-0.5\height}{\includegraphics[width=0.2\linewidth]{images/Foto}}
+      \item[\tt{me->name();}] \seperator {Volker Christian}
+      \item[\tt{me->email();}] \seperator\href{mailto:Volker.Christian@fh-hagenberg.at}{Volker.Christian@fh-hagenberg.at}
+      \item[\tt{me->profession();}] \seperator Professor for Multimedia Programming\\
+      \phantom{\seperator}University of Applied Sciences Upper Austria\\
+      \phantom{\seperator}Campus Hagenberg
+      \item[\tt{me->education()};]
+      \seperator Theoretical Physics -- Particle Physics (subnuclear) \\
+      \phantom{\seperator}Pervasive Computing\\
+      \phantom{\seperator}Electrical Engineering
+      \item[\tt{me->hobbies();}] \seperator Swimming, Physics, All aspects of computer and network sciences
+    \end{description}
+%  }
+  \hspace{-0.5cm}
+\end{frame}
+
+\part{Art Projects}
+\section{\tt{me->artProjects().list();}}
+
+\begin{frame}{\tt{me->artProjects().list();}}
+  \begin{description}
+    \item[0] {\texttt{->}} Resonator
+    \item[1] {\texttt{->}} Klangtheater GANZOHR
+    \item[2] {\texttt{->}} Elevator
+    \item[3] {\texttt{->}} Web-Cam Server
+    \item[4] {\texttt{->}} Back-Projection
+    \item[5] {\texttt{->}} Telezone
+    \item[6] {\texttt{->}} Time Explorer
+    \item[7] {\texttt{->}} Tug Of War
+    \item[8] {\texttt{->}} Unit-M
+  \end{description}
+\end{frame}
+
+﻿\subsection{Resonator (Steweag Art Award; Documenta X (1997))}
+
+\begin{frame}[t]{\tt{me->artProjects().get(0);}}
+  \alert{\Large{Resonator}} Steweag Art Award; Documenta X \scriptsize{1997}
+  \begin{center}
+    \only<1>{\ffbox{\includegraphics[trim=2in 1.5in 2in 1.5in, width=0.5\textwidth]{images/01-resonator}}}
+    \only<2>{\ffbox{\includegraphics[trim=0in 0in 0in 0in, width=0.5\textwidth]{images/quakediagr1}}}
+  \end{center}
+\end{frame}
+﻿\subsection{Klangtheater GANZOHR (Tune-Theater Only-Ear (1998))}
+
+\begin{frame}[t]{\tt{me->artProjects().get(1);}}
+  \alert{{\Large{Klangtheater GANZOHR}} (Tune-Theater Only--Ear)} Austrian Broadcasting Corp. (ORF) \scriptsize{1998}
+  \begin{center}
+    \ffbox{\includegraphics[trim=2in 1.3in 2in 1.7in, width=0.5\textwidth]{images/02-klangtheater}}
+  \end{center}
+\end{frame}
+﻿\subsection{Elevator (Ars Electronica Center (1999))}
+
+\begin{frame}[t]{\tt{me->artProjects().get(2);}}
+  \alert{\Large{Elevator}} Ars Electronica Center \scriptsize{1999}
+  \begin{center}
+    \ffbox{\includegraphics[trim=0.8in 1.3in 0.64in 1.25in, width=0.75\textwidth]{images/03-aec-elevator}}
+  \end{center}
+\end{frame}
+﻿\subsection{Web-Cam Server (Ars Electronica Center (1999))}
+
+\begin{frame}[t]{\tt{me->artProjects().get(3);}}
+  \alert{\Large{Web-Cam Server}} Ars Electronica Center \scriptsize{1999}
+  \begin{center}
+    \ffbox{\includegraphics[trim=0.8in 1.3in 0.64in 1.25in, width=0.75\textwidth]{images/04-aec-camera-server}}
+  \end{center}
+\end{frame}
+﻿\subsection{Back-Projection -- ESCAPE*spHERE (Ars Electronica Festival (2001))}
+
+\begin{frame}[t]{\tt{me->artProjects().get(4);}}
+  \alert{\Large{Back-Projection - ESCAPE*spHERE}} Ars Electronica Festival \scriptsize{2001}
+  \begin{center}
+    \ffbox{\includegraphics[trim=0.55in 1.66in 0.4in 1.6in, width=0.75\textwidth]{images/05-back-projection}}
+  \end{center}
+\end{frame}
+﻿\subsection{Telezone (Ars Electronica Center (1999))}
+
+\begin{frame}[t]{\tt{me->artProjects().get(5);}}
+  \alert{\Large{Telezone}} Ars Electronica Center \scriptsize{1999}
+  \begin{center}
+    \only<1>{\ffbox{\includegraphics[trim=0.79in 2.08in 0.75in 1.9in, width=0.75\textwidth]{images/06-telezone-1}}}%
+    \only<2>{\ffbox{\includegraphics[trim=0.53in 1.48in 0.42in 1.3in, width=0.75\textwidth]{images/07-telezone-2}}}%
+  \end{center}
+\end{frame}
+﻿\subsection{Time Explorer (National Exhibition -- Ars Electronica Center (2000))}
+
+\begin{frame}[t]{\tt{me->artProjects().get(6);}}
+  \alert{\Large{Time Explorer}} National Exhibition -- Ars Electronica Center \scriptsize{2000}
+  \begin{center}
+    \ffbox{\includegraphics[trim=0.8in 1.1in 0.6in 1in, width=0.7\textwidth]{images/08-time-explorer}}
+  \end{center}
+\end{frame}
+﻿\subsection{Tug Of War (Ars Electronica Center (2000))}
+
+\begin{frame}[t]{\tt{me->artProjects().get(7);}}
+  \alert{\Large{Tug Of War}} Ars Electronica Center \scriptsize{2000}
+  \begin{center}
+    \ffbox{\includegraphics[trim=1.3in 1.95in 1.52in 1.76in, width=0.75\textwidth]{images/09-tug-of-war}}
+  \end{center}
+\end{frame}
+﻿\subsection{WIFI-unitM (WIFI (Ars Electronica Center (2000)))}
+
+\begin{frame}[t]{\tt{me->artProjects().get(8);}}
+  \alert{\Large{WIFI-unitM}} WIFI (Ars Electronica Center) \scriptsize{2000}
+  \begin{center}
+    \ffbox{\includegraphics[trim=0.62in 1.42in 0.77in 1.4in, width=0.75\textwidth]{images/10-unit-m}}
+  \end{center}
+\end{frame}
+\part{Scientific Projects}
+\section{\tt{me->scientificProjects().list();}}
+
+\begin{frame}{\tt{me->scientificProjects().list();}}
+  \begin{description}
+    \item[0] {\texttt{->}} The MATRIX
+    \item[1] {\texttt{->}} Context Framework
+    \item[2] {\texttt{->}} Bavarian Emgergency Scenario
+    \item[3] {\texttt{->}} Repair
+    \item[4] {\texttt{->}} Instar
+    \item[5] {\texttt{->}} SNode.C
+  \end{description}
+\end{frame}
+
+﻿\subsection{The MATRIX (Ars Electronica Center (2000))}
+
+\begin{frame}[t]{\tt{me->scientificProjects().get(0);}}
+  \alert{\Large{The MATRIX}} Ars Electronica Center \scriptsize{2000}
+  \begin{center}
+    \only<1>{\includegraphics[trim=0.58in 1.27in 0.74in 0.95in, width=0.7\textwidth]{images/11-matrix-1}}
+    \only<2>{\includegraphics[trim=0.67in 1.17in 0.52in 1.06in, width=0.7\textwidth]{images/12-matrix-2}}
+  \end{center}
+\end{frame}
+﻿\subsection{Context Framework (Johannes Kepler University Linz (2001))}
+
+\begin{frame}[t]{\tt{me->scientificProjects().get(1);}}
+  \alert{\Large{Context Framework}} Johannes Kepler University Linz \scriptsize{2001}
+  \begin{center}
+    \only<1>{\includegraphics[trim=0.25in 1.97in 0.28in 0.95in, width=0.7\textwidth]{images/13-context-framework-1}}
+    \only<2>{\includegraphics[trim=0.33in 1.17in 0.36in 1.06in, width=0.7\textwidth]{images/14-context-framework-2}}
+    \only<3>{\includegraphics[trim=0.42in 1.17in 0.43in 1.06in, width=0.7\textwidth]{images/15-context-framework-4}}
+    \only<4>{\includegraphics[trim=1in 1.9in 1.4in 1.4in, width=0.7\textwidth]{images/16-context-framework-3}}
+  \end{center}
+\end{frame}
+﻿\subsection{Bavarian Emergency Scenario (Siemens AG (JKU) (2001)}
+
+\begin{frame}[t]{\tt{me->scientificProjects().get(2);}}
+  \alert{\Large{Bavarian Emergency Scenario}} Siemens AG (JKU) \scriptsize{2001}
+  \begin{center}
+    \includegraphics[trim=0.98in 1.1in 0.84in 1.2in, width=0.68\textwidth]{images/17-emergency-scenario}
+  \end{center}
+\end{frame}
+﻿\subsection{Repair (Johannes Kepler University) (2002)}
+
+\begin{frame}[t]{\tt{me->scientificProjects().get(3);}}
+  \alert{\Large{Repair}} Johannes Kepler University \scriptsize{2002}
+  \begin{center}
+    \includegraphics[trim=1.5in 1.3in 1.5in 1.1in, width=0.6\textwidth]{images/18-moving-robot}
+  \end{center}
+\end{frame}
+﻿\subsection{Instar (Siemens AG (Johannes Kepler University) (2002)}
+
+\begin{frame}[t]{\tt{me->scientificProjects().get(4);}}
+  \alert{\Large{Instar}} Siemens AG (Johannes Kepler University) \scriptsize{2002}
+  \begin{center}
+    \includegraphics[trim=0.82in 1.3in 0.82in 1.1in, width=0.6\textwidth]{images/20-siemens-instar}
+  \end{center}
+\end{frame}

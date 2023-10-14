@@ -28,6 +28,11 @@
 \usepackage[T2A, T1]{fontenc}
 %\usepackage[russian]{babel}
 
+\usepackage{catchfile}
+\newcommand{\getenv}[2][]{%
+  \CatchFileEdef{\temp}{"|kpsewhich --var-value #2"}{\endlinechar=-1}%
+  \if\relax\detokenize{#1}\relax\temp\else\let#1\temp\fi}
+
 \pgfkeys{/pgf/number format/.cd,1000 sep={\,}}
 
 \usepgfplotslibrary{dateplot}
@@ -124,7 +129,7 @@
 
 \author[voc]{Volker Christian}
 
-\setpath{kapitel-4}
+%\setpath{kapitel-4}
 
 \let\origframe\frame
 \let\endorigframe\endframe
@@ -134,6 +139,8 @@
 %}{
 %  \endorigframe
 %}
+
+%\setpath{/home/voc/projects/snodec/talks/slides}
 
 \begin{document}[without titlepage]%
 %  \begin{frame}{Frame Title}%
