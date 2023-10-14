@@ -1,0 +1,32 @@
+﻿\section[nosectionpage]{The JSON Structure of a Topic-Level}
+
+\begin{frame}[fragile]{The JSON Structure of a Topic-Level}
+  A \texttt{\textcolor{fh-ooe-red}{topic\_level}} object \textcolor{fh-ooe-red}{describes one topic-level in detail} (subtopics, mappings, ...) and
+  \begin{itemize}
+    \item \textcolor{fh-ooe-red}{must have an \texttt{name} object} describing the \textcolor{fh-ooe-red}{topic-name} of the \textcolor{fh-ooe-red}{current topic-level}.
+    \item can be nested to describe \texttt{\textcolor{fh-ooe-red}{subtopics recursively}}.
+    \item can have a \texttt{\textcolor{fh-ooe-red}{mapping}} object.
+    \begin{itemize}
+      \item When present the \texttt{\textcolor{fh-ooe-red}{mqttintegrator}} subscribes for that topic.
+      \item Whan also a \texttt{\textcolor{fh-ooe-red}{subscription}} object exists the subscription is done with the \texttt{\textcolor{fh-ooe-red}{qos}} level specified.
+    \end{itemize}
+  \end{itemize}
+
+  \begin{jsoncode}[gobble=4]
+    "topic_level" : {
+        "name" : "test01",,
+        "topic_level" : {
+            "name" : "button1",
+            "type" : "binary_sensor",
+            "subscription" : {
+                "qos" : 2
+            },
+            "mapping": {
+                ...
+            }
+            ...
+        }
+    }
+  \end{jsoncode}
+\end{frame}
+

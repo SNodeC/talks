@@ -1,0 +1,68 @@
+﻿\title[IoT]{\large IoT}
+
+\def\insertlecturepartnumbername{\Huge\alert{Overview of IoT Systems}}
+
+\mode<presentation>{\lecture[Recap]{Recap}{Überblick}}
+
+\part{A Short Recap of IoT}
+\section{Components of IoT}
+
+\begin{frame}{Components of IoT}
+  \begin{columns}
+    \begin{column}[T]{0.46\textwidth}
+      \begin{description}
+        \item[Sensors]\hfill\\
+        \begin{itemize}
+          \item Temerature, humidity, pressure
+          \item Brightness, Acoustics
+          \item Switches
+          \item Chemicals
+          \item \ldots
+        \end{itemize}
+      \end{description}
+    \end{column}
+    \begin{column}[T]{0.46\textwidth}
+      \begin{description}
+        \item[Actuators]\hfill\\
+        \begin{itemize}
+          \item Lamps
+          \item Motors
+          \item Locks
+          \item Relays
+          \item \ldots
+        \end{itemize}
+      \end{description}
+    \end{column}
+  \end{columns}
+  \vspace{0.5cm}
+  \begin{columns}
+    \begin{column}[T]{0.46\textwidth}
+      \begin{description}
+        \item[Microcontroller]\hfill\\
+        \begin{itemize}
+          \item Controls sensors and actuators
+          \item Preprocessing of sensor-data
+          \item (Limited) networking capabilities
+          \begin{itemize}
+            \item WiFi, Bluetooth
+            \item \ldots
+          \end{itemize}
+          \item Connected to Gateway
+        \end{itemize}
+      \end{description}
+    \end{column}
+    \begin{column}[T]{0.46\textwidth}
+      \begin{description}
+        \item[Gateway]\hfill\\
+        \begin{itemize}
+          \item Full network capabilities
+          \item Collecting data from MC
+          \item Sending commands to MC
+          \item (Can) offer portal for whole IoT-system
+          \item (Frequently) connected to cloud-system
+          \item Responsible for security
+        \end{itemize}
+      \end{description}
+    \end{column}
+  \end{columns}
+\end{frame}

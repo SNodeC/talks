@@ -12,3 +12,5 @@
 /snodec.synctex.gz
 /snodec.toc
 /snodec.vrb
+*.aux
+*.tmp

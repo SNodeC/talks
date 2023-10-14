@@ -1,0 +1,23 @@
+﻿\subsection{The JSON Structure of a \texttt{static} Mapping Section}
+
+\begin{frame}[fragile]{The JSON Structure of a \texttt{static} Mapping Section}
+  The \textcolor{fh-ooe-red}{\texttt{static}} mapping section describes the mapped topic and the message mapping where the \textcolor{fh-ooe-red}{incoming message} is \textcolor{fh-ooe-red}{string-compared} to a \textcolor{fh-ooe-red}{string-value} available in the \texttt{\textcolor{fh-ooe-red}{message\_mappings}} array section.\\
+  E.g.:
+
+  \begin{jsoncode}[gobble=4]
+    "static" : {
+        "mapped_topic" : "test02/onboard/set",
+        "retain_message" : false,
+        "message_mappings" : [
+            {
+                "message" : "pressed",
+                "mapped_message" : "on"
+            },{
+                "message" : "released",
+                "mapped_message" : "off"
+            }
+        ]
+    }
+  \end{jsoncode}
+\end{frame}
+

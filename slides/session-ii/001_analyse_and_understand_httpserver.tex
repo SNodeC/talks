@@ -1,0 +1,33 @@
+﻿\part{Using SNode.C to Create Complex Server Applications}
+\section[nosectionpage]{Which Header File should I Use}
+
+\begin{frame}[fragile]{Which Header File should I Use}
+  SNode.C provides different webserver classes. The individual classes can be distinguished by:
+  \begin{itemize}
+    \item Security of the data exchange.
+    \item The network protocol used.
+  \end{itemize}
+  For every combination of security and network protocol a specific C++ header file has to be included:
+  \begin{cppcode}[gobble=4]
+    #include "express/[security]/[network]/WebApp.h"
+  \end{cppcode}
+  \begin{description}
+    \item[Security:] Either unencrypted or SSL/TLS encrypted data exchange:
+    \begin{itemize}
+      \item Unencrypted: \texttt{\textcolor{fh-ooe-red}{[security]}} $\Rightarrow$ \texttt{\textcolor{fh-ooe-red}{legacy}}
+      \item SSL/TLS encrypted: \texttt{\textcolor{fh-ooe-red}{[security]}} $\Rightarrow$ \texttt{\textcolor{fh-ooe-red}{tls}}
+    \end{itemize}
+    \item[Network:] Four network protocolls are currently supported:
+    \begin{itemize}
+      \item IPv4: \texttt{\textcolor{fh-ooe-red}{[network]}} $\Rightarrow$ \texttt{\textcolor{fh-ooe-red}{in}}
+      \item IPv6: \texttt{\textcolor{fh-ooe-red}{[network]}} $\Rightarrow$ \texttt{\textcolor{fh-ooe-red}{in6}}
+      \item Bluetooth RFCOM: \texttt{\textcolor{fh-ooe-red}{[network]}} $\Rightarrow$ \texttt{\textcolor{fh-ooe-red}{rc}}
+      \item Unix: \texttt{\textcolor{fh-ooe-red}{[network]}} $\Rightarrow$ \texttt{\textcolor{fh-ooe-red}{un}}
+    \end{itemize}
+  \end{description}
+  \vspace{0.5cm}
+  Thus, if you need a webserver communicating unencrypted via IPv4 you have to use
+  \begin{cppcode}[gobble=4]
+    #include "express/legacy/in/WebApp.h"
+  \end{cppcode}
+\end{frame}

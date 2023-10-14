@@ -1,0 +1,27 @@
+\section[nosectionpage]{Anatomy of \texttt{app.get()}, \texttt{app.post()}, \ldots}
+
+\begin{frame}[fragile]{Anatomy of \texttt{app.get()}, \texttt{app.post()}, \ldots}
+  The HTTP request methods \texttt{\textcolor{fh-ooe-red}{GET}}, \texttt{\textcolor{fh-ooe-red}{POST}}, \ldots are mapped to the \textcolor{fh-ooe-red}{non-static} methods \texttt{\textcolor{fh-ooe-red}{.get(\ldots)}}, \texttt{\textcolor{fh-ooe-red}{.post(\ldots)}}, \ldots of the classes \texttt{\textcolor{fh-ooe-red}{express/*/*/WebApp}}.
+  \begin{itemize}
+    \item The signatures of these methods are
+    \begin{cppcode}[gobble=4]
+      Route& METHOD(const Router& router);
+      Route& METHOD(const std::string& relativeMountPath, const Router& router);
+      Route& METHOD(const std::function<void(Request & req, Response & res)>& lambda);
+      Route& METHOD(const std::string& relativeMountPath, const std::function<void(Request & req, Response & res)>& lambda);
+      Route& METHOD(const std::function<void(Request & req, Response & res, Next & next)>& lambda);
+      Route& METHOD(const std::string& relativeMountPath, const std::function<void(Request & req, Response & res, Next & next)>& lambda);
+      template <typename... Lambdas>
+      Route& METHOD(const std::function<void(Request & req, Response & res)>& lambda, Lambdas... lambdas);
+      template <typename... Lambdas>
+      Route& METHOD(
+      const std::string& relativeMountPath, const std::function<void(Request & req, Response & res)>& lambda, Lambdas... lambdas);
+      template <typename... Lambdas>
+      Route& METHOD(const std::function<void(Request & req, Response & res, Next & next)>& lambda, Lambdas... lambdas);
+      template <typename... Lambdas>
+      Route& METHOD(const std::string& relativeMountPath,
+      const std::function<void(Request & req, Response & res, Next & next)>& lambda,
+      Lambdas... lambdas);
+    \end{cppcode}
+  \end{itemize}
+\end{frame}

@@ -1,0 +1,28 @@
+﻿\section[nosectionpage]{The JSON Structure of the Mappings Section}
+
+\begin{frame}[fragile]{The JSON Structure of the Mappings Section}
+  The  Structure of the mapping section description consists of one objects:
+  \begin{description}[discover\_prefix]
+    \item[topic\_level] This is either an object describing one topic of the current level or an array of objects describing multiple topics of the same, current level.
+  \end{description}
+  One topic on the current level
+
+  \begin{jsoncode}[gobble=4]
+    "mappings" : {
+        "topic_level" : {                  // topic level description (name, mappings, ...)
+            ...
+        }
+    }
+  \end{jsoncode}
+  or multiple topics on the current level
+  \begin{jsoncode}[gobble=4]
+    "mappings" : {
+        "topic_level" : [{                    // topic level description (name, mappings, ...)
+            ...
+        }, {                                  // topic level description (name, mappings, ...)
+            ...
+        }]
+    }
+  \end{jsoncode}
+\end{frame}
+
