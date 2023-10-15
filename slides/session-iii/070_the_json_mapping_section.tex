@@ -7,7 +7,7 @@
     "json" : {
         "mapped_topic" : "test02/onboard/set",
         "retain_message" : false,
-        "mapping_template" : "{{ json.time.start }} to {{ json.time.end + 1 }}pm"
+        "mapping_template" : "{{ time.start }} to {{ time.end + 1 }}pm"
     }
   \end{jsoncode}
   This \texttt{\textcolor{fh-ooe-red}{mapping\_template}} renders the following JSON object:

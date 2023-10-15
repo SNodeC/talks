@@ -144,6 +144,6 @@
 
 \begin{document}[without titlepage]%
 %  \begin{frame}{Frame Title}%
-    <>
+    <>%
 %  \end{frame}%
 \end{document}
