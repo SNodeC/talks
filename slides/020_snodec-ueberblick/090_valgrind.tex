@@ -1,7 +1,8 @@
 ﻿\subsection{Memory}
 
 \begin{frame}[fragile]{Memory: \texttt{valgring httpserver-tls-in}}{Statistics}
-    \begin{lstlisting}[autogobble=true, showstringspaces=false, stringstyle=\color{black}]
+\begin{center}
+    \begin{BVerbatim}[gobble=8, fontsize=\small]
         voc@atlas:~/> valgrind httpserver-tls-in6
         ==1256206== Memcheck, a memory error detector
         ==1256206== Copyright (C) 2002-2022, and GNU GP'd, by Julian Seward et al.
@@ -18,6 +19,7 @@
         ==1256206==
         ==1256206== For lists of detected and suppressed errors, rerun with: -s
         ==1256206== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-    \end{lstlisting}
+    \end{BVerbatim}
+\end{center}
 \end{frame}
 
