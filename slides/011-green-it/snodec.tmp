@@ -1,0 +1,24 @@
+﻿\title[Green IT]{\Huge Green IT}
+
+\def\insertlecturepartnumbername{\Large encompasses a variety of approaches that address different aspects of the information and communication technology life cycle.}
+
+\lecture[Examples]{\alert{Examples}}{Examples}
+
+\nopartpage
+\part{Example Aspects}
+
+\begin{frame}{Example Aspects of Green IT}
+\begin{itemize}
+\item \alert{Reduction} of \alert{energy consumption} in use
+\item Reduction of energy and \alert{material consumption} in production
+\item Reduction of waste \alert{heat and pollutant emissions} in use and production
+\item Reduction of \alert{pollutants in products} and manufacturing processes
+\item Reduction of \alert{unnecessary printouts} in the printer area
+\item \alert{Recycling} and energy-saving disposal
+\item \alert{Sustainable design} of products and production of hardware that is as long-lasting as possible
+\only<1>{\item \alert{Resource-saving programming} of software (Green Software Engineering)}
+\only<2>{\item {\color{fh-ooe-red}Resource-saving programming} of software (Green Software Engineering)}
+\item \alert{Use of IT to reduce energy consumption} from another source (e.g. transport, heating systems)
+\item \alert{Social and ethical aspects}, such e.g. healthy and fair working conditions (Fair IT)
+\end{itemize}
+\end{frame}
