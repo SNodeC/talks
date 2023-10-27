@@ -1,0 +1,25 @@
+﻿\subsection{Install Package \alert{mqttbroker} on the Router}
+
+\begin{frame}[fragile]{Prepare Installation of the Package \alert{\texttt{mqttbroker}}}
+{\href{https://github.com/SNodeC/mqttbroker}{\beamergotobutton{https://github.com/SNodeC/mqttbroker}}}
+\alert{Precompiled and cryptographically signed packages} are available from \alert{my server} \href{https://www.vchrist.at/owrt}{\beamergotobutton{https://www.vchrist.at/owrt}}.
+\begin{exampleblock}{Tasks (group): Add Package Repository to OpenWRT}
+\begin{enumerate}
+  \item \alert{Download} the file with name \alert{7646d48820c9bd9d} containing the \alert{public} package signing \alert{key} from \href{https://www.vchrist.at/owrt}{\beamergotobutton{https://www.vchrist.at/owrt}}. Such \alert{keys} are used by OpenWRT for \alert{validating} the \alert{origin} of packages.
+  \item \alert{Upload} this file (\alert{don't change it's name}) into the directory \alert{\texttt{/etc/opkg/keys/}} on the router.
+  \item On the router \alert{add} the line\\
+  \begin{alertblock}{}
+  \texttt{src/gz snodec https://www.vchrist.at/owrt/packages/aarch64\_cortex-a53}
+  \end{alertblock}
+    to the file \alert{\texttt{/etc/opkg/customfeeds.conf}} pointing to my \alert{package repository} for the router.
+    \begin{description}[$\Rightarrow$]
+  \item[$\Rightarrow$] Create the file if it doesn't exist.
+  \end{description}
+  This can be done either using
+  \begin{itemize}
+    \item the \alert{WEB interface} of the router
+    \item or \alert{by hand} using an \alert{editor}. Install one if none is installed on the router (e.g. \texttt{vi}, \texttt{joe}, \texttt{nano}).
+  \end{itemize}
+\end{enumerate}
+\end{exampleblock}
+\end{frame}
