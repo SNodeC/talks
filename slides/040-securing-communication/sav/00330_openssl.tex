@@ -1,0 +1,19 @@
+﻿\subsection{Secure Socket Layer/Transport Layer Security and the Chain of Trust}
+
+\begin{frame}{\alert{S}ecure \alert{S}ocket \alert{L}ayer/\alert{T}ransport \alert{L}ayer \alert{S}ecurity}{SSL/TLS}
+    \begin{itemize}
+        \item \alert{SSL/TLS} supports both \alert{symmetric} and \alert{asymmetric} encryption
+        \item and uses \alert{certificates} for \alert{authentication} and \alert{encryption}.
+        \item A certificate contains
+        \begin{itemize}
+            \item A \alert{public key}
+            \item Certificate \alert{informations} ("Identity" information about the user, such as name, user ID, and so on)
+            \item A \alert{digital signature} from a \alert{certificate authority (CA)}.
+        \end{itemize}
+        \item To \alert{each} certificate a \alert{private key} exists which can be protected using a password.
+        \item The \alert{public key} of a certificate its the \alert{private key} forms a public/private key pair.
+        \begin{description}[$\Rightarrow$]
+            \item [$\Rightarrow$] The \alert{private key} and its \alert{password} shall be kept extremely safe.
+        \end{description}
+    \end{itemize}
+\end{frame}
