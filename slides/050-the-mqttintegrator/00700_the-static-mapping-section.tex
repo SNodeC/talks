@@ -7,16 +7,15 @@
   \begin{jsoncode}[gobble=4]
     "static" : {
         "mapped_topic" : "test02/onboard/set",
-        "retain_message" : false,
-        "message_mappings" : [
-            {
-                "message" : "pressed",
-                "mapped_message" : "on"
-            },{
-                "message" : "released",
-                "mapped_message" : "off"
-            }
-        ]
+        "message_mapping" : [{
+          "message" : "pressed",
+          "mapped_message" : "on"
+        },{
+          "message" : "released",
+          "mapped_message" : "off"
+        }],
+        "retain" : false,
+        "qos": 0
     }
   \end{jsoncode}
 \end{frame}
