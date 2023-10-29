@@ -1,0 +1,19 @@
+﻿\part{Create Certificates and use Certificates}
+
+\nosectionpage
+\section{Create Certificates}
+\withsectionpage
+
+\newcount\a
+\def\bn{100}
+\newcount\b\b=\number\bn
+\multido{\i=100+100}{34}{%
+  \a=\number\i
+  \divide \a by\b
+  \begin{frame}
+    \frametitle{Create Certificates}
+    \framesubtitle{Screenshot \the\a}
+    \centering
+    \includegraphics[scale=0.175]{images/\i_certificates.png}
+  \end{frame}
+}

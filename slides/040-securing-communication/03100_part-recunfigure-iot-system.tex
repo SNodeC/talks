@@ -1,22 +1,23 @@
 \nopartpage
-\part{Reconfigure the IoT system to use \texttt{mqttbroker}}
+\part{Reconfigure the IoT System to use \texttt{mqttbroker}}
 \withpartpage
 
-\begin{frame}{Reconfigure the IoT system to use \texttt{mqttbroker}}
-\begin{exampleblock}{Tasks (group): Port IoT Scenarious to \texttt{mqttbroker}}
+\begin{frame}{Reconfigure the IoT System to use \texttt{mqttbroker}}
+\begin{exampleblock}{Tasks (group): Port IoT Scenarios to \texttt{mqttbroker}}
   \begin{enumerate}
-    \item \alert{Duplicate all} your \alert{arduino sketches} and \alert{iotempower configurations}.
+    \item \alert{Select} a cool and working \alert{IoT scenario}.
+    \item \alert{Duplicate} selected \alert{arduino sketches} and/or \alert{iotempower configurations}.
     \begin{description}[$\Rightarrow$]
       \item[$\Rightarrow$] Do this \alert{systematically} to \alert{not get confused}.
     \end{description}
-    \item \alert{Duplicate all} your \alert{Node-Red flows}.
+    \item \alert{Duplicate} selected your \alert{Node-Red flows}.
     \begin{description}[$\Rightarrow$]
       \item[$\Rightarrow$] Do this \alert{systematically} to \alert{not get confused}.
     \end{description}
-    \item Reconfigure selected \alert{IoT scenarious} to utilize \alert{\texttt{mqttbroker}} instead of \texttt{mosquitto}.
+    \item \alert{Reconfigure} selected IoT scenarious to utilize \alert{\texttt{mqttbroker}} instead of \texttt{mosquitto}.
     \begin{itemize}
-    \item Reconfigure selected \alert{arduino sketches} and \alert{iotempower} configurations to contact the \alert{\texttt{mqttbroker}} at IP address \alert{\texttt{192.168.12.254}} instead of \texttt{192.168.12.1}.
-    \item Reconfigure selected \alert{Node-Red flows} to contact the \alert{\texttt{mqttbroker}} at IP address \alert{\texttt{192.168.12.254}} instead of \texttt{192.168.12.1}.
+    \item Reconfigure selected \alert{arduino sketches} and/or \alert{iotempower} configurations to contact \alert{\texttt{mqttbroker}} at IP address \alert{\texttt{192.168.12.254}} instead of \texttt{mosquitto} on \texttt{192.168.12.1}.
+    \item Reconfigure selected \alert{Node-Red flows} to contact \alert{\texttt{mqttbroker}} at IP address \alert{\texttt{192.168.12.254}} instead of \texttt{mosquitto} on \texttt{192.168.12.1}.
     \end{itemize}
     \begin{description}[$\Rightarrow$ Hint:]
       \item[$\Rightarrow$ Hint:] First port only one \alert{simple sketch} or \alert{simple iotempower configuration} and the \alert{corresponding Node-Red flow} to \alert{test the infrastructure}.

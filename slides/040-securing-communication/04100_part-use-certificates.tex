@@ -1,0 +1,13 @@
+\section{Use the Certificates to Secure the Communication with \texttt{mqttbroker}}
+
+\begin{frame}{Use the Certificates to Secure Communication with the \texttt{mqttbroker}}
+\begin{exampleblock}{Tasks (group): Secure the communication with the \texttt{mqttbroker}}
+  \begin{enumerate}
+    \item Install the \alert{root CA certificate} on your \alert{webbrowser}.
+    \item Configure the \alert{\texttt{mqtttlswebview}} instance of the \alert{\texttt{mqttbroker}} to use the created end entity \alert{server certificate chain} and the corresponding \alert{private key}
+    \item In case a \alert{password} was used during export of the \alert{private key} specify it also on the \texttt{mqttbroker} command line.
+    \item Point your \alert{webbrowser} to location \href{https://edge.iot/clients/}{\beamergotobutton{https://edge.iot/clients/}} and \alert{check} if the connection is \alert{secure}.
+    \item Using this as an example, \alert{also} secure the \texttt{mqttbroker} instance \alert{\texttt{tlsin}} with \alert{certificates} and configure \alert{Node-Red} to also communicate \alert{securely} with the \texttt{mqttbroker}.
+  \end{enumerate}
+  \end{exampleblock}
+\end{frame}
