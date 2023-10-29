@@ -7,10 +7,14 @@
 \begin{enumerate}
   \item \alert{Download} the file with name \alert{7646d48820c9bd9d} containing the \alert{public} package signing \alert{key} from \href{https://www.vchrist.at/owrt}{\beamergotobutton{https://www.vchrist.at/owrt}}. Such \alert{keys} are used by OpenWRT for \alert{validating} the \alert{origin} of packages.
   \item \alert{Upload} this file (\alert{don't change it's name}) into the directory \alert{\texttt{/etc/opkg/keys/}} on the router.
-  \item On the router \alert{add} the line\\
-  \begin{alertblock}{}
-  \texttt{src/gz snodec https://www.vchrist.at/owrt/packages/aarch64\_cortex-a53}
-  \end{alertblock}
+  \item On the router \alert{add} the line
+  \parbox{0.9\textwidth}{
+  \setlength{\textwidth}{0.9\textwidth}
+  \begin{block}{}
+  \centering\texttt{src/gz snodec https://www.vchrist.at/owrt/packages/aarch64\_cortex-a53}
+  \end{block}
+  }
+
     to the file \alert{\texttt{/etc/opkg/customfeeds.conf}} pointing to my \alert{package repository} for the router.
     \begin{description}[$\Rightarrow$]
   \item[$\Rightarrow$] Create the file if it doesn't exist.

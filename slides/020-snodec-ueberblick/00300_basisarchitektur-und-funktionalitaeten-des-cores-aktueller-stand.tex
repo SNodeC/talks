@@ -1,7 +1,7 @@
-﻿\part{Current Status}
-\section{Basic Architecture and Functionalities of the Core}
+﻿\section{Features of SNode.C}
 
-\begin{frame}{Basic Architecture and Functionalities of the \texttt{Core}}{Current Status}
+\subsection{Characteristics of SNode.C}
+\begin{frame}{Characteristics of SNode.C}
    \begin{itemize}
      \item Support for all \alert{three} main \alert{IO multiplexers}
      \begin{itemize}
@@ -9,7 +9,7 @@
        \item \texttt{poll()}
        \item \texttt{epoll()}
      \end{itemize}
-     \item \alert{\texttt{SingleShot}} and \alert{\texttt{IntervalTimer}} classes
+     \item \alert{Single shot} and \alert{interval timer} classes
      \item \alert{File access} via class \texttt{File} (currently read only)
      \item \alert{Template} base classes for concrete \texttt{SocketServer} and \texttt{SocketClient} classes
      \item \alert{Abstract} base class \texttt{SocketContext} for application protocols
