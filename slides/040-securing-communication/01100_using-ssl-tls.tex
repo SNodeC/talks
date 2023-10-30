@@ -11,9 +11,11 @@
             \item If \textit{Bob} \alert{trusts} certificate authority \alert{EXCA} than its \alert{CA certificate (public key) is knowen} by \textit{Bob}. E.g. it is installed on the system and made been knowen to \textit{Bob} by the \alert{administrator}.
             \item \textit{Bob} can now \alert{use the EXCA certificate} to \alert{validate} the \alert{certificate of \textit{Alice}}.
             \item If \textit{Alice} certificate is \alert{proven valid} than \textit{Bob} \alert{can trust} \textit{Alice},
+            \begin{description}[$\Rightarrow$]
+                \item [$\Rightarrow$] In case \textit{Bob} \alert{didn't trust} \textit{Alice} certificate he shall \alert{terminate the connection}.
+                \item [$\Rightarrow$] In case \textit{Bob} \alert{trusts} \textit{Alice} he can use \alert{\textit{Alice} public key and his private key} for encryption.
+                \item  [$\Rightarrow$]In that case also \textit{Alice} can now use \alert{\textit{Bobs} public key and her private key} for encryption.
+            \end{description}
         \end{itemize}
-        \item In case \textit{Bob} \alert{didn't trust} \textit{Alice} certificate he shall \alert{terminate the connection}.
-        \item In case \textit{Bob} \alert{trusts} \textit{Alice} he can use \alert{\textit{Alice} public key and his private key} for encryption.
-        \item In that case also \textit{Alice} can now use \alert{\textit{Bobs} public key and her private key} for encryption.
     \end{itemize}
 \end{frame}
