@@ -3,10 +3,10 @@
 \section[nosectionpage]{The JSON Structure of the Mapping File used by \texttt{mpttintegrator}}
 \begin{frame}[fragile]{The JSON Structure of the Mapping File used by \texttt{mpttintegrator}}
   The big Structure of the JSON mapping description consists of three objects:
-  \begin{description}[connection]
-    \item[discover\_prefix] The prefix topic-level of the discover topics of an application.
+  \begin{description}[discover\_prefix]
+    \item[discover\_prefix] The prefix topic-level of the discover topics of an application (currently not used).
     \item[connection] This object describes options for the MQTT connection.
-    \item[mappings] This object describes the mappings of incoming topics|messages to outgoing topics|messages.
+    \item[mappings] This object describes the mappings of incoming topics|messages to outgoing topics/messages.
   \end{description}
 
   \begin{jsoncode}[gobble=4]

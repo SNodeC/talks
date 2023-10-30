@@ -13,18 +13,20 @@
   \end{itemize}
 
   \begin{jsoncode}[gobble=4]
-    "topic_level" : {
-        "name" : "test01",,
+    {
         "topic_level" : {
-            "name" : "button1",
-            "subscription" : {
-                "type" : "binary_sensor",
-                "qos" : 2,
-                "<mapping-type>": {
-                    ...
-                }
-            },
-            ...
+            "name" : "test01",,
+            "topic_level" : {
+                "name" : "button1",
+                "subscription" : {
+                    "type" : "binary_sensor",
+                    "qos" : 2,
+                    "<mapping-type>": {
+                        ...
+                    }
+                },
+                ...
+            }
         }
     }
   \end{jsoncode}
