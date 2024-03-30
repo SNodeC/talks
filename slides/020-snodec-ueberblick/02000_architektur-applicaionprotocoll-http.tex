@@ -22,11 +22,15 @@
     \caption{HTTP server/client \texttt{SocketContext} in detail.}
   \end{figure}
   \end{center}\begin{itemize}
-     \item HTTP \alert{request parser} (fairly complete)
-     \item HTTP \alert{response parser} (fairly complete)
+     \item HTTP \alert{request parser}
+     \item HTTP \alert{response parser}
      \item \alert{Cookie} and \alert{query} support
-     \item Connection management (Connection: close, keep-alive, upgrade, ...)
-     \item Real \alert{pipelining} (but will probably be thrown out again)
-     \item \alert{Payload} handling (body)
+     \item Connection management (0.9, 1.0, 1.1) (Connection: close, keep-alive, upgrade, ...)
+     \item Real client side \alert{pipelining} support.
+     \item Transfere-Encoding
+      \begin{itemize}
+        \item "`normal"' with Content-Length
+        \item \alert{chunked} with \alert{trailer} support
+      \end{itemize}
    \end{itemize}
 \end{frame}

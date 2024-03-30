@@ -1,6 +1,6 @@
-﻿\section{Event Loop and Network Layer}
+﻿\subsection{Architecture of a Typical SNode.C-Application}
 
-\begin{frame}{Event Loop and Network Layer}{Event-Based Design}
+\begin{frame}{Architecture of a Typical SNode.C-Application}
   \begin{center}
     \begin{figure}
       \par\bigskip
@@ -18,21 +18,21 @@
         \draw (em.north west) + (-1cm, 0) [dashed] -- ++(11cm, 0);
 %%% End draw dashed line above Eventloop-Layer
 %%% Start Lowlevel Server/Client
-        \draw (em.north) node[anchor=south east, outer sep=0, draw, fill=red!30, minimum width=5cm, minimum height=1cm] (llst) {\texttt{SocketServer<SCF\footnote{\label{scf1}\texttt{SCF} \ldots \texttt{SocketContextFactory}}>}};
-        \draw (em.north) node[anchor=south west, outer sep=0, draw, fill=red!30, minimum width=5cm, minimum height=1cm] (llct) {\texttt{SocketClient<SCF\textsuperscript{\ref{scf1}}>}};
+        \draw (em.north) node[anchor=south east, outer sep=0, draw, fill=red!30, minimum width=5cm, minimum height=1cm] (llst) {\texttt{SocketServer<SCF\footnote{\label{scf2}\texttt{SCF} \ldots \texttt{SocketContextFactory}}>}};
+        \draw (em.north) node[anchor=south west, outer sep=0, draw, fill=red!30, minimum width=5cm, minimum height=1cm] (llct) {\texttt{SocketClient<SCF\textsuperscript{\ref{scf2}}>}};
 %% End Lowlevel Server/Client
 %% Start SocketConnection
-        \draw (llst.north east) node[anchor=south, draw, fill=orange!30, inner sep=0, outer sep=0, minimum width=10cm, minimum height=1cm] {\texttt{SocketConnection<SCF\textsuperscript{\ref{scf1}}>}};
+        \draw (llst.north east) node[anchor=south, draw, fill=orange!30, inner sep=0, outer sep=0, minimum width=10cm, minimum height=1cm] (sc) {\texttt{SocketConnection<SCF\textsuperscript{\ref{scf2}}>}};
 %% End SocketConnection
         \draw (llst.north east) node[outer sep=0, inner sep=0, anchor=center, draw, dashed, fill=blue!30, minimum width=2cm, minimum height=0.5cm] (ssl) {\texttt{ssl/tls}};
+%%$ Start draw dashed line above Eventloop-Layer
+        \draw (sc.north west) + (-1cm, 0) [dashed] -- ++(11cm, 0);
+%%% End draw dashed line above Eventloop-Layer
+%% SocketContexts
+        \draw (sc.north) node[anchor=south east, outer sep=0, inner sep=0, minimum width=5cm, minimum height=1cm, draw, fill=yellow!30] {\texttt{ServerContext}};
+        \draw (sc.north) node[anchor=south west, outer sep=0, inner sep=0, minimum width=5cm, minimum height=1cm, draw, fill=yellow!30] {\texttt{ClientContext}};
       \end{tikzpicture}
-      \caption{The event loop, network and connection layers more detailed.}
+      \caption{Typical Architecture of a SNode.C-Application.}
     \end{figure}
   \end{center}
-  Implementation details:
-  \begin{itemize}
-    \item \alert{Eventloop/Multiplexer/Timer/EventDispatcher}: Concrete classes, inheritance.
-     \item \alert{Socket, SocketServer, -Client, -Connection and SSL/TLS}: Implemented as templates.
-     \item \alert{IPv4, IPv6, unix, rfcomm, l2cap}: Implemented as a template class hierarchy.
-  \end{itemize}
 \end{frame}

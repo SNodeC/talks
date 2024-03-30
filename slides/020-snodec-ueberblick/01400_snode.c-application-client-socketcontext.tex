@@ -10,7 +10,7 @@
       void onConnected() override {.
         std::cout << "Echo connected to " << socketConnection->getRemoteAddress().toString() << std::endl;
         std::cout << "Initiating data exchange" << std::endl;
-        sendToPeer("Hello peer! It's nice talking to you!!!\n");
+        sendToPeer("Hello peer! It's nice talking to you!!!");
       }
 
       void onDisconnected() override {
@@ -19,9 +19,10 @@
 
       std::size_t onReceivedFromPeer() override {
         char junk[4096];
+
         std::size_t junkLen = readFromPeer(junk, 4096);
         if (junkLen > 0) {
-          std::cout << "Data to reflect: " << std::string(junk, junkLen);
+          std::cout << "Data to reflect: " << std::string(junk, junkLen) << std::endl;
           sendToPeer(junk, junkLen);
         }
         return junkLen;

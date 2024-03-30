@@ -3,11 +3,7 @@
 \begin{frame}[fragile]{The RFCOMM Client Application}
   \begin{cppcode}[autogobble=true, caption={RFCOMM client application.},captionpos=b]
     #include "EchoClientContextFactory.h"
-    #include <core/SNodeC.h>
-    #include <iostream>
     #include <net/rc/stream/legacy/SocketClient.h>
-    #include <cstring>
-    #include <string>
 
     int main(int argc, char* argv[]) {
       core::SNodeC::init(argc, argv);
@@ -17,8 +13,8 @@
 
       EchoClient echoClient;
 
-      echoClient.connect("10:3D:1C:AC:BA:9C", 1, [](const core::ProgressLog& progressLog) -> void {
-        progressLog.logProgress();
+      echoClient.connect("10:3D:1C:AC:BA:9C", 1, [](const SocketAddress& socketAddress, const core::socket::State& state) -> void {
+        // State processing
       });
 
       return core::SNodeC::start();

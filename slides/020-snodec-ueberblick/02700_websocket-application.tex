@@ -3,21 +3,24 @@
 \begin{frame}[fragile]{WebSocket Application}
   \begin{cppcode}[autogobble=true, caption={WebSocket Application.},captionpos=b]
     #include "express/legacy/WebApp.h"
-    #include <cstring>
 
     int main(int argc, char* argv[]) {
       express::WebApp::init(argc, argv);
 
       express::legacy::WebApp webApp;
 
-      webApp.get("/", [](express::Request& req, express::Response& res) -> void {
-        if (!res.upgrade(req)) {
-          res.end();
-        }
+      webApp.get("/", [] APPLICATION(req, res) {
+        res->upgrade(req, [req](bool success) -> void {
+          if (success) {
+            std::cout << "Successful upgrade to '" << req->get("upgrade") << "'" << std::endl;
+          } else {
+            std::cout << "Can not upgrade to '" << req->get("upgrade") << "'" << std::endl;
+          }
+        });
       });
 
-      webApp.listen(8080, [](const core::ProgressLog& progressLog) -> void {
-        progressLog.logProgress();
+      webApp.listen(8080, [](const SocketAddress& socketAddress, const core::socket::State& state) -> void {
+        // State processing
       });
 
       return express::WebApp::start();

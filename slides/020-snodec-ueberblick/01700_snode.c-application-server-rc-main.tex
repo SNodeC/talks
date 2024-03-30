@@ -3,11 +3,7 @@
 \begin{frame}[fragile]{The RFCOMM Server Application}
   \begin{cppcode}[autogobble=true, caption={RFCOMM server application.},captionpos=b]
     #include "EchoServerContextFactory.h"
-    #include <core/SNodeC.h>
-    #include <iostream>
     #include <net/rc/stream/legacy/SocketServer.h>
-    #include <cstring>
-    #include <string>
 
     int main(int argc, char* argv[]) {
       core::SNodeC::init(argc, argv);
@@ -17,8 +13,8 @@
 
       EchoServer echoServer;
 
-      echoServer.listen(1, [](const core::ProgressLog& progressLog) -> void {
-        progressLog.logProgress();
+      echoServer.listen(1, [](const SocketAddress& socketAddress, const core::socket::State& state) -> void {
+        // State processing
       });
 
       return core::SNodeC::start();

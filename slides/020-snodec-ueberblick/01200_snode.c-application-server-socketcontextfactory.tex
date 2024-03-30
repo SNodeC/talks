@@ -8,7 +8,7 @@
 
     class EchoServerContextFactory : public core::socket::stream::SocketContextFactory {
       private:
-      core::socket::stream::SocketContext* create(core::socket::stream::SocketConnection* socketConnection) override {
+      core::socket::stream::SocketContext* create(core::socket::stream::SocketConnection* socketConnection) {
         return new EchoServerContext(socketConnection);
       }
     };
@@ -20,7 +20,7 @@
 
     class EchoClientContextFactory : public core::socket::stream::SocketContextFactory {
       private:
-      core::socket::stream::SocketContext* create(core::socket::stream::SocketConnection* socketConnection) override {
+      core::socket::stream::SocketContext* create(core::socket::stream::SocketConnection* socketConnection) {
         return new EchoClientContext(socketConnection);
       }
     };

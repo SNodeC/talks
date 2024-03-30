@@ -1,0 +1,54 @@
+\subsection{Section 'local' of IPv4 or IPv6 Server and Client Instances}
+
+\begin{frame}[fragile]{Section \alert{\lstinline|local|} of IPv4 or IPv6 Server and Client Instances}
+\begin{columns}[T]
+\begin{column}{0.4\textwidth}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoserver \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{local} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline]
+Local side of connection for instance 'echo'
+
+Usage: echoserver \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{local} [OPTIONS] \textcolor{blue}{REQUIRED}
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{--host} hostname|IPv4:TEXT [\textcolor{lightblue}{0.0.0.0}]
+       Host name or IPv4 address
+  \textcolor{fh-ooe-red}{--port} port:UINT in [0 - 65535] \textcolor{blue}{REQUIRED}
+       Port number
+  \textcolor{fh-ooe-red}{--numeric}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Suppress host name lookup
+  \textcolor{fh-ooe-red}{--numeric-reverse}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Suppress reverse host name lookup
+\end{Verbatim}
+\end{scriptsize}
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoclient \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{local} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline]
+Local side of connection for instance 'echo'
+
+Usage: echoclient \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{local} [OPTIONS]
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{--host} hostname|IPv4:TEXT [\textcolor{lightblue}{0.0.0.0}]
+       Host name or IPv4 address
+  \textcolor{fh-ooe-red}{--port} port:UINT in [0 - 65535] [\textcolor{lightblue}{0}]
+       Port number
+  \textcolor{fh-ooe-red}{--numeric}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Suppress host name lookup
+  \textcolor{fh-ooe-red}{--numeric-reverse}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Suppress reverse host name lookup
+\end{Verbatim}
+\end{scriptsize}
+\end{column}
+\end{columns}
+\end{frame}

@@ -8,17 +8,17 @@
    \end{itemize}
 \end{block}
    \begin{description}
-     \item [The user] must
-     \begin{itemize}
-       \item classes derived from \texttt{SocketContextFactory} and
-       \item classes derived from \texttt{SocketContext}
-     \end{itemize}
-     provide for server and client.
-     \item [SNode.C] represents "`ready to use"'
-     \begin{itemize}
-       \item \texttt{SocketServer} and
-       \item \texttt{SocketClient}
-     \end{itemize}
-     Classes available for every network protocol.
+     \item [The user] must provide
+     \begin{description}[\texttt{SocketContextFactory}]
+       \item [\texttt{SocketContextFactory}] classes and
+       \item [\texttt{SocketContext}] classes
+     \end{description}
+     for server and client.
+     \item [SNode.C] provides \alert{ready to use}
+     \begin{description}[\texttt{SocketContextFactory}]
+       \item [\texttt{SocketServer}] and
+       \item [\texttt{SocketClient}]
+     \end{description}
+     classes for every encrypted and unencrypted network protocol.
    \end{description}
 \end{frame}

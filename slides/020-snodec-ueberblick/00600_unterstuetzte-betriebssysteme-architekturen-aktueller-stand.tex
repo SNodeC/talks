@@ -1,28 +1,28 @@
 ﻿\subsection{Supported Operating Systems and Architectures}
 
 \begin{frame}{Supported Operating Systems and Architectures}{Current Status}
-   \begin{description}[Hardware and processor architectures]
+   \begin{description}[Processor Architectures]
      \item [Operating Systems]
      \begin{itemize}
-       \item Currently only Linux with relatively current compilers because of C++20
-       \begin{itemize}
-         \item GCC v12.2 and later
-         \item Clang 13.0 and later
-       \end{itemize}
+       \item Linux with relatively current compilers because of C++20
+       \begin{description}[Clang]
+         \item [GCC] 12.2 and later
+         \item [Clang] 13.0 and later
+       \end{description}
      \end{itemize}
-     \item [Hardware and Processor Architectures]
+     \item [Processor Architectures]
      \begin{itemize}
-       \item x86\_{}64, i386 (including Pentium) (i.e. 32 and 64 bit clean)
-       \item Raspberry PI (32 and 64 bit)
-       \item All (Wi-Fi) router architectures supported by \alert{OpenWRT} \href{https://openwrt.org/}{\beamergotobutton{https://openwrt.org/}}
+       \item \alert{x86\_{}64}, \alert{i386} (32- and 64-bit clean)
+       \item \alert{Arm} (Raspberry PI 3/4/5 32- and 64-bit)
+       \item \alert{OpenWRT} \href{https://openwrt.org/}{\beamergotobutton{https://openwrt.org/}} all supported architectures
        \begin{itemize}
-         \item Aarch64 (ARM 64-bit)
+         \item AArch64 (ARM 64-bit)
          \item ARM (ARM 32-bit, soft and hard floating point)
          \item MIPS: mips\_24kc, mipsel\_24kc
          \item PowerPC: 464fp (32-bit), 8548 (64-bit)
          \item RISK v64
        \end{itemize}
-       \item Apple-M2 \alert{should be tested} (currently no hardware available for this)
+       \item \color{gray}{Apple-M2 \alert{should be tested} (currently no hardware available for this)}
      \end{itemize}
    \end{description}
 \end{frame}

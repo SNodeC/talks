@@ -1,0 +1,35 @@
+﻿\begin{frame}[fragile]{Three Options for Configuration}
+  \begin{description}[Configuration Files]
+    \item[In-Code] configuration is provided for \alert{anonymous and named} instances.
+      \begin{itemize}
+        \item Configure \alert{port number} of a server instance-object \alert{\lstinline|echoServer|}
+        \begin{cppcode}[autogobble=true,basicstyle=\normalsize\codefontfamily, numberstyle=\normalsize\numberfontfamily,frame=none,numbers=none,numbersep=0pt]
+            EchoServerType echoServer("echo");
+            echoServer.getConfig().Local::setPort(8080);
+        \end{cppcode}
+      \end{itemize}
+    \item[Command-Line] configuration exists for \alert{named instances only}
+      \begin{itemize}
+        \item Configure the \alert{port number} of instance named \alert{\lstinline|echo|} in application \alert{echoserver}
+        \begin{cppcode}[autogobble=true,basicstyle=\normalsize\codefontfamily, numberstyle=\normalsize\numberfontfamily,frame=none,numbers=none,numbersep=0pt]
+            command@line~> ./echoserver echo local --port 8080
+        \end{cppcode}
+      \end{itemize}
+    \item[Configuration File] configuration exists for \alert{named instances only}
+      \begin{itemize}
+        \item Configure the \alert{port number} of instance named \alert{\lstinline|echo|} in application \alert{echoserver}\\
+        \medskip
+        \begin{tabular}{|l|}
+        \hline
+        \lstinline|~/.config/snode.c/echoserver.cfg|\\
+        \specialrule{.1em}{.0em}{.0em}
+        \lstinline|echo.local.port=8080|\\
+        \hline
+        \end{tabular}
+      \end{itemize}
+  \end{description}
+    \begin{itemize}
+      \item \alert{Configuration File entries} takes precedence over \alert{In-Code} configuration and
+      \item \alert{Command-Line options} takes precedence over \alert{Configuration File} configuration.
+    \end{itemize}
+\end{frame}

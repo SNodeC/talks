@@ -1,0 +1,43 @@
+\subsection{Section 'local' of Unix-Domain Server and Client Instances}
+
+\begin{frame}[fragile]{Section \alert{\lstinline|local|} of Unix-Domain Server and Client Instances}
+\begin{columns}[T]
+\begin{column}{0.4\textwidth}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoserver \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{local} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline]
+Local side of connection for instance '\textcolor{fh-ooe-red}{echo}'
+
+Usage: echoserver \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{local} [OPTIONS] \textcolor{blue}{REQUIRED}
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{--sun-path} filename:FILE \textcolor{blue}{REQUIRED}
+       Unix domain bind path
+\end{Verbatim}
+\end{scriptsize}
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoclient \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{local} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline]
+Local side of connection for instance '\textcolor{fh-ooe-red}{echo}'
+
+Usage: echoclient \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{local} [OPTIONS]
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{--sun-path} filename:FILE [\textcolor{lightblue}{@echoclient50181_39627f9e}
+                            \textcolor{lightblue}{-2c7b-5482-886c-06e792fea056}]
+       Unix domain bind path
+\end{Verbatim}
+\end{scriptsize}
+\end{column}
+\end{columns}
+\end{frame}

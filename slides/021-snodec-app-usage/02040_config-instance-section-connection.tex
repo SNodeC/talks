@@ -1,0 +1,31 @@
+\subsection{Section 'connection' of Server and Client Instances}
+
+\begin{frame}[fragile]{Section \alert{\lstinline|connection|} of Server and Client Instances}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoserver \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{connection} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline]
+Configuration of \textcolor{fh-ooe-red}{established connections} for instance '\textcolor{fh-ooe-red}{echo}'
+
+Usage: echoserver \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{connection} [OPTIONS]
+
+Options (\textcolor{fh-ooe-red}{nonpersistent}):
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{--read-timeout} timeout:POSITIVE [\textcolor{lightblue}{60}]
+       Read timeout in seconds
+  \textcolor{fh-ooe-red}{--write-timeout} timeout:POSITIVE [\textcolor{lightblue}{60}]
+       Write timeout in seconds
+  \textcolor{fh-ooe-red}{--read-block-size} size:POSITIVE [\textcolor{lightblue}{16384}]
+       Read block size
+  \textcolor{fh-ooe-red}{--write-block-size} size:POSITIVE [\textcolor{lightblue}{16384}]
+       Write block size
+  \textcolor{fh-ooe-red}{--terminate-timeout} timeout:POSITIVE [\textcolor{lightblue}{1}]
+       Terminate timeout
+
+\end{Verbatim}
+\end{scriptsize}
+\end{frame}

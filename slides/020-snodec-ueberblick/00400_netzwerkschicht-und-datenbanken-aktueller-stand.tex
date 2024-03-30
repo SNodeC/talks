@@ -2,21 +2,21 @@
 
 \begin{frame}{Network Layer and Databases}
    \begin{itemize}
-     \item \texttt{SocketServer} and \texttt{SocketClients} classes (\texttt{ssl/tls} and \texttt{legacy} versions) for the network protocols
-     \begin{itemize}
-       \item \texttt{IPv4}
-       \item \texttt{IPv6} (dual stack, single stack, IPv4 mapped addresses, \ldots)
-       \item \texttt{rfcomm} (Bluetooth)
-       \item \texttt{l2cap} (Bluetooth)
-       \item \texttt{unix domain} Sockets
-     \end{itemize}
-     \item Database support
-     \begin{itemize}
-       \item \texttt{MariaDBClient} class (ready for use)
+     \item \alert{\texttt{SocketServer}} and \alert{\texttt{SocketClients}} classes \alert{(\texttt{ssl/tls}} and \alert{\texttt{legacy}} versions) for:
+     \begin{description}[\texttt{MariaDBClient}]
+       \item [\texttt{IPv4}] Must have
+       \item [\texttt{IPv6}] Dual stack, single stack, IPv4 mapped addresses, \ldots
+       \item [\texttt{RFCOMM}] Bluetooth emulated serial line (RS-232). \alert{Reliable} connection.
+       \item [\texttt{L2CAP}] Base bluetooth layer (\alert{L}ayer \alert{2} En\alert{cap}sulation)
+       \item [\texttt{Unix Domain}] Local communication. Socket address is path (sun-path) in filesystem.
+     \end{description}
+     \item \alert{Database} support
+     \begin{description}[\texttt{MariaDBClient}]
+        \item [\texttt{MariaDBClient}] Ready for use
        \begin{itemize}
-         \item "Normal"{} queries and execs
-         \item transactions
+         \item Queries and execs
+         \item Transactions
        \end{itemize}
-     \end{itemize}
+     \end{description}
    \end{itemize}
 \end{frame}
