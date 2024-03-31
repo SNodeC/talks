@@ -1,0 +1,39 @@
+\withsectionpage
+\section{Application Configuration}
+\nosectionpage
+\subsection{Nonpersistent Application Configuration}
+
+\begin{frame}[fragile]{Nonpersistent Application Configuration}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoserver --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+Configuration for Application '\textcolor{fh-ooe-red}{echoserver}'
+
+\textcolor{grassgreen}{Usage:} \textcolor{fh-ooe-red}{echoserver [OPTIONS] [INSTANCE [--help]]}
+
+\textcolor{grassgreen}{Options} (\textcolor{fh-ooe-red}{nonpersistent}):
+  \textcolor{fh-ooe-red}{-c},\textcolor{fh-ooe-red}{--config-file} configfile:NOT DIR [\textcolor{lightblue}{/home/voc/.config/snode.c/echoserver.conf}]
+       Read a config file
+  \textcolor{fh-ooe-red}{-w},\textcolor{fh-ooe-red}{--write-config} [configfile]:NOT DIR [\textcolor{lightblue}{/home/voc/.config/snode.c/echoserver.conf}]
+       Write config file and exit
+  \textcolor{fh-ooe-red}{-k},\textcolor{fh-ooe-red}{--kill}
+       Kill running daemon
+  \textcolor{fh-ooe-red}{-i},\textcolor{fh-ooe-red}{--instance-alias} instance=instance_alias [instance=instance_alias [...]]
+       Make an instance also known as an alias in configuration files
+  \textcolor{fh-ooe-red}{-s},\textcolor{fh-ooe-red}{--show-config}
+       Show current configuration and exit
+  \textcolor{fh-ooe-red}{--command-line}\{\textcolor{cyan}{standard}\}=\{standard,required,full,default\}
+       Print a command line
+         standard (default): View all non-default and required options
+         required: View required options only
+         full: View the full set of options with their default or configured values
+         default: View the full set of options with their default values
+  \textcolor{fh-ooe-red}{--version}
+       Framework version
+  \textcolor{fh-ooe-red}{-h}\{\textcolor{cyan}{standard}\},\textcolor{fh-ooe-red}{--help}\{\textcolor{cyan}{standard}\}=\{standard,expanded\}
+       Print help message
+\end{Verbatim}
+\end{scriptsize}
+\end{frame}

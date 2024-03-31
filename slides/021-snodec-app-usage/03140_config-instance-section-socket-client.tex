@@ -1,0 +1,24 @@
+﻿\begin{frame}[fragile]{Section \alert{\lstinline|socket|} of a Client Instances}
+The \alert{scope resolution operator} \textcolor{fh-ooe-red}{\lstinline|Socket::|} is optional as there are no ambiguous methods for this section.
+\vskip0.5em
+\begin{description}[]
+\item[Socket Section of a Client Instance]
+\end{description}
+\begin{footnotesize}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{client}.\textcolor{grassgreen!60!black}{getConfig}();
+
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Socket}::]\textcolor{grassgreen!60!black}{setConnectTimeout}(\textcolor{olive}{const} \textcolor{purple}{utils::Timeval}&);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Socket}::]\textcolor{grassgreen!60!black}{setReconnect}(\textcolor{purple}{bool} = true);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Socket}::]\textcolor{grassgreen!60!black}{setReconnectTime}(\textcolor{purple}{double});
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Socket}::]\textcolor{grassgreen!60!black}{setRetry}(\textcolor{purple}{bool} = true);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Socket}::]\textcolor{grassgreen!60!black}{setRetryBase}(\textcolor{purple}{double});
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Socket}::]\textcolor{grassgreen!60!black}{setRetryJitter}(\textcolor{purple}{double});
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Socket}::]\textcolor{grassgreen!60!black}{setRetryLimit}(\textcolor{purple}{unsigned int});
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Socket}::]\textcolor{grassgreen!60!black}{setRetryOnFatal}(\textcolor{purple}{bool} = true);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Socket}::]\textcolor{grassgreen!60!black}{setRetryTimeout}(\textcolor{purple}{double});
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Socket}::]\textcolor{grassgreen!60!black}{setRetryTries}(\textcolor{purple}{unsigned int});
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Socket}::]\textcolor{grassgreen!60!black}{setReuseAddress}(\textcolor{purple}{bool} = true);
+\end{Verbatim}
+\end{footnotesize}
+\end{frame}

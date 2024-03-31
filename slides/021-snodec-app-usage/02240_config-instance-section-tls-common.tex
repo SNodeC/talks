@@ -1,0 +1,36 @@
+\subsection{Section \textcolor{fh-ooe-red}{\lstinline|tls|}}
+
+\begin{frame}[fragile]{Section \alert{\lstinline|tls|} common for Server and Client}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoTlsServerOrClient \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{tls} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+Configuration of \textcolor{fh-ooe-red}{tls behavior} for instance '\textcolor{fh-ooe-red}{echo}'
+
+Usage: echoTlsServerOrClient \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{tls} [OPTIONS]
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{--cert} filename:PEM-FILE
+       Certificate chain file
+  \textcolor{fh-ooe-red}{--cert-key} filename:PEM-FILE
+       Certificate key file
+  \textcolor{fh-ooe-red}{--cert-key-password} password:TEXT
+       Password for the certificate key file
+  \textcolor{fh-ooe-red}{--ca-cert} filename:PEM-FILE
+       CA-certificate file
+  \textcolor{fh-ooe-red}{--ca-cert-dir} directory:PEM-CONTAINER-DIR
+       CA-certificate directory
+  \textcolor{fh-ooe-red}{--ca-cert-use-default-dir}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Use default CA-certificate directory
+  \textcolor{fh-ooe-red}{--cipher-list} cipher_list:CIPHER
+       Cipher list (OpenSSL syntax)
+  \textcolor{fh-ooe-red}{--ssl-options} options:UINT [\textcolor{lightblue}{0}]
+       OR combined SSL/TLS options (OpenSSL values)
+  \textcolor{fh-ooe-red}{--init-timeout} timeout:POSITIVE [\textcolor{lightblue}{10}]
+       SSL/TLS initialization timeout in seconds
+  \textcolor{fh-ooe-red}{--shutdown-timeout} timeout:POSITIVE [\textcolor{lightblue}{1}]
+       SSL/TLS shutdown timeout in seconds
+\end{Verbatim}
+\end{scriptsize}
+\end{frame}

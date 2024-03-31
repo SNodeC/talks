@@ -1,0 +1,32 @@
+\withpartpage
+\part{In-Code (API) Configuration}
+\nopartpage
+
+\begin{frame}[fragile]{In-Code (API) Configuration}
+\begin{itemize}
+    \item The type of the \alert{configuration object} of each instance retrieved using \lstinline|getConfig()|
+\begin{small}
+\begin{Verbatim}[frame=leftline,rulecolor=\color{fh-ooe-red}]
+ServerOrClientType serverOrClientIntance;
+serverOrClientIntance.getConfig();
+\end{Verbatim}
+\end{small}
+    is constructed for each individual \alert{server} and \alert{client} type using \alert{multiple inheritance}.
+    \item Base configuration classes
+\begin{small}
+\begin{Verbatim}[frame=leftline,rulecolor=\color{fh-ooe-red}]
+ConfigInstance
+ConfigAddressLocal
+ConfigAddressRemote
+ConfigAddressReverse
+ConfigConnection
+ConfigPhyiscalSocketClient
+ConfigPhysicalSocketServer
+ConfigLegacy
+ConfigTlsClient
+ConfigTlsServer
+\end{Verbatim}
+\end{small}
+\item Every \alert{network layer subclasses} the \lstinline|ConfigAddress*| classes to \alert{inject} its \alert{individual configuration} items.
+\end{itemize}
+\end{frame}

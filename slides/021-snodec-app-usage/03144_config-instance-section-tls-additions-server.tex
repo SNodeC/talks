@@ -1,0 +1,19 @@
+﻿\begin{frame}[fragile]{Section \alert{\lstinline|tls|} additions for Server Instances}
+The \alert{scope resolution operator} \textcolor{fh-ooe-red}{\lstinline|Tls::|} is optional as there are no ambiguous methods for this section.
+\vskip0.5em
+\begin{description}[]
+\item[Tls Section additions for Server Instances]
+\end{description}
+\begin{footnotesize}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{tlsServer}.\textcolor{grassgreen!60!black}{getConfig}();
+
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{addSniCert}(
+    \textcolor{olive}{const} \textcolor{purple}{std::string},
+    \textcolor{olive}{const} \textcolor{purple}{std::map}<\textcolor{purple}{std::string}, \textcolor{purple}{std::variant}<\textcolor{purple}{std::string}, \textcolor{purple}{bool}, \textcolor{purple}{ssl_option_t}>>&);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{addSniCerts}(
+    \textcolor{olive}{const} \textcolor{purple}{std::map}<\textcolor{purple}{std::string}, \textcolor{purple}{std::map}<\textcolor{purple}{std::string}, \textcolor{purple}{std::variant}<\textcolor{purple}{std::string}, \textcolor{purple}{bool}, \textcolor{purple}{ssl_option_t}>>>&);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setForceSni}(\textcolor{purple}{bool} = true);
+\end{Verbatim}
+\end{footnotesize}
+\end{frame}

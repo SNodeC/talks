@@ -1,0 +1,63 @@
+﻿\subsection{IPv4 and IPv6: Sections \textcolor{fh-ooe-red}{\lstinline|local|} and \textcolor{fh-ooe-red}{\lstinline|remote|}}
+
+\begin{frame}[fragile]{Sections \alert{\lstinline|local|} and \alert{\lstinline|remote|} of IPv4 and IPv6 Server and Client Instances}
+The \alert{scope resolution operators} \textcolor{fh-ooe-red}{\lstinline|Local::|} and \textcolor{fh-ooe-red}{\lstinline|Remote::|} are used to \alert{resolve ambiguities} and to precisely define which \alert{side of a socket} is to be \alert{configured}.
+\vskip0.5em
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\begin{description}[]
+\item[Server: Local Side]
+\end{description}
+\begin{footnotesize}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{ipServer}.\textcolor{grassgreen!60!black}{getConfig}();
+
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setHost}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setPort}(\textcolor{purple}{uint32_t});
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setNumeric}(\textcolor{purple}{bool} = true);
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setNumericReverse}(\textcolor{purple}{bool} = true);
+\end{Verbatim}
+\end{footnotesize}
+\vskip1em
+\begin{description}[]
+\item[Server: Remote Side]
+\end{description}
+\begin{footnotesize}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{ipServer}.\textcolor{grassgreen!60!black}{getConfig}();
+
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Remote}::\textcolor{grassgreen!60!black}{setNumericReverse}(\textcolor{purple}{bool} = true);
+\end{Verbatim}
+\end{footnotesize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{description}[]
+\item[Client: Local Side]
+\end{description}
+\begin{footnotesize}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{ipClient}.\textcolor{grassgreen!60!black}{getConfig}();
+
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setHost}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setPort}(\textcolor{purple}{uint32_t});
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setNumeric}(\textcolor{purple}{bool} = true);
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setNumericReverse}(\textcolor{purple}{bool} = true);
+\end{Verbatim}
+\end{footnotesize}
+\vskip1em
+\begin{description}[]
+\item[Client: Remote Side]
+\end{description}
+\begin{footnotesize}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{ipClient}.\textcolor{grassgreen!60!black}{getConfig}();
+
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Remote}::\textcolor{grassgreen!60!black}{setHost}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Remote}::\textcolor{grassgreen!60!black}{setPort}(\textcolor{purple}{uint32_t});
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Remote}::\textcolor{grassgreen!60!black}{setNumeric}(\textcolor{purple}{bool} = true);
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Remote}::\textcolor{grassgreen!60!black}{setNumericReverse}(\textcolor{purple}{bool} = true);
+\end{Verbatim}
+\end{footnotesize}
+\end{column}
+\end{columns}
+\end{frame}
