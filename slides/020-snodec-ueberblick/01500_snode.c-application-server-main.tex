@@ -6,12 +6,13 @@
     #include <net/in/stream/legacy/SocketServer.h>
 
     int main(int argc, char* argv[]) {
-      core::SNodeC::init(argc, argv);
+        core::SNodeC::init(argc, argv);
 
-      using EchoServer = net::in::stream::legacy::SocketServer<EchoServerContextFactory>;
-      using SocketAddress = EchoServer::SocketAddress;
-      EchoServer echoServer;
-      echoServer.listen(8001, 5, [](const SocketAddress& socketAddress, const core::socket::State& state) -> void {
+        using EchoServer = net::in::stream::legacy::SocketServer<EchoServerContextFactory>;
+        using SocketAddress = EchoServer::SocketAddress;
+        EchoServer echoServer;
+        echoServer.listen(8001, 5, [](const SocketAddress& socketAddress,
+                                      const core::socket::State& state) -> void {
         switch (state) {
             case core::socket::State::OK:
                 VLOG(1) << "EchoServer: connected to '" << socketAddress.toString() << "'";
@@ -26,7 +27,7 @@
                 LOG(FATAL) << "EchoServer: " << socketAddress.toString() << ": " << state.what();
                 break;
         }
-      return core::SNodeC::start();
+        return core::SNodeC::start();
     }
   \end{cppcode}
 \end{frame}

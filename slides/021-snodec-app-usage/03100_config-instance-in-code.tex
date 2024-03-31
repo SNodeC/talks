@@ -2,18 +2,16 @@
 \section{Instance Configuration}
 \nosectionpage
 
-\begin{frame}[fragile]{Instance Configuration}
-    \begin{cppcode}[autogobble=true,basicstyle=\scriptsize\codefontfamily]
-    class ConfigInstance {
-        ... ... ...
+\subsection{Enable or disable an Instance}
+\begin{frame}[fragile]{Enable or disable an Instance}
+The \alert{scope resolution operator} \textcolor{fh-ooe-red}{\lstinline|Instance::|} is optional as there are no ambiguous methods for this section.
+\vskip0.5em
+\begin{footnotesize}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{serverOrClient}.\textcolor{grassgreen!60!black}{getConfig}();
 
-        void setDisabled(bool disabled = true);
-
-        ... ... ...
-    }
-    \end{cppcode}
-
-    \begin{itemize}
-        \item Usage: \lstinline|instance.getConfig().setDisabled();|
-    \end{itemize}
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Instance}::]\textcolor{grassgreen!60!black}{setDisabled}(\textcolor{purple}{bool} = true&);
+\end{Verbatim}
+\end{footnotesize}
 \end{frame}
+

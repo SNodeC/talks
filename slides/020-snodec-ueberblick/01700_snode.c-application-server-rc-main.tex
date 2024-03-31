@@ -6,18 +6,19 @@
     #include <net/rc/stream/legacy/SocketServer.h>
 
     int main(int argc, char* argv[]) {
-      core::SNodeC::init(argc, argv);
+        core::SNodeC::init(argc, argv);
 
-      using EchoServer = net::rc::stream::legacy::SocketServer<EchoServerContextFactory>;
-      using SocketAddress = EchoServer::SocketAddress;
+        using EchoServer = net::rc::stream::legacy::SocketServer<EchoServerContextFactory>;
+        using SocketAddress = EchoServer::SocketAddress;
 
-      EchoServer echoServer;
+        EchoServer echoServer;
 
-      echoServer.listen(1, [](const SocketAddress& socketAddress, const core::socket::State& state) -> void {
-        // State processing
-      });
+        echoServer.listen(1, [](const SocketAddress& socketAddress,
+                                const core::socket::State& state) -> void {
+            // State processing
+        });
 
-      return core::SNodeC::start();
+        return core::SNodeC::start();
     }
   \end{cppcode}
 \end{frame}

@@ -6,12 +6,13 @@
     #include <net/in/stream/legacy/SocketClient.h>
 
     int main(int argc, char* argv[]) {
-      core::SNodeC::init(argc, argv);
+        core::SNodeC::init(argc, argv);
 
-      using EchoClient = net::in::stream::legacy::SocketClient<EchoClientContextFactory>;
-      using SocketAddress = EchoClient::SocketAddress;
-      EchoClient echoClient;
-      echoClient.connect(("localhost", 8001, [](const SocketAddress& socketAddress, const core::socket::State& state) -> void {
+        using EchoClient = net::in::stream::legacy::SocketClient<EchoClientContextFactory>;
+        using SocketAddress = EchoClient::SocketAddress;
+        EchoClient echoClient;
+        echoClient.connect(("localhost", 8001, [](const SocketAddress& socketAddress,
+                                                  const core::socket::State& state) -> void {
         switch (state) {
             case core::socket::State::OK:
                 VLOG(1) << "EchoClient: connected to '" << socketAddress.toString() << "'";
@@ -26,7 +27,7 @@
                 LOG(FATAL) << "EchoClient: " << socketAddress.toString() << ": " << state.what();
                 break;
         }
-      return core::SNodeC::start();
+        return core::SNodeC::start();
     }
   \end{cppcode}
 \end{frame}

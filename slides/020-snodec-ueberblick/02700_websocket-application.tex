@@ -5,25 +5,26 @@
     #include "express/legacy/WebApp.h"
 
     int main(int argc, char* argv[]) {
-      express::WebApp::init(argc, argv);
+        express::WebApp::init(argc, argv);
 
-      express::legacy::WebApp webApp;
+        express::legacy::WebApp webApp;
 
-      webApp.get("/", [] APPLICATION(req, res) {
-        res->upgrade(req, [req](bool success) -> void {
-          if (success) {
-            std::cout << "Successful upgrade to '" << req->get("upgrade") << "'" << std::endl;
-          } else {
-            std::cout << "Can not upgrade to '" << req->get("upgrade") << "'" << std::endl;
-          }
+        webApp.get("/", [] APPLICATION(req, res) {
+            res->upgrade(req, [req](bool success) -> void {
+                if (success) {
+                    std::cout << "Successful upgrade to '" << req->get("upgrade") << "'" << std::endl;
+                } else {
+                    std::cout << "Can not upgrade to '" << req->get("upgrade") << "'" << std::endl;
+                }
+            });
         });
-      });
 
-      webApp.listen(8080, [](const SocketAddress& socketAddress, const core::socket::State& state) -> void {
-        // State processing
-      });
+        webApp.listen(8080, [](const SocketAddress& socketAddress,
+                               const core::socket::State& state) -> void {
+            // State processing
+        });
 
-      return express::WebApp::start();
+        return express::WebApp::start();
     }
   \end{cppcode}
 \end{frame}

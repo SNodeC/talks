@@ -7,10 +7,10 @@
     #include <core/socket/stream/SocketContextFactory.h>
 
     class EchoServerContextFactory : public core::socket::stream::SocketContextFactory {
-      private:
-      core::socket::stream::SocketContext* create(core::socket::stream::SocketConnection* socketConnection) {
-        return new EchoServerContext(socketConnection);
-      }
+    private:
+        core::socket::stream::SocketContext* create(core::socket::stream::SocketConnection* socketConnection) {
+            return new EchoServerContext(socketConnection);
+        }
     };
   \end{cppcode}
   Client
@@ -19,10 +19,10 @@
     #include <core/socket/stream/SocketContextFactory.h>
 
     class EchoClientContextFactory : public core::socket::stream::SocketContextFactory {
-      private:
-      core::socket::stream::SocketContext* create(core::socket::stream::SocketConnection* socketConnection) {
-        return new EchoClientContext(socketConnection);
-      }
+    private:
+        core::socket::stream::SocketContext* create(core::socket::stream::SocketConnection* socketConnection) {
+            return new EchoClientContext(socketConnection);
+        }
     };
   \end{cppcode}
 \end{frame}
