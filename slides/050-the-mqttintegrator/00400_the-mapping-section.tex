@@ -1,32 +1,51 @@
-﻿\section[nosectionpage]{The JSON Structure of the Mappings Section}
+﻿\subsection[nosectionpage]{\texttt{\alert{topic\_level}}s and the JSON-Structure of the \alert{\texttt{mapping}} Section}
 
-\begin{frame}[fragile]{The JSON Structure of the Mappings Section}
-  The  Structure of the mapping section description consists of one objects:
-  \begin{description}[discover\_prefix]
-    \item[topic\_level] This is either an object describing one topic of the current level or an array of objects describing multiple topics of the same, current level.
+\begin{frame}[fragile]{\alert{\texttt{topic\_level}}s and the JSON-Structure of the \alert{\texttt{mapping}} Section}
+  \begin{description}[topic\_levels]
+    \item[topic\_level] is either
+    \begin{itemize}
+      \item an \alert{object} describing one topic or
+      \item an \alert{array of objects} describing multiple \alert{sibling} topics.
+    \end{itemize}
+    \item[topic\_levels] can be recursively nested to create a \alert{topic\_level tree}.
   \end{description}
-  One topic on the current level (root level in this case)
-
-  \begin{jsoncode}[gobble=4]
-    {
-        "mappings" : {
-            "topic_level" : {                  // topic level description (name, mappings, ...)
-                ...
-            }
-        }
-    }
+\begin{columns}[]
+  \begin{column}{0.5\textwidth}
+  \begin{jsoncode}[autogobble=true]
+      "mapping" : {
+          "topic_level" : {         // single topic level
+              "name" : "topic_level_name",
+              ...
+          }
+      }
   \end{jsoncode}
-  or multiple topics on the current level (root level in this case)
-  \begin{jsoncode}[gobble=4]
-    {
-        "mappings" : {
-            "topic_level" : [{                    // topic level description (name, mappings, ...)
-            ...
-            }, {                                  // topic level description (name, mappings, ...)
-                ...
-            }]
-        }
-    }
+  \begin{jsoncode}[autogobble=true]
+      "mapping" : {
+          "topic_level" : {         // single topic level
+              "name" : "topic_level_name",
+              "topic_level" : {     // sub-topic level
+                  "name" : "sub_topic_level_name",
+              }
+          }
+      }
   \end{jsoncode}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+  \begin{jsoncode}[autogobble=true]
+      "mapping" : {
+          "topic_level" : [{     // 1st sibling topic level
+              "name" : "sibling_1_topic_level_name",
+              ...
+          }, {                   // 2nd sibling topic level
+              "name" : "sibling_2_topic_level_name",
+              "topic_level" : {  // sub-topic level
+                  "name" : "sub_topic_level_name",
+                  ...
+              }
+          }]
+      }
+  \end{jsoncode}
+  \end{column}
+\end{columns}
 \end{frame}
 

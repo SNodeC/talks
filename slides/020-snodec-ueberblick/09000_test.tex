@@ -1,0 +1,53 @@
+﻿%\subsection{\texttt{SocketContext} of the Server}
+
+%\ExplSyntaxOn
+
+%% compile the expression
+%\regex_new:N \l_pascal_camelcase_regex
+%\regex_set:Nn \l_pascal_camelcase_regex { ^ [a-z]* [A-Z]+ [a-zA-Z]* $ }
+%
+%% a variant that expands the input fully
+%\cs_generate_variant:Nn \regex_match:NnTF {No}
+%
+%\NewDocumentCommand \ifcamelcase { m m }
+%{
+%    % expand to actual underscore
+%    \cs_set_eq:Nc \__pascal_camelcase_um { lst@um_ }
+%    \tl_set:cn { lst@um_ } { _ }
+%    % match the current token
+%    \regex_match:NoTF \l_pascal_camelcase_regex {\the\use:c{lst@token}} {#1} {#2}
+%    % reset
+%    \cs_set_eq:cN { lst@um_ } \__pascal_camelcase_um
+%}
+%
+%\ExplSyntaxOff
+%
+%\lstset{
+%    alsoletter={?_},
+%    columns=fullflexible,
+%    identifierstyle=\ifcamelcase{\bfseries}{\relax},
+%    morekeywords={using},
+%}
+%
+%\begin{frame}[fragile]{\texttt{SocketContext} of the Server}
+%  \begin{cppcode}[autogobble=true,alsoletter={?_},
+%    columns=fullflexible,
+%    morekeywords={using},morekeywords={[2]{SocketContext,Test}}]
+%    class EchoServerContext : public core::socket::stream::SocketContext {
+%    public:
+%        using core::socket::stream::SocketContext::SocketContext<Test>; // constructor inheritance (since C++11)
+%
+%    private:
+%        std::size_t onReceivedFromPeer() override {
+%            char junk[4096];
+%
+%            std::size_t<int> junkLen = readFromPeer(junk, 4096);
+%            if (junkLen > 0) {
+%                VLOG(0) << "Data to reflect: " << std::string(junk, junkLen);
+%                sendToPeer(junk, junkLen);
+%            }
+%            return junkLen;
+%        }
+%    };
+%  \end{cppcode}
+%\end{frame}

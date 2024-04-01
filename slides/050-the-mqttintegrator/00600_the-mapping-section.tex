@@ -1,9 +1,7 @@
-﻿\withsectionpage
-\section{The JSON Structure of a Mapping Section}
-\nosectionpage
+﻿\subsection{The \alert{JSON Structure} of the \texttt{<\alert{mapping-section}>}s}
 
-\begin{frame}[fragile]{The JSON Structure of a Mapping Section}
-  A \texttt{\textcolor{fh-ooe-red}{<mapping-type>}} object can be one of the three objects \texttt{\textcolor{fh-ooe-red}{static}}, \texttt{\textcolor{fh-ooe-red}{value}}, and \texttt{\textcolor{fh-ooe-red}{json}}.
+\begin{frame}[fragile]{The \alert{JSON Structure} of the \texttt{<\alert{mapping-section}>}s}
+  A <\texttt{\textcolor{fh-ooe-red}{mapping-section}}> object can be one of the three objects \texttt{\textcolor{fh-ooe-red}{static}}, \texttt{\textcolor{fh-ooe-red}{value}}, and \texttt{\textcolor{fh-ooe-red}{json}}.
   \begin{itemize}
     \item Only one of these objects needs to be specified.
     \item If two or all three objects are specified, the order of interpretation is
@@ -12,11 +10,11 @@
       \item \texttt{\textcolor{fh-ooe-red}{value}}
       \item \texttt{\textcolor{fh-ooe-red}{json}}
     \end{enumerate}
-    \item \textcolor{fh-ooe-red}{All three object describe a topic/message mapping} but in different ways.
+    \item \alert{All three object describe a topic/message mapping} but in different ways.
     \begin{description}[\texttt{static}]
-      \item[\texttt{static}] is thought for a string-matching mapping of incoming messages to outgoing one.
-      \item[\texttt{value}] is used if the incoming message should be interpreted as a value. The actual mapping is done controlled by a \textcolor{fh-ooe-red}{\href{https://raw.githubusercontent.com/pantor/inja/master/doc/logo.svg?sanitize=true}{inja}} template.
-      \item[\texttt{json}] is used if the incoming message is a JSON object. The actual mapping is done controlled by a \textcolor{fh-ooe-red}{\href{https://raw.githubusercontent.com/pantor/inja/master/doc/logo.svg?sanitize=true}{inja}} template.
+      \item[\texttt{static}] is thought for a \alert{string-matching} mapping of incoming messages to outgoing one.
+      \item[\texttt{value}] is used if the incoming message should be \alert{interpreted as a value} and accessible. The actual mapping is done controlled by a \alert{\href{https://github.com/pantor/inja}{inja}} template, whereas the message is accessible via the template variable \texttt{\alert{message}}.
+      \item[\texttt{json}] can be used in case the \alert{incoming message} is a \alert{JSON object}. The \alert{actual mapping} is done controlled by a \alert{\href{https://github.com/pantor/inja}{inja}} template. The JSON objects are accessible in the template \alert{as elements of} the template JSON variable \texttt{\alert{message}}.
     \end{description}
   \end{itemize}
 \end{frame}

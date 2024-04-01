@@ -1,35 +1,58 @@
-﻿\section[nosectionpage]{The JSON Structure of a Topic-Level}
+﻿\subsection{The \alert{\texttt{subscription}} Object of a \alert{Topic-Level}}
 
-\begin{frame}[fragile]{The JSON Structure of a Topic-Level}
-  A \texttt{\textcolor{fh-ooe-red}{topic\_level}} object \textcolor{fh-ooe-red}{describes one topic-level in detail} (subtopics, mappings, ...) and
+\begin{frame}[fragile]{The \texttt{\alert{subscription}} Object of a \alert{Topic-Level}}
+  The \texttt{\textcolor{fh-ooe-red}{topic\_level}} object \alert{describes one topic-level in detail} (sub-topics, ...) and can contain
   \begin{itemize}
-    \item \textcolor{fh-ooe-red}{must have an \texttt{name} object} describing the \textcolor{fh-ooe-red}{topic-name} of the \textcolor{fh-ooe-red}{current topic-level}.
-    \item can be nested to describe \texttt{\textcolor{fh-ooe-red}{subtopics recursively}}.
-    \item can have a \texttt{\textcolor{fh-ooe-red}{mapping}} object.
-    \begin{itemize}
-      \item When present the \texttt{\textcolor{fh-ooe-red}{mqttintegrator}} subscribes for that topic.
-      \item Whan also a \texttt{\textcolor{fh-ooe-red}{subscription}} object exists the subscription is done with the \texttt{\textcolor{fh-ooe-red}{qos}} level specified.
-    \end{itemize}
+    \item a \texttt{\alert{subscription}} object, which forces the \texttt{\textcolor{fh-ooe-red}{mqttintegrator}} to subscribes for this topic.
+    \item This \texttt{\alert{subscription}} object describes concrete \alert{topic to topic} and \alert{message to message} mappings.
   \end{itemize}
-
-  \begin{jsoncode}[gobble=4]
-    {
+\begin{columns}[T]
+\begin{column}{0.37\textwidth}
+  \begin{figure}
+  \begin{jsoncode}[autogobble=true]
         "topic_level" : {
-            "name" : "test",,
+            "name" : "device",
             "topic_level" : {
-                "name" : "button",
+                "name" : "sensor",
                 "subscription" : {
                     "type" : "binary_sensor",
                     "qos" : 2,
-                    "<mapping-type>": {
+                    "<mapping-section>": {
                         ...
                     }
                 },
                 ...
             }
         }
+  \end{jsoncode}
+  \caption{This \alert{\texttt{subsciption}} object \alert{subscribes} to topic \textcolor{fh-ooe-red}{\texttt{device/sensor}} with \alert{quality of service} 2}
+  \end{figure}
+  \end{column}
+  \begin{column}{0.57\textwidth}
+  \begin{figure}
+  \begin{jsoncode}[autogobble=true]
+    "static" : {
+        "mapped_topic" : "other_device/some_actuator/set",
+        "message_mapping" : [{
+        }]
     }
   \end{jsoncode}
+  \begin{jsoncode}[autogobble=true]
+    "value" : {
+        "mapped_topic" : "other_device/some_actuator/set",
+        "mapping_template" : "{% message %}"         // INJA-Template
+    }
+  \end{jsoncode}
+  \begin{jsoncode}[autogobble=true]
+    "json" : {
+        "mapped_topic" : "other_device/some_actuator/set",
+        "mapping_template" : "{% message.element %}" // INJA-Template
+    }
+  \end{jsoncode}
+  \caption{The <\textcolor{fh-ooe-red}{\texttt{mapping-section}}> types, \alert{\texttt{static}}, \alert{\texttt{value}} and \alert{\texttt{json}}.}
+  \end{figure}
+  \end{column}
+\end{columns}
 \end{frame}
 
 

@@ -1,6 +1,6 @@
 \begin{frame}[fragile]{Beispiel der Verwendung des express-API}
 \begin{onlyenv}<1>
-  \begin{cppcode}[autogobble=true]
+  \begin{cppcode}[autogobble=true, morekeywords={[2]{Request,Response}}]
     #include "express/legacy/WebApp.h"
 
     int main(int argc, char* argv[]) {
@@ -33,25 +33,26 @@
     #include "express/legacy/WebApp.h"
 
     int main(int argc, char* argv[]) {
-      express::WebApp::init(argc, argv);
+        express::WebApp::init(argc, argv);
 
-      express::legacy::WebApp webApp;
+        express::legacy::WebApp webApp;
 
-      webApp.get("/", [] APPLICATION(req, res) {
-        res.sendFile("/home/voc/projects/ServerVoc/docs/html" + req.url, [&res](int ret) -> void {
-          if (ret != 0) {
-            res->status(404).end();
-          }
+        webApp.get("/", [] APPLICATION(req, res) {
+            res.sendFile("/home/voc/projects/ServerVoc/docs/html" + req.url, [&res](int ret) -> void {
+                if (ret != 0) {
+                    res->status(404).end();
+                }
+            });
         });
-      });
 
-      // further routes can be defined
+        // further routes can be defined
 
-      webApp.listen(8080, [](const SocketAddress& socketAddress, const core::socket::State& state) -> void {
-        // State processing
-      }
+        webApp.listen(8080, [](const SocketAddress& socketAddress,
+                               const core::socket::State& state) -> void {
+            // State processing
+        }
 
-      return express::WebApp::start();
+        return express::WebApp::start();
     }
   \end{cppcode}
 \end{onlyenv}

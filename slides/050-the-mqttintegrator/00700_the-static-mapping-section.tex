@@ -1,11 +1,10 @@
-﻿\subsection{\texttt{static} Mapping Section}
+﻿\subsection{The \alert{\texttt{static}} Mapping Section}
 
-\begin{frame}[fragile]{\texttt{static} Mapping Section}
+\begin{frame}[fragile]{The \alert{\texttt{static}} Mapping Section}
   The \textcolor{fh-ooe-red}{\texttt{static}} mapping section describes the mapped topic and the message mapping where the \textcolor{fh-ooe-red}{incoming message} is \textcolor{fh-ooe-red}{string-matched} to \textcolor{fh-ooe-red}{string-values} specified in the \texttt{\textcolor{fh-ooe-red}{message\_mappings}} array section.\\
   E.g.:
 
-  \begin{jsoncode}[gobble=4]
-    {
+  \begin{jsoncode}[gobble=8]
         "static" : {
             "mapped_topic" : "test/onboard/set",
             "message_mapping" : [{
@@ -18,7 +17,6 @@
             "retain" : false,
             "qos": 0
         }
-    }
   \end{jsoncode}
 \end{frame}
 

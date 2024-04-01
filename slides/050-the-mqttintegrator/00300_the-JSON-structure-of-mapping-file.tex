@@ -1,7 +1,10 @@
-﻿\part{Configuration of IoT Scenarious using the \texttt{mqttintegrator}}
+﻿\part{Using the MQTTSuite}
 
-\section[nosectionpage]{The JSON Structure of the Mapping File used by \texttt{mpttintegrator}}
-\begin{frame}[fragile]{The JSON Structure of the Mapping File used by \texttt{mpttintegrator}}
+\section[withsectionpage]{The \texttt{mqttintegrator}}
+
+\subsection{The \alert{JSON Structure} of the Mapping File used by \alert{\texttt{mqttintegrator}}}
+
+\begin{frame}[fragile]{The \alert{JSON Structure} of the Mapping File used by \alert{\texttt{mqttintegrator}}}
   The big Structure of the JSON mapping description consists of three objects:
   \begin{description}[discover\_prefix]
     \item[discover\_prefix] The prefix topic-level of the discover topics of an application (currently not used).
@@ -11,19 +14,19 @@
 
   \begin{jsoncode}[gobble=4]
     {
-        "discover_prefix" : "iotempower",  // discover prefix of the application
-        "connection" : {                   // connection options
-            "keep_alive" : 60,             // [60]    duration between two ping packets
-            "client_id" : "Client",        // [""]    logical name of the client
-            "clean_session" : true,        // [true]  start with clean session or pick up retained one
-            "will_topic" : "will/topic",   // [""]    last will topic
-            "will_message" : "Last Will",  // [""]    last will message
-            "will_qos": 0,                 // [0]     last will qos
-            "will_retain" : false,         // [false] retain last will or not
-            "username" : "Username",       // [""]    username
-            "password" : "Password"        // [""]    password
+        "discover_prefix" : "snode.c",         // discover prefix of the application (not used currently)
+        "connection" : {                       // connection options
+            "keep_alive" : 60,                 // [60]    duration between two ping packets
+            "client_id" : "Client",            // [""]    logical name of the client
+            "clean_session" : true,            // [true]  start with clean session or pick up retained one
+            "will_topic" : "will/topic",       // [""]    last will topic
+            "will_message" : "Last Will",      // [""]    last will message
+            "will_qos": 0,                     // [0]     last will qos
+            "will_retain" : false,             // [false] retain last will or not
+            "username" : "Username",           // [""]    username
+            "password" : "Password"            // [""]    password
         },
-        "mappings" : {                     // mapping descriptions of templates|messages mapping
+        "mappings" : {                         // mapping descriptions of templates|messages mapping
             ...
         }
     }

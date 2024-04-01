@@ -1,11 +1,11 @@
 ﻿\subsection{WebSocket Application}
 
-\begin{frame}[fragile]{WebSocket Application}
-  \begin{cppcode}[autogobble=true, caption={WebSocket Application.},captionpos=b]
+\begin{frame}[fragile]{WebSocket Server-Application}
+  \begin{cppcode}[autogobble=true, caption={WebSocket Server-Application.},captionpos=b,morekeywords={[2]{upgrade}}]
     #include "express/legacy/WebApp.h"
 
     int main(int argc, char* argv[]) {
-        express::WebApp::init(argc, argv);
+        core::SNodeC::init(argc, argv);
 
         express::legacy::WebApp webApp;
 
@@ -24,7 +24,7 @@
             // State processing
         });
 
-        return express::WebApp::start();
+        return core::SNodeC::start();
     }
   \end{cppcode}
 \end{frame}

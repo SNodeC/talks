@@ -2,7 +2,7 @@
 
 \begin{frame}[fragile]{\texttt{SocketContextFactories} of the Server and Client}
   Server
-  \begin{cppcode}[autogobble=true, caption={\alert{SocketContextFactory} of the server.},captionpos=b]
+  \begin{cppcode}[autogobble=true, caption={\alert{SocketContextFactory} of the server.},captionpos=b,morekeywords={[2]create},morekeywords={[3]{socketConnection}}]
     #include "EchoServerContext.h"
     #include <core/socket/stream/SocketContextFactory.h>
 
@@ -14,7 +14,7 @@
     };
   \end{cppcode}
   Client
-  \begin{cppcode}[autogobble=true, caption={\alert{SocketContextFactory} of the client.},captionpos=b]
+  \begin{cppcode}[autogobble=true, caption={\alert{SocketContextFactory} of the client.},captionpos=b,morekeywords={[2]create},morekeywords={[3]{socketConnection}}]
     #include "EchoClientContext.h"
     #include <core/socket/stream/SocketContextFactory.h>
 
