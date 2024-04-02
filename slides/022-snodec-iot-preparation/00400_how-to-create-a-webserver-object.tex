@@ -1,7 +1,7 @@
 ﻿\section[nosectionpage]{How to Create a Webserver Object}
 
 \begin{frame}[fragile]{How to Create a Webserver Object}
-  After including a concrete \inlinecppcode|"express/[security]/[network]/WebApp.h"| header one can instanciate a webserver object by using the class name \inlinecppcode|express::[security]::[network]::WebApp| and either the \textcolor{fh-ooe-red}{default constructor} or the \textcolor{fh-ooe-red}{constructor expecting} an \textcolor{fh-ooe-red}{instance name} as argument.
+  After including a concrete \lstinline|"express/[security]/[network]/WebApp.h"| header one can instanciate a webserver object by using the class name \lstinline|express::[security]::[network]::WebApp| and either the \textcolor{fh-ooe-red}{default constructor} or the \textcolor{fh-ooe-red}{constructor expecting} an \textcolor{fh-ooe-red}{instance name} as argument.
   The \textcolor{fh-ooe-red}{instance name} must be \textcolor{fh-ooe-red}{unique} in one server application. Thus, you can \textcolor{fh-ooe-red}{not} create \textcolor{fh-ooe-red}{two WebApp instances} with the \textcolor{fh-ooe-red}{same instance name}.
 
   \begin{cppcode}[gobble=4]
@@ -14,10 +14,10 @@
   \end{description}
   The \textcolor{fh-ooe-red}{API} provided by any of the \textcolor{fh-ooe-red}{WebApp} classes is the same and very \textcolor{fh-ooe-red}{similar} to the \textcolor{fh-ooe-red}{API of NodeJS-Express}. You can use e.g.
   \begin{itemize}
-    \item \inlinecppcode|app.use(...)|
-    \item \inlinecppcode|app.get(...)|
-    \item \inlinecppcode|app.post(...)|
-    \item \inlinecppcode|app.put(...)|
+    \item \lstinline|app.use(...)|
+    \item \lstinline|app.get(...)|
+    \item \lstinline|app.post(...)|
+    \item \lstinline|app.put(...)|
   \end{itemize}
   as in NodeJS-Express but with C++ syntax.
 \end{frame}
