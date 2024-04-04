@@ -13,7 +13,7 @@
     \item \alert{All three object describe a topic/message mapping} but in different ways.
     \begin{description}[\texttt{static}]
       \item[\texttt{static}] is thought for a \alert{string-matching} mapping of incoming messages to outgoing one.
-      \item[\texttt{value}] is used if the incoming message should be \alert{interpreted as a value} and accessible. The actual mapping is done controlled by a \alert{\href{https://github.com/pantor/inja}{inja}} template, whereas the message is accessible via the template variable \texttt{\alert{message}}.
+      \item[\texttt{value}] is used if the incoming message should be \alert{interpreted as a value}. The actual mapping is done controlled by a \alert{\href{https://github.com/pantor/inja}{inja}} template, whereas the message is accessible via the template variable \texttt{\alert{message}}.
       \item[\texttt{json}] can be used in case the \alert{incoming message} is a \alert{JSON object}. The \alert{actual mapping} is done controlled by a \alert{\href{https://github.com/pantor/inja}{inja}} template. The JSON objects are accessible in the template \alert{as elements of} the template JSON variable \texttt{\alert{message}}.
     \end{description}
   \end{itemize}
