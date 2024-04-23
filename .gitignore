@@ -16,3 +16,11 @@
 *.tmp
 *.pdf
 *.log
+*.nav
+*.out
+*.snm
+*.src
+*.synctex.gz
+*.toc
+*.vrb
+*.dvi
