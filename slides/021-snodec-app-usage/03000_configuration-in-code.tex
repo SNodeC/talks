@@ -1,6 +1,10 @@
-\withpartpage
-\part{In-Code (API) Configuration}
 \nopartpage
+\part{In-Code (API) Configuration}
+\withpartpage
+
+\withsectionpage
+\section{Overview and Commons}
+\nosectionpage
 
 \begin{frame}[fragile]{In-Code (API) Configuration}
 \begin{itemize}
@@ -27,6 +31,6 @@ ConfigTlsClient
 ConfigTlsServer
 \end{Verbatim}
 \end{small}
-\item Every \alert{network layer subclasses} the \lstinline|ConfigAddress*| classes to \alert{inject} its \alert{individual configuration} items.
+\item Every \alert{network layer subclasses} the \lstinline|ConfigAddress| classes to \alert{inject} its \alert{individual configuration} items.
 \end{itemize}
 \end{frame}
