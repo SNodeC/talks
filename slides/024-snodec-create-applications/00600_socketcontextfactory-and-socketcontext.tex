@@ -2,21 +2,21 @@
 
 \begin{frame}[fragile]{The \texttt{SocketContextFactory} and the \texttt{SocketContext} of the MQTT-Broker}
   \begin{itemize}
-    \item \textcolor{fh-ooe-red}{MQTT-Broker}'s \textcolor{fh-ooe-red}{\texttt{SocketContextFactory}} itself is designed as a \textcolor{fh-ooe-red}{template class} expecting a \textcolor{fh-ooe-red}{\texttt{std::string}} as \textcolor{fh-ooe-red}{non-type template argument} which has to contain a \textcolor{fh-ooe-red}{JSON} object.
+    \item \alert{MQTT-Broker}'s \alert{\texttt{SocketContextFactory}} itself is designed as a \alert{template class} expecting a \alert{\texttt{std::string}} as \alert{non-type template argument} which has to contain a \alert{JSON} object.
     \begin{itemize}
-      \item By \textcolor{fh-ooe-red}{providing} such a \textcolor{fh-ooe-red}{JSON} object the \textcolor{fh-ooe-red}{broker} would \textcolor{fh-ooe-red}{also} act as an \textcolor{fh-ooe-red}{integrator} which \textcolor{fh-ooe-red}{maps incoming topics and messages} to \textcolor{fh-ooe-red}{outgoing topics and messages controlled} by the \textcolor{fh-ooe-red}{mapping describtion in the JSON} object.
-      \item If \textcolor{fh-ooe-red}{no JSON}-mapping (empty string) is provided, the broker acts as a \textcolor{fh-ooe-red}{pure broker}.
+      \item By \alert{providing} such a \alert{JSON} object the \alert{broker} would \alert{also} act as an \alert{integrator} which \alert{maps incoming topics and messages} to \alert{outgoing topics and messages controlled} by the \alert{mapping describtion in the JSON} object.
+      \item If \alert{no JSON}-mapping (empty string) is provided, the broker acts as a \alert{pure broker}.
     \end{itemize}
-    \item \textcolor{fh-ooe-red}{MQTT-Broker}'s \textcolor{fh-ooe-red}{\texttt{SocketContext}} is a class which \textcolor{fh-ooe-red}{inherits multible super classes}. Most \textcolor{fh-ooe-red}{important} it is \textcolor{fh-ooe-red}{derived from} the plain \textcolor{fh-ooe-red}{\texttt{iot::mqtt::server::SocketContext}} provided by SNode.C.
+    \item \alert{MQTT-Broker}'s \alert{\texttt{SocketContext}} is a class which \alert{inherits multible super classes}. Most \alert{important} it is \alert{derived from} the plain \alert{\texttt{iot::mqtt::server::SocketContext}} provided by SNode.C.
     \begin{itemize}
-      \item The \textcolor{fh-ooe-red}{\texttt{iot::mqtt::server::SocketContext} already provides a full MQTT broker} implementation.
-      \item By \textcolor{fh-ooe-red}{inheriting from this class} one has the \textcolor{fh-ooe-red}{opportunity} to \textcolor{fh-ooe-red}{override any method associated with incoming MQTT packets}, most \textcolor{fh-ooe-red}{important} the \textcolor{fh-ooe-red}{\texttt{onPublish}} method, \textcolor{fh-ooe-red}{associated} with an incoming \textcolor{fh-ooe-red}{MQTT publish packets}.
+      \item The \alert{\texttt{iot::mqtt::server::SocketContext} already provides a full MQTT broker} implementation.
+      \item By \alert{inheriting from this class} one has the \alert{opportunity} to \alert{override any method associated with incoming MQTT packets}, most \alert{important} the \alert{\texttt{onPublish}} method, \alert{associated} with an incoming \alert{MQTT publish packets}.
 
       \begin{cppcode}[gobble=8]
         void onPublish(iot::mqtt::packets::Publish& publish) override;
       \end{cppcode}
-      \item This \textcolor{fh-ooe-red}{method is called for every incoming MQTT publish message}.
-      \item The \textcolor{fh-ooe-red}{\texttt{iot::mqtt::packets::Publish}} argument passed to ths method \textcolor{fh-ooe-red}{contains the complete information of the publish message}.
+      \item This \alert{method is called for every incoming MQTT publish message}.
+      \item The \alert{\texttt{iot::mqtt::packets::Publish}} argument passed to ths method \alert{contains the complete information of the publish message}.
     \end{itemize}
   \end{itemize}
 \end{frame}

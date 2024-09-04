@@ -6,8 +6,8 @@
     \item a \texttt{\alert{subscription}} object, which forces the \texttt{\textcolor{fh-ooe-red}{mqttintegrator}} to subscribes for this topic.
     \item This \texttt{\alert{subscription}} object describes concrete \alert{topic to topic} and \alert{message to message} mappings.
   \end{itemize}
-\begin{columns}[T]
-\begin{column}{0.37\textwidth}
+\begin{columns}[T, onlytextwidth]
+\begin{column}{0.34\textwidth}
   \begin{figure}
   \begin{jsoncode}[autogobble=true]
         "topic_level" : {
@@ -28,7 +28,7 @@
   \caption{This \alert{\texttt{subsciption}} object \alert{subscribes} to topic \textcolor{fh-ooe-red}{\texttt{device/sensor}} with \alert{quality of service} 2}
   \end{figure}
   \end{column}
-  \begin{column}{0.57\textwidth}
+  \begin{column}{0.56\textwidth}
   \begin{figure}
   \begin{jsoncode}[autogobble=true]
     "static" : {
@@ -40,13 +40,13 @@
   \begin{jsoncode}[autogobble=true]
     "value" : {
         "mapped_topic" : "other_device/some_actuator/set",
-        "mapping_template" : "{% message %}"         // INJA-Template
+        "mapping_template" : "{% message %}" // INJA-Template
     }
   \end{jsoncode}
   \begin{jsoncode}[autogobble=true]
     "json" : {
         "mapped_topic" : "other_device/some_actuator/set",
-        "mapping_template" : "{% message.element %}" // INJA-Template
+        "mapping_template" : "{% message.<element> %}" // INJA-T.
     }
   \end{jsoncode}
   \caption{The <\textcolor{fh-ooe-red}{\texttt{mapping-section}}> types, \alert{\texttt{static}}, \alert{\texttt{value}} and \alert{\texttt{json}}.}

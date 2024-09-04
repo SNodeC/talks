@@ -2,8 +2,8 @@
 
 \begin{frame}[fragile]{Ordinary \texttt{SocketServer} objects and the MQTT-Broker application}
   \begin{itemize}
-    \item The MQTT broker \texttt{\textcolor{fh-ooe-red}{mqttbroker}} is an ordinary \textcolor{fh-ooe-red}{TCP server} application communicating \textcolor{fh-ooe-red}{unencrypted} via \textcolor{fh-ooe-red}{IPv4} with the MQTT broker protocol attached.
-    Thus you have to use one of the \textcolor{fh-ooe-red}{template classes \texttt{SocketServer}} provided by SNode.C and provide a \texttt{\textcolor{fh-ooe-red}{SocketContextFactory}} class as \textcolor{fh-ooe-red}{template argument}.
+    \item The MQTT broker \texttt{\alert{mqttbroker}} is an ordinary \alert{TCP server} application communicating \alert{unencrypted} via \alert{IPv4} with the MQTT broker protocol attached.
+    Thus you have to use one of the \alert{template classes \texttt{SocketServer}} provided by SNode.C and provide a \texttt{\alert{SocketContextFactory}} class as \alert{template argument}.
 
     \begin{cppcode}[gobble=4]
       #include "net/in/stream/legacy/SocketServer.h" // stream => TCP (dgram would be UDP)
@@ -15,6 +15,6 @@
         ...
       }
     \end{cppcode}
-    \item The \texttt{\textcolor{fh-ooe-red}{SocketContextFactory}} is responsible for \textcolor{fh-ooe-red}{creating} a concrete \texttt{\textcolor{fh-ooe-red}{SocketContext}} object for \textcolor{fh-ooe-red}{every connected client}, \textcolor{fh-ooe-red}{representing} the \textcolor{fh-ooe-red}{application protocol} (e.g. \texttt{\textcolor{fh-ooe-red}{HTTP}}, or \texttt{\textcolor{fh-ooe-red}{Websocket}}, or \texttt{\textcolor{fh-ooe-red}{MQTT}}, or \ldots) used by the application.
+    \item The \texttt{\alert{SocketContextFactory}} is responsible for \alert{creating} a concrete \texttt{\alert{SocketContext}} object for \alert{every connected client}, \alert{representing} the \alert{application protocol} (e.g. \texttt{\alert{HTTP}}, or \texttt{\alert{Websocket}}, or \texttt{\alert{MQTT}}, or \ldots) used by the application.
   \end{itemize}
 \end{frame}

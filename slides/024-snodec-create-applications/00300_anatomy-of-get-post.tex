@@ -1,7 +1,7 @@
 \section[nosectionpage]{Anatomy of \texttt{app.get()}, \texttt{app.post()}, \ldots}
 
 \begin{frame}[fragile]{Anatomy of \texttt{app.get()}, \texttt{app.post()}, \ldots}
-  The HTTP request methods \texttt{\textcolor{fh-ooe-red}{GET}}, \texttt{\textcolor{fh-ooe-red}{POST}}, \ldots are mapped to the \textcolor{fh-ooe-red}{non-static} methods \texttt{\textcolor{fh-ooe-red}{.get(\ldots)}}, \texttt{\textcolor{fh-ooe-red}{.post(\ldots)}}, \ldots of the classes \texttt{\textcolor{fh-ooe-red}{express/*/*/WebApp}}.
+  The HTTP request methods \texttt{\alert{GET}}, \texttt{\alert{POST}}, \ldots are mapped to the \alert{non-static} methods \texttt{\alert{.get(\ldots)}}, \texttt{\alert{.post(\ldots)}}, \ldots of the classes \texttt{\alert{express/*/*/WebApp}}.
   \begin{itemize}
     \item The signatures of these methods are
     \begin{cppcode}[gobble=4]
