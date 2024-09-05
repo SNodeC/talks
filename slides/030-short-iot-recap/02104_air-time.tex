@@ -1,21 +1,21 @@
-\begin{frame}{How Symbols get encoded - \alert{Frequency Shift} Chirp Spread Spectrum (FS-CSS)}
+\begin{frame}{How Symbols get encoded - \alert{Frequency Shift} Chirp Spread Spectrum (FSCSS)}
   \begin{itemize}
     \item The number of symbols representable by one chirp is defined by the \alert{spreading factor} ($SF$).
-    \item The \alert{frequency shift (starting step-number)} represents a concrete symbol.
-    \begin{description}
-      \item[$\Rightarrow$] Thus, \alert{a concrete frequency shift encodes a concrete symbol}.
-    \end{description}
     \item Each chirp contains $n_c = 2^{SF}$ \alert{chips} and encodes one symbol.
     \begin{description}
       \item[$\Rightarrow$] Thus, a chirp is a \alert{stair-shaped curve} with \alert{$n_c$ steps}.
     \end{description}
+    \item The \alert{frequency shift} (starting step-number) represents a concrete symbol.
+    \begin{description}
+      \item[$\Rightarrow$] Thus a \alert{concrete frequency shift encodes one symbol}.
+    \end{description}
     \item The chosen \alert{bandwidth $BW$ of a chirp} determines the \alert{duration} $\Delta t_b = 1 / BW$ of a \alert{chip}.
     \begin{description}
       \item[$\Rightarrow$] $n_c$ multiplied with $\Delta t_b$ defines the \alert{chirp duration} $\Delta t_c = t_b \cdot 2^{SF} = 2^{SF} / BW$.
-      \item[$\Rightarrow$] The \alert{symbol rate} $s_r = BW / 2^{SF}$ is the \alert{inverse of the chirp duration}.
+      \item[$\Rightarrow$] The \alert{symbol rate} $s_r = BW / 2^{FS}$ is the \alert{inverse of the chirp duration}.
     \end{description}
     \item The \alert{number of symbols} $s = n_c = 2^{SF}$ \alert{representable in one} chirp is the \alert{total number of steps}.
-    \item With $s = 2^{SF}$ symbols \alert{$b_s = \log_2(s) = \log_2(2^{SF})= SF$ bits} can be encoded per symbol (chirp).
-    \item Thus, the \alert{bit rate} $b_r$ is the number of \alert{bits per symbol $b_s$} times the \alert{symbols rate $s_r$} $b_r = b_s \cdot s_r =  SF \cdot BW / 2^{SF}$.
+    \item With $s = 2^{FS}$ symbols \alert{$b_c = \log_2(s) = \log_2(2^{FS})= SF$ bits} can be encoded per symbol (chirp).
+    \item Thus, the \alert{bit rate} $b_r$ is the number of \alert{bits per symbol} times the \alert{symbols rate} $b_r = b_c \cdot s_r =  SF \cdot BW / 2^{SF}$.
   \end{itemize}
 \end{frame}
