@@ -10,7 +10,7 @@
 
         webApp.get("/", [](std::shared_ptr<express::Request>& req,
                            std::shared_ptr<express::Response>& res) -> void {
-            res.sendFile("/home/voc/projects/ServerVoc/docs/html" + req.url, [&res](int ret) -> void {
+            res.sendFile("/home/voc/projects/ServerVoc/docs/html" + req->url, [&res](int ret) -> void {
                 if (ret != 0) {
                     res->status(404).end();
                 }
@@ -38,9 +38,9 @@
         express::legacy::WebApp webApp;
 
         webApp.get("/", [] APPLICATION(req, res) {
-            res.sendFile("/home/voc/projects/ServerVoc/docs/html" + req.url, [&res](int ret) -> void {
+            res.sendFile("/home/voc/projects/ServerVoc/docs/html" + req->url, [&res](int ret) -> void {
                 if (ret != 0) {
-                    res->status(404).end();
+                    res->sendStatus(404);
                 }
             });
         });
