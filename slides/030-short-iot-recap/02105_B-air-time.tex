@@ -1,24 +1,26 @@
-\begin{frame}{The LoRa Physical Frame}
-
-  \begin{center}
-    Uplink Frame\\
-    \includegraphics[width=0.7\textwidth]{material/phy-downlink.png}\\
+\begin{frame}{Air time of a LoRa Frame and the Duty Cycle}
+  \only<1>{
+    One can calculate the air time by hand \ldots
+    \begin{center}
+      \includegraphics[width=0.7\textwidth]{material/LoRaWAN-packet-duration-calculation-formula.png}
+    \end{center}
+  }
+  \only<2>{
+    \ldots but it's much easier to use an online airtime calculator:
     \vskip1em
-    Downlink Frame\\
-    \includegraphics[width=0.7\textwidth]{material/phy-uplink.png}
-  \end{center}
-  \begin{itemize}
-    \item The \alert{PHDR} encodes the
-    \begin{itemize}
-      \item Header Type (1 bit)
-      \item Payload Length in symbols (8 bit),
-      \item Coding Rate (3 bits),
-      \item CRC Enabled (1 bit),
-      \item Reserved (1 bit),
-    \end{itemize}
-    \item The \alert{PHDR\_CRC} is 16 bit long.
-    \item The total length of PHDR + PHDR\_CRC is 8 symbols.
-    \item The maximum PHYPayload size is 255 symbols.
-    \item The CRC is appended in case requested via the PHDR.
-  \end{itemize}
+    \begin{columns}[onlytextwidth]
+      \begin{column}{0.5\textwidth}
+        \includegraphics[width=0.75\textwidth]{material/lora-airtime-calculator.png}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{exampleblock}{Example: An Application transmits 20 Databytes ($SF=7,\,CR=1,\,BW=\SI{125}{\mega\hertz}$) every minute}
+          \begin{itemize}
+            \item The air time of one frame is $t_a = \SI{56.576}{\milli\second}$.
+            \item The air time used in one hour is $t_h = t_a \cdot 60 = \SI{3.39}{\second}$.
+            \item The \alert{duty cycle} is the \alert{fraction} of used air time per hour \alert{in percent}. $\Rightarrow D = \frac{3,39}{3600}\cdot 100 = 0,09\%$
+          \end{itemize}
+        \end{exampleblock}
+      \end{column}
+    \end{columns}
+  }
 \end{frame}
