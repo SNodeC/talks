@@ -3,17 +3,30 @@
 \part{LoRa, LoRaWAN and The Things Network}
 %\nosectionpage
 \withsectionpage
-\section{LoRaWan Topology, Technology and Properties}
+\section{LoRa (PHY-Layer)}
 %\withsectionpage
 
-\begin{frame}{LoRaWAN Topology}
-  \alert{LoRaWAN} is an abbreviation for \alert{Long Range Wide Area Network}
-  \begin{itemize}
-    \item Uses the \alert{world wide} license free \alert{ISM} RF-bands (industrial, scientific and medical).
-    \item Range: Typically \alert{\SI{10}{\kilo\meter}} using a \alert{\SI{25}{\milli\watt}} transceiver.
-    \item \href{https://www.thethingsnetwork.org/article/new-lora-world-record-1336-km-830-mi\#:~:text=The\%20long\%20term\%20LoRaWAN\%C2\%AE,at\%201336\%20km\%20\%2F\%20830\%20miles.}{World record}: \alert{\SI{1336}{\kilo\meter}}.
-  \end{itemize}
+\begin{frame}{Long Range Communication (LoRa)}
+
+  \begin{exampleblock}{}
   \begin{center}
-    \includegraphics[width=0.7\textwidth]{material/lorawan-topography.jpg}
+    \Large \alert{LoRa} is an Abbreviation for \alert{Long Range}
   \end{center}
+  \end{exampleblock}
+  \begin{center}
+    \includegraphics[width=0.28\textwidth]{material/lora-logo.jpg}
+  \end{center}
+  \begin{exampleblock}{}
+  \begin{center}
+  \Large Inspired by Nature: Bats, Dolphins, Whales, \ldots
+  \end{center}
+  \end{exampleblock}
+  \begin{itemize}
+    \item Is a proprietary \alert{low power modulation technique} patented by \href{https://www.semtech.com/lora}{\alert{Semtech Corporation}}.
+    \item Uses the \alert{world wide} license free \alert{ISM} RF-bands (industrial, scientific and medical).
+  \end{itemize}
+  \begin{description}[World record]
+    \item[Range] Typically \alert{\SI{10}{\kilo\meter}} using a \alert{\SI{25}{\milli\watt}} transmitter.
+    \item[\href{https://www.thethingsnetwork.org/article/new-lora-world-record-1336-km-830-mi\#:~:text=The\%20long\%20term\%20LoRaWAN\%C2\%AE,at\%201336\%20km\%20\%2F\%20830\%20miles.}{World record}] \alert{\SI{1336}{\kilo\meter}} using a \SI{25}{\milli\watt} transmitter.
+  \end{description}
 \end{frame}
