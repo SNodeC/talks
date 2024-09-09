@@ -5,8 +5,8 @@
 \withpartpage
 
 \begin{frame}{Components of IoT}
-  \begin{columns}
-    \begin{column}[T]{0.46\textwidth}
+  \begin{columns}[onlytextwidth]
+    \begin{column}[T]{0.5\textwidth}
       \begin{description}[Microcontroller]
         \item[Sensors]
         \begin{itemize}
@@ -16,25 +16,6 @@
           \item Chemicals
           \item \ldots
         \end{itemize}
-      \end{description}
-    \end{column}
-    \begin{column}[T]{0.46\textwidth}
-      \begin{description}[Actuators]
-        \item[Actuators]
-        \begin{itemize}
-          \item Lamps
-          \item Motors
-          \item Locks
-          \item Relays
-          \item \ldots
-        \end{itemize}
-      \end{description}
-    \end{column}
-  \end{columns}
-  \vspace{0.5cm}
-  \begin{columns}
-    \begin{column}[T]{0.5\textwidth}
-      \begin{description}[Microcontroller]
         \item[Microcontroller]
         \begin{itemize}
           \item Controls sensors and actuators
@@ -45,11 +26,20 @@
             \item \ldots
           \end{itemize}
           \item Connected to Gateway
+          \item \ldots
         \end{itemize}
       \end{description}
     \end{column}
     \begin{column}[T]{0.5\textwidth}
       \begin{description}[Actuators]
+        \item[Actuators]
+        \begin{itemize}
+          \item Lamps
+          \item Motors
+          \item Locks
+          \item Relays
+          \item \ldots
+        \end{itemize}
         \item[Gateway]
         \begin{itemize}
           \item Full network capabilities
@@ -58,6 +48,7 @@
           \item (Can) offer portal for whole IoT-system
           \item (Frequently) connected to cloud-system
           \item Responsible for security
+          \item \ldots
         \end{itemize}
       \end{description}
     \end{column}
