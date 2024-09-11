@@ -2,22 +2,26 @@
 The \alert{number of symbols} representable by one chirp is defined by the \alert{spreading factor} ($SF$).
   \begin{itemize}
     \item \alert{Each chirp} encodes \alert{one symbol} and contains $n_c = 2^{SF}$ in frequency raising \alert{chips} (missing 'r').
-    \begin{description}[$\Rightarrow$]
+    \begin{itemize}
       \item[$\Rightarrow$] Thus, a chirp is a \alert{stair-shaped curve} with \alert{$n_c$ steps}.
-    \end{description}
+    \end{itemize}
     \item The \alert{frequency shift} (start chip frequency relative to the center frequency or "{}starting step-number"{}) represents a \alert{symbol}.
-    \begin{description}[$\Rightarrow$]
+    \begin{itemize}
       \item[$\Rightarrow$] Thus, a \alert{concrete frequency shift} encodes a \alert{concrete symbol}.
-    \end{description}
+    \end{itemize}
     \item The chosen \alert{bandwidth $BW$ of a chirp} determines the \alert{duration} $\Delta t_b = 1 / BW$ of a \alert{chip}.
-    \begin{description}[$\Rightarrow$]
+    \begin{itemize}
       \item[$\Rightarrow$] $n_c$ multiplied with $\Delta t_b$ defines the \alert{chirp duration} $\Delta t_c = \Delta t_b \cdot n_c = 2^{SF} / BW$.
       \item[$\Rightarrow$] The \alert{symbol rate} $r_s = BW / 2^{SF}$ is the \alert{inverse of the chirp duration}.
-    \end{description}
+    \end{itemize}
     \item The \alert{number of symbols} $s$ \alert{representable by one} chirp is the \alert{total number of chips} $s = n_c = 2^{SF}$.
-    \item The \alert{coding rate $CR$} $\in \{0, 1, 2, 3, 4\}$ determines the number of \alert{FEC-bits} per \alert{4 data bits} used. If the coding rate is e.g. $CR = 2$ than every \textcolor{fh-ooe-red}{4} \alert{data bits} \textcolor{fh-ooe-red}{2} \alert{FEC-bits} are appended, giving \textcolor{fh-ooe-red}{6} \alert{PHYPayload bits} in total.
-    \item With $s = 2^{SF}$ symbols one can encode \alert{$n_s = \log_2(s) = \log_2\left(2^{SF}\right)= SF$} PHYPayload \alert{bits per symbol}.
+    \begin{itemize}
+      \item[$\Rightarrow$] With $s = 2^{SF}$ symbols one can encode \alert{$n_s = \log_2(s) = \log_2\left(2^{SF}\right)= SF$} PHYPayload \alert{bits per symbol}.
+    \end{itemize}
     \item The \alert{PHYPayload bit rate} $b_p$ is the number of \alert{PHYPayload bits per symbol $n_s$} times the \alert{symbols rate $r_s$}. \textcolor{fh-ooe-red}{$b_p =$} $ n_s \cdot r_s$ \textcolor{fh-ooe-red}{$= SF \cdot BW / 2^{SF}$}.
-    \item For $CR > 0$, the \alert{data bit rate} $b_d  = b_p \cdot 4 / (CR + 4)$ is less than the \alert{PHYPayload bit rate $b_p$}.
+    \item The \alert{coding rate $CR$} $\in \{0, 1, 2, 3, 4\}$ determines the number of \alert{FEC-bits} per \alert{4 data bits} used. If the coding rate is e.g. $CR = 2$ than every \textcolor{fh-ooe-red}{4} \alert{data bits} \textcolor{fh-ooe-red}{2} \alert{FEC-bits} are appended, giving \textcolor{fh-ooe-red}{6} \alert{PHYPayload bits} in total.
+    \begin{itemize}
+      \item[$\Rightarrow$] For $CR > 0$, the \alert{data bit rate} $b_d  = b_p \cdot 4 / (CR + 4)$ is less than the \alert{PHYPayload bit rate $b_p$}.
+    \end{itemize}
   \end{itemize}
 \end{frame}
