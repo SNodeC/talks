@@ -1,8 +1,23 @@
 \begin{frame}[t]{Data Rate, Bit Rate and Payload Size}
   Overview about \alert{bit rate} and \alert{maximum payload size} with respect to \alert{spreading factor} $SF$ and \alert{bandwidth} $BW$ of a chirp numbered by the \alert{data rate} $DR$:
   \begin{center}
-    \includegraphics[width=0.45\textwidth]{material/data-rate.png}
-  \end{center}
+    \begin{table}
+      \begin{tabular}{c|c|c|c}
+      \toprule
+      Data Rate & Configuration & bits/s & Max. Payload \\
+      \midrule
+        DR0 & SF12/125kHz & 250 & 59\\
+        DR1 & SF11/125kHz & 440 & 59\\
+        DR2 & SF10/125kHz & 980 & 59\\
+        DR3 & SF9/125kHz & 1 760 & 123\\
+        DR4 & SF8/125kHz & 3 125 & 230\\
+        DR5 & SF7/125kHz & 5 470 & 230\\
+        DR6 & SF7/250kHz & 11 000 & 230\\
+        DR7 & FSK: 50kpbs & 50 000 & 230
+      \end{tabular}
+    \caption{Data rates for the EU868, EU433, CN780 and AS923 bands}
+    \end{table}%
+  \end{center}%
   \begin{description}[$\Rightarrow$]
     \item[$\Rightarrow$] By knowing the configured \alert{data rate} of a device you also know the \alert{bit rate} and maximum \alert{guarantied payload size}.\\
     \item[$\Rightarrow$] The \alert{payload size} can have a \alert{upper limit} if \alert{dwell time} is imposed by the regulator. E.g. US915 a dwell limit of $\SI{400}{\milli\second}$ applies.
