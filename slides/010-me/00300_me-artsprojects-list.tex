@@ -1,6 +1,12 @@
-﻿\part[nopartpage]{\tt{me->artProjects().list();}}
+﻿\part{\tt{me->artProjects().list();}}
 
-\begin{frame}{\tt{me->artProjects().list();}}
+\begin{frame}[fragile]{\tt{me->artProjects().list();}}
+  \begin{cppcode}[autogobble=true,captionpos=b,morekeywords={[2]project}]
+    for(auto project: me->artProjects().list()) {
+      std::cout << project.getNumber() << " -> " << project.getName() << std::endl;
+    }
+  \end{cppcode}
+
   \begin{description}
     \item[0] {\texttt{->}} Resonator
     \item[1] {\texttt{->}} Klangtheater GANZOHR

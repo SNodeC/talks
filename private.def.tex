@@ -39,3 +39,36 @@
 
 \counterwithin{figure}{lecture}
 \counterwithin{table}{lecture}
+
+\setbeamerfont{lecture in toc}{size=\normalsize}
+
+\let\orig@@maketitle=\maketitle%
+\def\maketitle{%
+  \orig@@maketitle%
+  \IfFileExists{\jobname.lol}{%
+    \global\advance\c@framenumber by-1\relax%
+    \begin{frame}{Lectures}%
+      \usebeamerfont{lecture in toc}%
+      \begin{itemize}%
+        \input{\jobname.lol}%
+      \end{itemize}%
+    \end{frame}%
+  }{}%
+}%
+
+\newcommand{\fhooelecture}[4][]{%
+  \def\insertlecturenumbername{#2}%
+  \setcounter{lastframeoflastlecture}{\value{framenumber}}%
+  \orig@lecture[#1]{#2}{#4}%
+  \addtocontents{lol}{%
+    \protect\item #3%
+  }%
+}%
+
+\AtEndDocument{%
+  \clearpage
+  \if@filesw
+    \newwrite\tf@lol
+    \immediate\openout\tf@lol\jobname.lol\relax
+  \fi
+}
