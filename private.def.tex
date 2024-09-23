@@ -59,11 +59,21 @@
 \newcommand{\fhooelecture}[4][]{%
   \def\insertlecturenumbername{#2}%
   \setcounter{lastframeoflastlecture}{\value{framenumber}}%
+%
+  \edef\link{lecture:\insertlecturenumber}
   \orig@lecture[#1]{#2}{#4}%
   \addtocontents{lol}{%
-    \protect\item #3%
+    \protect\item \hyperlink{\link}{#3}%
   }%
 }%
+
+\def\makelectureframe{
+  \setbeamertemplate{headline}[fh-ooe theme lecture page]
+  \setbeamertemplate{footline}[fh-ooe theme lecture page]
+  \begin{frame}[label=\link]
+    \lecturepage
+  \end{frame}
+}
 
 \AtEndDocument{%
   \clearpage
