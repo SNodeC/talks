@@ -18,11 +18,11 @@
         \draw (em.north west) + (-1cm, 0) [dashed] -- ++(11cm, 0);
 %%% End draw dashed line above Eventloop-Layer
 %%% Start Lowlevel Server/Client
-        \draw (em.north) node[anchor=south east, outer sep=0, draw, fill=red!30, minimum width=5cm, minimum height=1cm] (llst) {\texttt{SocketServer<SCF\footnote{\label{scf2}\texttt{SCF} \ldots \texttt{SocketContextFactory}}>}};
-        \draw (em.north) node[anchor=south west, outer sep=0, draw, fill=red!30, minimum width=5cm, minimum height=1cm] (llct) {\texttt{SocketClient<SCF\textsuperscript{\ref{scf2}}>}};
+        \draw (em.north) node[anchor=south east, outer sep=0, draw, fill=red!30, minimum width=5cm, minimum height=1cm] (llst) {\texttt{SocketServer<SCF\footnote{\label{scf2e}\texttt{SCF} \ldots \texttt{SocketContextFactory}}>}};
+        \draw (em.north) node[anchor=south west, outer sep=0, draw, fill=red!30, minimum width=5cm, minimum height=1cm] (llct) {\texttt{SocketClient<SCF\textsuperscript{\ref{scf2e}}>}};
 %% End Lowlevel Server/Client
 %% Start SocketConnection
-        \draw (llst.north east) node[anchor=south, draw, fill=orange!30, inner sep=0, outer sep=0, minimum width=10cm, minimum height=1cm] (sc) {\texttt{SocketConnection<SCF\textsuperscript{\ref{scf2}}>}};
+        \draw (llst.north east) node[anchor=south, draw, fill=orange!30, inner sep=0, outer sep=0, minimum width=10cm, minimum height=1cm] (sc) {\texttt{SocketConnection<SCF\textsuperscript{\ref{scf2e}}>}};
 %% End SocketConnection
         \draw (llst.north east) node[outer sep=0, inner sep=0, anchor=center, draw, dashed, fill=blue!30, minimum width=2cm, minimum height=0.5cm] (ssl) {\texttt{ssl/tls}};
 %%$ Start draw dashed line above Eventloop-Layer
