@@ -1,17 +1,17 @@
-\section[nosectionpage]{Ordinary \texttt{SocketServer} objects and the MQTT-Broker application}
+\section[nosectionpage]{Ordinary \texttt{SocketServer} objects and the MQTTbroker application}
 
-\begin{frame}[fragile]{Ordinary \texttt{SocketServer} objects and the MQTT-Broker application}
+\begin{frame}[fragile]{Ordinary \texttt{SocketServer} objects and the MQTTbroker application}
   \begin{itemize}
-    \item The MQTT broker \texttt{\alert{mqttbroker}} is an ordinary \alert{TCP server} application communicating \alert{unencrypted} via \alert{IPv4} with the MQTT broker protocol attached.
+    \item The MQTTbroker \texttt{\alert{mqttbroker}} is an ordinary \alert{TCP server} application communicating \alert{unencrypted} via \alert{IPv4} with the MQTT broker protocol attached.
     Thus you have to use one of the \alert{template classes \texttt{SocketServer}} provided by SNode.C and provide a \texttt{\alert{SocketContextFactory}} class as \alert{template argument}.
 
     \begin{cppcode}[gobble=4]
-      #include "net/in/stream/legacy/SocketServer.h" // stream => TCP (dgram would be UDP)
-      #include "ASocketContextFactory.h"
+      #include <net/in/stream/legacy/SocketServer.h> // stream => TCP (dgram would be UDP)
+      #include "SharedSocketContextFactory.h"
 
       int main(int argc, char* argv[]) {
         ...
-        net::in::stream::legacy::SocketServer<ASocketContextFactory> server(...);
+        net::in::stream::legacy::SocketServer<mqtt::mqttbroker::SharedSocketContextFactory> server(...);
         ...
       }
     \end{cppcode}

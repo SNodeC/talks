@@ -47,7 +47,7 @@
   \orig@@maketitle%
   \IfFileExists{\jobname.lol}{%
     \global\advance\c@framenumber by-1\relax%
-    \begin{frame}{Lectures}%
+    \begin{frame}{Overview}%
       \usebeamerfont{lecture in toc}%
       \begin{itemize}%
         \input{\jobname.lol}%
@@ -59,8 +59,7 @@
 \newcommand{\fhooelecture}[4][]{%
   \def\insertlecturenumbername{#2}%
   \setcounter{lastframeoflastlecture}{\value{framenumber}}%
-%
-  \edef\link{lecture:\insertlecturenumber}
+  \def\link{lecture:\insertlecturenumber}
   \orig@lecture[#1]{#2}{#4}%
   \addtocontents{lol}{%
     \protect\item \hyperlink{\link}{#3}%
