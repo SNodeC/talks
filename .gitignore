@@ -14,7 +14,7 @@
 /snodec.vrb
 *.aux
 *.tmp
-*.pdf
+/*.pdf
 *.log
 *.nav
 *.out
