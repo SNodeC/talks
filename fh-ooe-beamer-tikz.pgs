@@ -13,6 +13,7 @@
 \usepackage{braket}
 \usepackage{tkz-euclide}
 \usepackage{trfsigns}
+\usepackage{siunitx}
 \RequirePackage{svg}
 \RequirePackage{includesvg}
 \usepackage{stackengine}
