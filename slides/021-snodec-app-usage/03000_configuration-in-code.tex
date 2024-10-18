@@ -2,13 +2,13 @@
 \part[withpartpage]{In-Code (API) Configuration}
 \withpartpage
 
-\begin{frame}[fragile]{In-Code (API) Configuration}
+\begin{frame}[fragile]{Base Classes of all \lstinline|Config| Objects}
 \begin{itemize}
     \item The type of the \alert{configuration object} of each instance retrieved using \lstinline|getConfig()|
 \begin{small}
 \begin{Verbatim}[frame=leftline,rulecolor=\color{fh-ooe-red}]
 ServerOrClientType serverOrClientIntance;
-serverOrClientIntance.getConfig();
+auto& serverOrClientConfigType = serverOrClientIntance.getConfig();
 \end{Verbatim}
 \end{small}
     is constructed for each individual \alert{server} and \alert{client} type using \alert{multiple inheritance}.
