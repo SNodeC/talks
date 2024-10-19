@@ -2,7 +2,7 @@
 
 \begin{frame}[fragile]{\tt{me->artProjects().list();}}
   \begin{cppcode}[autogobble=true,captionpos=b,morekeywords={[2]project}]
-    for(auto project: me->artProjects().list()) {
+    for(const auto& project: me->artProjects().list()) {
       std::cout << project.getNumber() << " -> " << project.getName() << std::endl;
     }
   \end{cppcode}
