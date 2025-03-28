@@ -57,7 +57,7 @@
 }%
 
 \newcommand{\fhooelecture}[4][]{%
-  \def\insertlecturenumbername{#2}%
+  \def\insertlecturenumbername{#3}%
   \setcounter{lastframeoflastlecture}{\value{framenumber}}%
   \def\link{lecture:\insertlecturenumber}
   \orig@lecture[#1]{#2}{#4}%
