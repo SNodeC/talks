@@ -4,7 +4,7 @@
 \begin{itemize}
 \item The MQTTBridge did not have predefined instances.
 \item A bridge configuration file needs to be specified.
-\begin{scriptsize}
+\begin{footnotesize}
 \begin{Verbatim}[commandchars=\\\{\}]
 \textcolor{grassgreen}{command@line~>} mqttbridge --help
 \end{Verbatim}
@@ -15,6 +15,17 @@ MQTT-Bridge:
   \textcolor{fh-ooe-red}{bridge} REQUIRED
        Configuration for Application mqttbridge
 \end{Verbatim}
-\end{scriptsize}
+\vspace{1em}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} mqttbridge bridge --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+MQTT-Bridge bridge:
+  \textcolor{fh-ooe-red}{--definition} path [<REQUIRED>] \{/home/voc/projects/mqttsuite/mqttsuite/mqttbridge/config.json\}
+       MQTT bridge definition file (JSON format)
+\end{Verbatim}
+\end{footnotesize}
 \end{itemize}
 \end{frame}
