@@ -1,0 +1,59 @@
+\begin{frame}[fragile]{Beispiel der Verwendung des express-API}
+\begin{onlyenv}<1>
+  \begin{cppcode}[autogobble=true, morekeywords={[2]{Request,Response}}]
+    #include "express/legacy/WebApp.h"
+
+    int main(int argc, char* argv[]) {
+        express::WebApp::init(argc, argv);
+
+        express::legacy::WebApp webApp;
+
+        webApp.get("/", [](std::shared_ptr<express::Request>& req,
+                           std::shared_ptr<express::Response>& res) -> void {
+            res.sendFile("/home/voc/projects/ServerVoc/docs/html" + req->url, [&res](int ret) -> void {
+                if (ret != 0) {
+                    res->status(404).end();
+                }
+            });
+        });
+
+        // further routes can be defined
+
+        webApp.listen(8080, [](const SocketAddress& socketAddress,
+                               const core::socket::State& state) -> void {
+            // State processing
+        }
+
+        return express::WebApp::start();
+    }
+  \end{cppcode}
+\end{onlyenv}
+\begin{onlyenv}<2>
+  \begin{cppcode}[autogobble=true]
+    #include "express/legacy/WebApp.h"
+
+    int main(int argc, char* argv[]) {
+        express::WebApp::init(argc, argv);
+
+        express::legacy::WebApp webApp;
+
+        webApp.get("/", [] APPLICATION(req, res) {
+            res.sendFile("/home/voc/projects/ServerVoc/docs/html" + req->url, [&res](int ret) -> void {
+                if (ret != 0) {
+                    res->sendStatus(404);
+                }
+            });
+        });
+
+        // further routes can be defined
+
+        webApp.listen(8080, [](const SocketAddress& socketAddress,
+                               const core::socket::State& state) -> void {
+            // State processing
+        }
+
+        return express::WebApp::start();
+    }
+  \end{cppcode}
+\end{onlyenv}
+\end{frame}

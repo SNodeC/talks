@@ -1,0 +1,30 @@
+﻿\subsection{\texttt{SocketContext} of the Server}
+
+\begin{frame}[fragile]{\texttt{SocketContext} of the Server}
+  \begin{cppcode}[autogobble=true, caption={\alert{SocketContext} of the server.},captionpos=b]
+    class EchoServerContext : public core::socket::stream::SocketContext {
+    public:
+        using core::socket::stream::SocketContext::SocketContext; // constructor inheritance (since C++11)
+
+    private:
+        void onConnected() override {
+            VLOG(0) << "Echo connected to " << getSocketConnection()->getRemoteAddress().toString();
+        }
+
+        void onDisconnected() override {
+            VLOG(0) << "Echo disconnected from " << getSocketConnection()->getRemoteAddress().toString();
+        }
+
+        std::size_t onReceivedFromPeer() override {
+            char junk[4096];
+
+            std::size_t junkLen = readFromPeer(junk, 4096);
+            if (junkLen > 0) {
+                VLOG(0) << "Data to reflect: " << std::string(junk, junkLen);
+                sendToPeer(junk, junkLen);
+            }
+            return junkLen;
+        }
+    };
+  \end{cppcode}
+\end{frame}

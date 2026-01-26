@@ -1,0 +1,24 @@
+﻿\subsection{The RFCOMM Client Application}
+
+\begin{frame}[fragile]{The RFCOMM Client Application}
+  \begin{cppcode}[autogobble=true, caption={RFCOMM client application.},captionpos=b, morekeywords={[2]{SocketClient,EchoClientContextFactory,connect}}]
+    #include "EchoClientContextFactory.h"
+    #include <net/rc/stream/legacy/SocketClient.h>
+
+    int main(int argc, char* argv[]) {
+        core::SNodeC::init(argc, argv);
+
+        using EchoClient = net::rc::stream::legacy::SocketClient<EchoClientContextFactory>;
+        using SocketAddress = EchoClient::SocketAddress;
+
+        EchoClient echoClient;
+
+        echoClient.connect("10:3D:1C:AC:BA:9C", 1, [](const SocketAddress& socketAddress,
+                                                      const core::socket::State& state) -> void {
+            // State processing
+        });
+
+        return core::SNodeC::start();
+    }
+  \end{cppcode}
+\end{frame}

@@ -1,0 +1,70 @@
+\subsection{Configuration Sections of Server and Client Instances}
+
+\begin{frame}[fragile]{Configuration Sections of Server and Client Instances}
+\begin{columns}[T, onlytextwidth]
+\begin{column}{0.5\textwidth}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoserver \textcolor{fh-ooe-red}{echo} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+Configuration for server instance '\textcolor{fh-ooe-red}{echo}'
+
+Usage: echoserver \textcolor{fh-ooe-red}{echo} [OPTIONS] [SECTIONS [--help]] \textcolor{blue}{REQUIRED}
+
+Options (\textcolor{fh-ooe-red}{nonpersistent}):
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Sections:
+  \textcolor{fh-ooe-red}{local} \textcolor{blue}{REQUIRED}
+       Local side of connection for instance 'echo'
+  \textcolor{fh-ooe-red}{remote}
+       Remote side of connection for instance 'echo'
+  \textcolor{fh-ooe-red}{connection}
+       Configuration of established connections for
+       instance 'echo'
+  \textcolor{fh-ooe-red}{socket}
+       Configuration of socket behavior for instance 'echo'
+  \textcolor{fh-ooe-red}{tls}  Configuration of SSL/TLS behavior for instance 'echo'
+\end{Verbatim}
+\end{scriptsize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoclient \textcolor{fh-ooe-red}{echo} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+Configuration for client instance '\textcolor{fh-ooe-red}{echo}'
+
+Usage: echoclient \textcolor{fh-ooe-red}{echo} [OPTIONS] [SECTIONS [--help]] \textcolor{blue}{REQUIRED}
+
+Options (\textcolor{fh-ooe-red}{nonpersistent}):
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Sections:
+  \textcolor{fh-ooe-red}{remote} \textcolor{blue}{REQUIRED}
+       Remote side of connection for instance 'echo'
+  \textcolor{fh-ooe-red}{local}
+       Local side of connection for instance 'echo'
+  \textcolor{fh-ooe-red}{connection}
+       Configuration of established connections for
+       instance 'echo'
+  \textcolor{fh-ooe-red}{socket}
+       Configuration of socket behavior for instance 'echo'
+  \textcolor{fh-ooe-red}{tls}  Configuration of SSL/TLS behavior for instance 'echo'
+\end{Verbatim}
+\end{scriptsize}
+\end{column}
+\end{columns}
+\end{frame}

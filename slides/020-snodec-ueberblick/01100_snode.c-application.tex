@@ -1,0 +1,26 @@
+﻿\withsectionpage
+\section{Echo Application - Example usage of SNode.C}
+\nosectionpage
+
+\begin{frame}{\alert{Echo} Application}{Example of using SNode.C}
+   \begin{block}{Echo application}
+   \begin{itemize}
+   \item Imagine you want to create a simple TCP (stream)/IPv4 (in) server/client pair that ping-pong legacy plaintext data to each other.
+   \item The client starts sending text data to the server, and the server reflects this data back to the client. The client receives this reflected data and sends it back to the server again. This data ping-pong is supposed to last forever.
+   \end{itemize}
+\end{block}
+   \begin{description}
+     \item [The user] must provide
+     \begin{description}[\texttt{SocketContextFactory}]
+       \item [\texttt{SocketContextFactory}] classes and
+       \item [\texttt{SocketContext}] classes
+     \end{description}
+     for server and client.
+     \item [SNode.C] provides \alert{ready to use}
+     \begin{description}[\texttt{SocketContextFactory}]
+       \item [\texttt{SocketServer}] and
+       \item [\texttt{SocketClient}] classes
+     \end{description}
+     for every supported transport layer (encrypted and unencrypted).
+   \end{description}
+\end{frame}

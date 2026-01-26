@@ -1,0 +1,25 @@
+﻿\subsection{Section \textcolor{fh-ooe-red}{\lstinline|Tls|}}
+
+\begin{frame}[fragile]{Section \alert{\lstinline|tls|} common for Server and Client Instances}
+The \alert{scope resolution operator} \textcolor{fh-ooe-red}{\lstinline|Tls::|} is optional as there are no ambiguous methods for this section.
+\vskip0.5em
+\begin{description}[]
+\item[Tls Section common for Server and Client Instances]
+\end{description}
+\begin{footnotesize}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{tlsClientOrServer}.\textcolor{grassgreen!60!black}{getConfig}();
+
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setCert}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setCertKey}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setCertKeyPassword}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setCaCert}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setCaCertDir}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setCaCertUseDefaultDir}(\textcolor{purple}{bool} = true);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setCipherList}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setSslOptions}(\textcolor{purple}{ssl_option_t});
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setInitTimeout}(\textcolor{olive}{const} \textcolor{purple}{utils::Timeval}&);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setShutdownTimeout}(\textcolor{olive}{const} \textcolor{purple}{utils::Timeval}&);
+\end{Verbatim}
+\end{footnotesize}
+\end{frame}

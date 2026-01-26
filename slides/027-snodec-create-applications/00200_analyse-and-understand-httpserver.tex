@@ -1,0 +1,34 @@
+﻿\part{Using SNode.C to Create Complex Server Applications}
+\section[nosectionpage]{Which Header File should I Use}
+
+\begin{frame}[fragile]{Which Header File should I Use}
+  SNode.C provides different webserver classes. The individual classes can be distinguished by:
+  \begin{itemize}
+    \item Security of the data exchange.
+    \item The network protocol used.
+  \end{itemize}
+  For every combination of security and network protocol a specific C++ header file has to be included:
+  \begin{cppcode}[gobble=4]
+    #include "express/[security]/[network]/WebApp.h"
+  \end{cppcode}
+  \begin{description}
+    \item[Security:] Either unencrypted or SSL/TLS encrypted data exchange:
+    \begin{itemize}
+      \item Unencrypted: \texttt{\alert{[security]}} $\Rightarrow$ \texttt{\alert{legacy}}
+      \item SSL/TLS encrypted: \texttt{\alert{[security]}} $\Rightarrow$ \texttt{\alert{tls}}
+    \end{itemize}
+    \item[Network:] Five network protocolls are currently supported:
+    \begin{itemize}
+      \item IPv4: \texttt{\alert{[network]}} $\Rightarrow$ \texttt{\alert{in}}
+      \item IPv6: \texttt{\alert{[network]}} $\Rightarrow$ \texttt{\alert{in6}}
+      \item Bluetooth RFCOM: \texttt{\alert{[network]}} $\Rightarrow$ \texttt{\alert{rc}}
+      \item Bluetooth L2CAP: \texttt{\alert{[network]}} $\Rightarrow$ \texttt{\alert{l2}}
+      \item Unix: \texttt{\alert{[network]}} $\Rightarrow$ \texttt{\alert{un}}
+    \end{itemize}
+  \end{description}
+  \vspace{0.5cm}
+  Thus, if you need a webserver communicating unencrypted via IPv4 you have to use
+  \begin{cppcode}[gobble=4]
+    #include "express/legacy/in/WebApp.h"
+  \end{cppcode}
+\end{frame}

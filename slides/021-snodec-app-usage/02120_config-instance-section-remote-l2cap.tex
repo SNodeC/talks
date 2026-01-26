@@ -1,0 +1,23 @@
+\subsection{L2CAP: Section \textcolor{fh-ooe-red}{\lstinline|remote|}}
+
+\begin{frame}[fragile]{Section \alert{\lstinline|remote|} of L2CAP Client Instances}
+
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoclient \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{remote} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+Remote side of connection for instance '\textcolor{fh-ooe-red}{echo}'
+
+Usage: echoclient \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{remote} [OPTIONS] \textcolor{blue}{REQUIRED}
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{--host} xx:xx:xx:xx:xx:xx:TEXT \textcolor{blue}{REQUIRED}
+       Bluetooth address
+  \textcolor{fh-ooe-red}{--psm} psm:UINT in [0 - 65535] \textcolor{blue}{REQUIRED}
+       Protocol service multiplexer
+\end{Verbatim}
+\end{scriptsize}
+\end{frame}

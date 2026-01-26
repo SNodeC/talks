@@ -1,0 +1,20 @@
+﻿\subsection{Section \textcolor{fh-ooe-red}{\lstinline|Connection|}}
+
+\begin{frame}[fragile]{Section \alert{\lstinline|Connection|} of Server and Client Instances}
+The \alert{scope resolution operator} \textcolor{fh-ooe-red}{\lstinline|Connection::|} is optional as there are no ambiguous methods for this section.
+\vskip0.5em
+\begin{description}[]
+\item[Connection Section equivalent for Server and Client]
+\end{description}
+\begin{footnotesize}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{serverOrClient}.\textcolor{grassgreen!60!black}{getConfig}();
+
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setReadBlockSize}(\textcolor{purple}{std::size_t});
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setWriteBlockSize}(\textcolor{purple}{std::size_t});
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setReadTimeout}(\textcolor{olive}{const} \textcolor{purple}{utils::Timeval}&);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setWriteTimeout}(\textcolor{olive}{const} \textcolor{purple}{utils::Timeval}&);
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setTerminateTimeout}(\textcolor{olive}{const} \textcolor{purple}{utils::Timeval}&);
+\end{Verbatim}
+\end{footnotesize}
+\end{frame}

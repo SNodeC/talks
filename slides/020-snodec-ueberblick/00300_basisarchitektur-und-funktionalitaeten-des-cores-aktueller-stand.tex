@@ -1,0 +1,28 @@
+﻿\withsectionpage
+\section{Features of SNode.C}
+\nosectionpage
+
+\subsection{Current Characteristics of SNode.C}
+\begin{frame}{Current Characteristics of SNode.C}
+   \begin{itemize}
+     \item Support for all \alert{three} main \alert{IO multiplexers}
+     \begin{itemize}
+       \item \texttt{select()}
+       \item \texttt{poll()}
+       \item \texttt{epoll()}
+     \end{itemize}
+     \item \alert{Single shot} and \alert{interval timer} classes
+     \item \alert{File access} via class \texttt{File} (currently read only)
+     \item \alert{Template} base classes for concrete \texttt{SocketServer} and \texttt{SocketClient} classes
+     \item \alert{Abstract} base class \texttt{SocketContext} for application protocols
+     \item \alert{Transparent \texttt{SSL/TLS}} support for \alert{encryption}, \alert{authentication} and \alert{authorization}
+     \item Dynamic loading of \alert{plugins} (\texttt{dlopen()}, \texttt{dlsym()}, \texttt{dlclose()})
+     \begin{description}[WS-Subprotocols:]
+       \item[HTTP upgrade:] \texttt{websocket} (something else is not specified (yet))
+       \item[WS-Subprotocol:] \texttt{tiktaktoe}, \texttt{echo}, \texttt{mqtt}
+     \end{description}
+     \item \alert{Daemonize} if desired
+     \item Automatically provide \alert{command line parameters} and
+     \item \alert{Configuration file} support
+   \end{itemize}
+\end{frame}

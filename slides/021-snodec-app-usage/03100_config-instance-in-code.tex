@@ -1,0 +1,16 @@
+\withsectionpage
+\section{Instance Configuration}
+\nosectionpage
+
+\begin{frame}[fragile]{Enable or disable an \alert{\lstinline|Instance|}}
+The \alert{scope resolution operator} \textcolor{fh-ooe-red}{\lstinline|Instance::|} is optional as there are no ambiguous methods for this section.
+\vskip0.5em
+\begin{footnotesize}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{serverOrClient}.\textcolor{grassgreen!60!black}{getConfig}();
+
+\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Instance}::]\textcolor{grassgreen!60!black}{setDisabled}(\textcolor{purple}{bool} = true);
+\end{Verbatim}
+\end{footnotesize}
+\end{frame}
+

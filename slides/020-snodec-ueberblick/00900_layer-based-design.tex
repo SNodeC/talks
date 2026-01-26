@@ -1,0 +1,22 @@
+﻿\part{Technical Overview}
+\withsectionpage
+\section{Structure of SNode.C}
+\nosectionpage
+
+\begin{frame}{Structure of SNode.C}{Layer-Based Design}
+  {\centering
+    \begin{figure}
+      \begin{tikzpicture}
+        \node[outer sep=0, draw, fill=grassgreen!30, minimum width=10cm, minimum height=1cm] (env) {Eventloop};
+        \draw (env.north) node[anchor=south, outer sep=0, draw, fill=orange!30, minimum width=10cm, minimum height=1cm, align=center] (sc) {Connection Layer\\\texttt{SocketConnection<SCF\footnote{\texttt{SCF \ldots SocketContextFactory}}>}};
+        \draw (sc.north) node[anchor=south, outer sep=0, draw, fill=red!40, minimum width=10cm, minimum height=1cm, align=center] (aps) {Application Protocol Layer\\\texttt{SocketContext}};
+        \draw (aps.north)  node[anchor=south, outer sep=0, draw, fill=blue!40, minimum width=10cm, minimum height=1cm] (app) {Application};
+      \end{tikzpicture}
+      \caption{Layers of SNode.C.}
+    \end{figure}
+  }
+\begin{itemize}
+     \item The \alert{application protocol} layer, i.e. \texttt{SocketContext} objects, can be \alert{exchanged at runtime} within an existing server/client \texttt{SocketConnection}.
+     \item Usage: E.g. HTTP-\texttt{upgrade} from HTTP-\texttt{SocketContext} to WebSocket-\texttt{SocketContext}
+   \end{itemize}
+\end{frame}

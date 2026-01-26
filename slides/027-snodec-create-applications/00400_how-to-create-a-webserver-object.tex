@@ -1,0 +1,23 @@
+﻿\section[nosectionpage]{How to Create a Webserver Object}
+
+\begin{frame}[fragile]{How to Create a Webserver Object}
+  After including a concrete \lstinline|"express/[security]/[network]/WebApp.h"| header one can instanciate a webserver object by using the class name \lstinline|express::[security]::[network]::WebApp| and either the \alert{default constructor} or the \alert{constructor expecting} an \alert{instance name} as argument.
+  The \alert{instance name} must be \alert{unique} in one server application. Thus, you can \alert{not} create \alert{two WebApp instances} with the \alert{same instance name}.
+
+  \begin{cppcode}[gobble=4]
+    express::[security]::[network]::WebApp app;             // Anonymous WebApp
+    express::[security]::[network]::WebApp app("mywebapp"); // Named WebApp
+  \end{cppcode}
+  \begin{description}
+    \item [Anonymous WebApp:] No command line arguments are provided.
+    \item [Named WebApp:] Command line arguments are provided automatically by SNode.C.
+  \end{description}
+  The \alert{API} provided by any of the \alert{WebApp} classes is the same and very \alert{similar} to the \alert{API of NodeJS-Express}. You can use e.g.
+  \begin{itemize}
+    \item \lstinline|app.use(...)|
+    \item \lstinline|app.get(...)|
+    \item \lstinline|app.post(...)|
+    \item \lstinline|app.put(...)|
+  \end{itemize}
+  as in NodeJS-Express but with C++ syntax.
+\end{frame}

@@ -1,0 +1,33 @@
+﻿\subsection{The IPv4 Client Application}
+
+\begin{frame}[fragile]{The IPv4 Client Application}
+  \begin{cppcode}[autogobble=true, caption={IPv4 client application.},captionpos=b,, morekeywords={[2]{SocketClient,EchoClientContextFactory,connect}}]
+    #include "EchoClientContextFactory.h"
+    #include <net/in/stream/legacy/SocketClient.h>
+
+    int main(int argc, char* argv[]) {
+        core::SNodeC::init(argc, argv);
+
+        using EchoClient = net::in::stream::legacy::SocketClient<EchoClientContextFactory>;
+        using SocketAddress = EchoClient::SocketAddress;
+        EchoClient echoClient;
+        echoClient.connect(("localhost", 8001, [](const SocketAddress& socketAddress,
+                                                  const core::socket::State& state) -> void {
+        switch (state) {
+            case core::socket::State::OK:
+                VLOG(1) << "EchoClient: connected to '" << socketAddress.toString() << "'";
+                break;
+            case core::socket::State::DISABLED:
+                VLOG(1) << "EchoClient: disabled";
+                break;
+            case core::socket::State::ERROR:
+                LOG(ERROR) << "EchoClient: " << socketAddress.toString() << ": " << state.what();
+                break;
+            case core::socket::State::FATAL:
+                LOG(FATAL) << "EchoClient: " << socketAddress.toString() << ": " << state.what();
+                break;
+        }
+        return core::SNodeC::start();
+    }
+  \end{cppcode}
+\end{frame}

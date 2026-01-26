@@ -1,0 +1,51 @@
+﻿\subsection{RFCOMM: Sections \textcolor{fh-ooe-red}{\lstinline|Local|} and \textcolor{fh-ooe-red}{\lstinline|Remote|}}
+
+\begin{frame}[fragile]{Sections \alert{\lstinline|Local|} and \alert{\lstinline|Remote|} of RFCOMM Server and Client Instances}
+The \alert{scope resolution operators} \textcolor{fh-ooe-red}{\lstinline|Local::|} and \textcolor{fh-ooe-red}{\lstinline|Remote::|} are used to \alert{resolve ambiguities} and to precisely define which \alert{side of a socket} is to be \alert{configured}.
+\vskip0.5em
+\begin{columns}[T, onlytextwidth]
+\begin{column}{0.5\textwidth}
+\begin{description}[]
+\item[Server: Local Side]
+\end{description}
+\begin{footnotesize}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{ipServer}.\textcolor{grassgreen!60!black}{getConfig}();
+
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setHost}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setChannel}(\textcolor{purple}{uint32_t});
+\end{Verbatim}
+\end{footnotesize}
+\vskip1em
+\begin{description}[]
+\item[Server: Remote Side]
+\end{description}
+\alert{Nothing to configure} for the remote side of an \alert{RFCOMM server} socket.
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{description}[]
+\item[Client: Local Side]
+\end{description}
+\begin{footnotesize}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{ipClient}.\textcolor{grassgreen!60!black}{getConfig}();
+
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setHost}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setChannel}(\textcolor{purple}{uint32_t});
+\end{Verbatim}
+\end{footnotesize}
+\vskip1em
+\begin{description}[]
+\item[Client: Remote Side]
+\end{description}
+\begin{footnotesize}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{ipClient}.\textcolor{grassgreen!60!black}{getConfig}();
+
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Remote}::\textcolor{grassgreen!60!black}{setHost}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Remote}::\textcolor{grassgreen!60!black}{setChannel}(\textcolor{purple}{uint32_t});
+\end{Verbatim}
+\end{footnotesize}
+\end{column}
+\end{columns}
+\end{frame}

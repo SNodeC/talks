@@ -1,0 +1,58 @@
+﻿\subsection{The \alert{\texttt{subscription}} Object of a \alert{Topic-Level}}
+
+\begin{frame}[fragile]{The \texttt{\alert{subscription}} Object of a \alert{Topic-Level}}
+  The \texttt{\textcolor{fh-ooe-red}{topic\_level}} object \alert{describes one topic-level in detail} (sub-topics, ...) and can contain
+  \begin{itemize}
+    \item a \texttt{\alert{subscription}} object, which forces the \texttt{\textcolor{fh-ooe-red}{mqttintegrator}} to subscribes for this topic.
+    \item This \texttt{\alert{subscription}} object describes concrete \alert{topic to topic} and \alert{message to message} mappings.
+  \end{itemize}
+\begin{columns}[T, onlytextwidth]
+\begin{column}{0.34\textwidth}
+  \begin{figure}
+  \begin{jsoncode}[autogobble=true]
+        "topic_level" : {
+            "name" : "device",
+            "topic_level" : {
+                "name" : "sensor",
+                "subscription" : {
+                    "type" : "binary_sensor",
+                    "qos" : 2,
+                    "<mapping-section>": {
+                        ...
+                    }
+                },
+                ...
+            }
+        }
+  \end{jsoncode}
+  \caption{This \alert{\texttt{subsciption}} object \alert{subscribes} to topic \textcolor{fh-ooe-red}{\texttt{device/sensor}} with \alert{quality of service} 2}
+  \end{figure}
+  \end{column}
+  \begin{column}{0.56\textwidth}
+  \begin{figure}
+  \begin{jsoncode}[autogobble=true]
+    "static" : {
+        "mapped_topic" : "other_device/some_actuator/set",
+        "message_mapping" : [{
+        }]
+    }
+  \end{jsoncode}
+  \begin{jsoncode}[autogobble=true]
+    "value" : {
+        "mapped_topic" : "other_device/some_actuator/set",
+        "mapping_template" : "{% message %}" // INJA-Template
+    }
+  \end{jsoncode}
+  \begin{jsoncode}[autogobble=true]
+    "json" : {
+        "mapped_topic" : "other_device/some_actuator/set",
+        "mapping_template" : "{% message.<element> %}" // INJA-T.
+    }
+  \end{jsoncode}
+  \caption{The <\textcolor{fh-ooe-red}{\texttt{mapping-section}}> types, \alert{\texttt{static}}, \alert{\texttt{value}} and \alert{\texttt{json}}.}
+  \end{figure}
+  \end{column}
+\end{columns}
+\end{frame}
+
+

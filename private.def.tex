@@ -1,16 +1,24 @@
-%\usepackage[ngerman]{babel}
+﻿%\usepackage[ngerman]{babel}
 
 \RequirePackage{qrcode}
-\RequirePackage[ngerman]{babel}
+\RequirePackage{multido}
+%\RequirePackage[ngerman]{babel}
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{booktabs}
+\RequirePackage{makecell}
+\RequirePackage{mathrsfs}
+\RequirePackage[dvipsnames]{xcolor}
 
 \author[Volker Christian]{Volker Christian}
-\degree[DACHS23]{\Huge DACHS23}
-\title[SNode.C]{\large A simple, lightweight, highly extensible, event driven, layer-based framework for network applications in the spirit of node.js written entirely in C++}
-\institute[FH-O\"O -- Hagenberg]{FH Ober\"osterreich -- Campus Hagenberg\\Fakult\"at f\"ur Informatik, Kommunikation und Medien\\Softwarepark 11, 4232 Hagenberg/Austria}
-\semester[SS 2021]{$11.9.2023 \leq$ DACHS23 $\leq 12.9.2023$}
-\date[11. September 2023]{11. September 2023}
+\degree[SHD]{\Large Spirit of Hit Days 2026}
+\title[ISCIS]{\Huge The Internet of Things and Sensors\hspace{2cm} for Controlling Invasive Species}
+\institute[FH-O\"O -- Hagenberg]{FH Upper Austria -- Campus Hagenberg\\School of Informatics, Communications and Media\\Softwarepark 11,\\4232 Hagenberg/Austria}
+\semester[WS 2024/25]{Winter Semester 2025/26}
+\date[03.09.2024]{02. September 2025}
 
-\mode<presentation>{\subject{Simple Node in C++ (SNode.C)}}
+%\def\insertlecturepartnumbername{Global Acting in IT}
+%\mode<presentation>{\subject{Global Acting in IT}}
 \setjavasourcepath{java/src}
 \setcppsourcepath{cpp}
 
@@ -19,12 +27,89 @@
 \newcommand{\ffbox}[1]{\fbox{\vspace*{0.4in}#1}}
 
 %\def\insertlecturepartnumbername{A simple to use, lightweight, highly extensible, event driven, layer-based framework for network applications in the spirit of node.js written entirely in C++}
-\def\insertlecturenumberintitle{\relax}
+%\def\insertlecturenumberintitle{\relax}
 
 \def\inserttitlehead{\insertshorttitle}
 
+%\withsectionpage
 \nosectionpage
-\nopartpage
+\withpartpage
 
 \def\ffbox{\relax}
 \pgfplotsset{compat=1.18}
+
+\counterwithin{figure}{lecture}
+\counterwithin{table}{lecture}
+
+\setbeamerfont{lecture in toc}{size=\normalsize}
+
+\let\orig@@maketitle=\maketitle%
+\def\maketitle{%
+  \orig@@maketitle%
+  \IfFileExists{\jobname.lol}{%
+    \global\advance\c@framenumber by-1\relax%
+    \begin{frame}{Overview}%
+      \usebeamerfont{lecture in toc}%
+      \begin{itemize}%
+        \input{\jobname.lol}%
+      \end{itemize}%
+    \end{frame}%
+  }{}%
+}%
+
+\newcommand{\fhooelecture}[4][]{%
+  \def\insertlecturenumbername{#3}%
+  \setcounter{lastframeoflastlecture}{\value{framenumber}}%
+  \def\link{lecture:\insertlecturenumber}
+  \orig@lecture[#1]{#2}{#4}%
+  \addtocontents{lol}{%
+    \protect\item \hyperlink{\link}{#3}%
+  }%
+}%
+
+\def\makelectureframe{
+  \setbeamertemplate{headline}[fh-ooe theme lecture page]
+  \setbeamertemplate{footline}[fh-ooe theme lecture page]
+  \begin{frame}[label=\link]
+    \lecturepage
+  \end{frame}
+}
+
+\AtEndDocument{%
+  \clearpage
+  \if@filesw
+    \newwrite\tf@lol
+    \immediate\openout\tf@lol\jobname.lol\relax
+  \fi
+}
+
+
+\defbeamertemplate*{title page}{fh-ooe-local}[1][]
+{
+  \vbox{}
+  \vfill
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+      \ifx\insertdegree\@empty%
+      \else%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertdegree\par}%
+        \vskip0.25em%
+      \fi%
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    \vskip0em\par
+    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{date}\insertsemester
+    \end{beamercolorbox}\vskip0.5em
+  \end{centering}
+  \vfill
+}
+
+\setbeamertemplate{title page}[fh-ooe-local][colsep=-4bp]

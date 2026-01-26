@@ -1,0 +1,34 @@
+\subsection{Configuration-Sections of an Instance}
+
+\begin{frame}[fragile]{Configuration-Sections of an Instance}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoserver \textcolor{fh-ooe-red}{echo} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline]
+Configuration for server instance 'echo'
+
+Usage: echoserver echo [OPTIONS] [SECTIONS [--help]]
+
+Options (\textcolor{fh-ooe-red}{nonpersistent}):
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Sections:
+  \textcolor{fh-ooe-red}{local} \textcolor{blue}{REQUIRED}
+       Local side of connection for instance 'echo'
+  \textcolor{fh-ooe-red}{remote}
+       Remote side of connection for instance 'echo'
+  \textcolor{fh-ooe-red}{connection}
+       Configuration of established connections for instance 'echo'
+  \textcolor{fh-ooe-red}{socket}
+       Configuration of socket behavior for instance 'echo'
+  \textcolor{fh-ooe-red}{server}
+       Configuration of server socket for instance 'echo'
+\end{Verbatim}
+\end{scriptsize}
+\end{frame}

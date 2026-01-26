@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+
+PageProps = {
+  1: {
+       'skip': 1
+     },
+  2: {
+       'skip': 1
+     },
+  4: {
+       'sound': 'WeAreTheCampions-2.mp3'
+     },
+ 22: {
+       'next': 3
+     }
+}

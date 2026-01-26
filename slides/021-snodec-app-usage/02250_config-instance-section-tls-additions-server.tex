@@ -1,0 +1,32 @@
+\begin{frame}[fragile]{Section \alert{\lstinline|tls|} additions for Server}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoTlsServer \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{tls} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+Configuration of \textcolor{fh-ooe-red}{SSL/TLS behavior} for instance '\textcolor{fh-ooe-red}{echo}'
+
+Usage: echoTlsServer \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{tls} [OPTIONS]
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+
+  [ common tls options ]
+
+  \textcolor{fh-ooe-red}{--sni-cert} sni <key> value [<key> value] ... [%% sni <key> value [<key> value] ...] [\textcolor{lightblue}{'' '' ''}] ...
+       Server Name Indication (SNI) Certificates:
+       sni = SNI of the virtual server
+       <key> = \{
+         \textcolor{fh-ooe-red}{Cert} -> value:PEM-FILE                  [\textcolor{lightblue}{''}]
+         \textcolor{fh-ooe-red}{CertKey} -> value:PEM-FILE               [\textcolor{lightblue}{''}]
+         \textcolor{fh-ooe-red}{CertKeyPassword} -> value:TEXT           [\textcolor{lightblue}{''}]
+         \textcolor{fh-ooe-red}{CaCert} -> value:PEM-FILE                [\textcolor{lightblue}{''}]
+         \textcolor{fh-ooe-red}{CaCertDir} -> value:PEM-CONTAINER-DIR    [\textcolor{lightblue}{''}]
+         \textcolor{fh-ooe-red}{CaCertUseDefaultDir} -> value:BOOLEAN    [\textcolor{lightblue}{false}]
+         \textcolor{fh-ooe-red}{CipherList} -> value:CIPHER              [\textcolor{lightblue}{''}]
+         \textcolor{fh-ooe-red}{SslOptions} -> value:UINT                [\textcolor{lightblue}{0}]
+       \}
+  \textcolor{fh-ooe-red}{--force-sni}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Force using of the Server Name Indication
+\end{Verbatim}
+\end{scriptsize}
+\end{frame}

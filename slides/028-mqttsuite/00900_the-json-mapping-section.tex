@@ -1,0 +1,27 @@
+﻿\subsection{The \alert{\texttt{json}} Mapping Section}
+
+\begin{frame}[fragile]{The \alert{\texttt{json}} Mapping Section}
+  The \textcolor{fh-ooe-red}{\texttt{json}} mapping section describes the \alert{mapped topic} and the \alert{message mapping} where the \alert{incoming message} is \alert{interpreted as a JSON message}.
+  \begin{itemize}
+  \item The \alert{JSON message} is available in the template in the variable \texttt{\textcolor{grassgreen}{message}}
+  \end{itemize}
+  \begin{jsoncode}[autogobble=true,morekeywords={[3]{message}},keywordstyle={[3]\textcolor{grassgreen}}]
+        "json" : {
+            "mapped_topic" : "some/topic/set",
+            "mapping_template" : "{{ message.time.start }} to {{ message.time.end + 1 }}pm",
+            "retain" : false,
+            "qos" : 0
+        }
+  \end{jsoncode}
+  This \texttt{\textcolor{fh-ooe-red}{mapping\_template}} renders the following JSON object as \texttt{\textcolor{fh-ooe-red}{5 to 11pm}}.
+
+  \begin{jsoncode}[gobble=4]
+    {
+        "time" : {
+            "start" : 5,
+            "end" : 10
+        }
+    }
+  \end{jsoncode}
+  Have a look at the \alert{\href{https://github.com/pantor/inja/tree/master}{inja documentation}} for more details about templates.
+\end{frame}

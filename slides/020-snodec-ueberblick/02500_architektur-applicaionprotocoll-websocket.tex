@@ -1,0 +1,23 @@
+﻿\subsection{WebSocket}
+
+\begin{frame}{WebSocket}{Application Protocols}
+  \begin{center}
+    \begin{figure}
+      \par\bigskip
+      \begin{tikzpicture}
+        \draw node [outer sep=0, inner sep=0, draw, fill=green!30, minimum width=10cm, minimum height=1cm, align=center] (wstr) {WebSocket\\\texttt{SocketContextUpgrade}};
+        \draw (wstr.north) node[anchor=south west, outer sep=0, inner sep=0, fill=red!30, draw, minimum width=5cm, minimum height=1cm, align=center] (wsc) {WebSocket Client\\\texttt{SocketContextUpgrade}};
+        \draw (wstr.north) node[anchor=south east, outer sep=0, inner sep=0, fill=red!30, draw, minimum width=5cm, minimum height=1cm, align=center] (wss) {WebSocket Server\\\texttt{SocketContextUpgrade}};
+        \draw (wss.north east) node[anchor=south, outer sep=0, inner sep=0, fill=blue!30, draw, minimum width=10cm, minimum height=1cm, align=center] (sp) {WebSocket\\\texttt{SubProtocol}};
+      \end{tikzpicture}
+      \caption{WebSocket application protocol in detail}
+    \end{figure}
+  \end{center}
+\begin{itemize}
+     \item The WS libraries are \alert{loaded dynamically} (\texttt{dlopen()}, \ldots) as \alert{plugins} during \texttt{HTTP-upgrade}.
+     \item The requested subprotocol (e.g. \texttt{tiktaktoe}, \texttt{echo}, \texttt{mqtt}) is also \alert{dynamically loaded} as plugin.
+     \item Both, WS libraries and subprotocol (SP) Libraries \alert{must obey a naming convention}.
+     \item WS and SP libraries must provide \texttt{static} \alert{factory-factory} functions.
+     \item Concrete SP libraries must be implemented by the user (abstract base class \texttt{SubProtocol).}
+   \end{itemize}
+\end{frame}

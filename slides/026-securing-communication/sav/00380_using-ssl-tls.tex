@@ -1,0 +1,19 @@
+﻿\subsection{Using SSL/TLS to Secure Communication}
+
+\begin{frame}{How to use SSL/TLS Certificates to Secure a Communication Stream}{e.g. TCP}
+    To secure an e.g. TCP connection \ldots
+    \begin{itemize}
+        \item \alert{\textit{Bob}} (the client) contacts \alert{\textit{Alice}} (the server).
+        \item  At the very beginning \alert{\textit{Alice}} sends its \alert{server certificate} signed by the \alert{certificate authority \textit{EXCA}} to \textit{Bob}.
+        \item \alert{\textit{Bob} also sends a certificate} to \textit{Alice}. In case no \alert{client} certificate is configured for \textit{Bob} a public/private key pair is generated randomly.
+        \item \textit{Bob} can now \alert{prove} the \alert{validity} of \textit{Alices} \alert{certificate} if he is tolled so (depends on \alert{configuration}):
+        \begin{itemize}
+            \item If \textit{Bob} \alert{trusts} certificate authority \alert{EXCA} than its \alert{CA certificate (public key) is knowen} by \textit{Bob}. E.g. it is installed on the system and made been knowen to \textit{Bob} by the \alert{administrator}.
+            \item \textit{Bob} can now \alert{use the EXCA certificate} to \alert{validate} the \alert{certificate of \textit{Alice}}.
+            \item If \textit{Alice} certificate is \alert{proven valid} than \textit{Bob} \alert{can trust} \textit{Alice},
+        \end{itemize}
+        \item In case \textit{Bob} \alert{didn't trust} \textit{Alice} certificate he shall \alert{terminate the connection}.
+        \item In case \textit{Bob} \alert{trusts} \textit{Alice} he can use \alert{\textit{Alice} public key and his private key} for encryption.
+        \item In that case also \textit{Alice} can now use \alert{\textit{Bobs} public key and her private key} for encryption.
+    \end{itemize}
+\end{frame}

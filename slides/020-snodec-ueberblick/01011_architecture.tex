@@ -1,0 +1,32 @@
+﻿\subsection{Multiplexer and DescriptorEventPublisher}
+
+\begin{frame}{Multiplexer and DescriptorEventPublisher}
+  \begin{tikzpicture}
+    \umlclass[x=0, y=0, type=abstract,fill=brown!20]{EventMultiplexer}{%
+    }{
+    }
+    \umlclass[x=-2, y=-2,fill=brown!20]{select::EventMultiplexer}{}{}
+    \umlclass[x=0, y=-3.5,fill=brown!20]{poll::EventMultiplexer}{}{}
+    \umlclass[x=2, y=-5,fill=brown!20]{epoll::EventMultiplexer}{}{}
+
+    \umlVHVinherit{select::EventMultiplexer}{EventMultiplexer}
+    \umlVHVinherit{poll::EventMultiplexer}{EventMultiplexer}
+    \umlVHVinherit[weight=0.8]{epoll::EventMultiplexer}{EventMultiplexer}
+
+
+    \umlclass[x=7, y=0, type=abstract,fill=brown!20]{DescriptorEventPublisher}{%
+    }{
+    }
+    \umlclass[x=5, y=-2,fill=brown!20]{select::DescriptorEventPublisher}{}{}
+    \umlclass[x=7, y=-3.5,fill=brown!20]{poll::DescriptorEventPublisher}{}{}
+    \umlclass[x=9, y=-5,fill=brown!20]{epoll::DescriptorEventPublisher}{}{}
+
+    \umlVHVinherit{select::DescriptorEventPublisher}{DescriptorEventPublisher}
+    \umlVHVinherit{poll::DescriptorEventPublisher}{DescriptorEventPublisher}
+    \umlVHVinherit[weight=0.8]{epoll::DescriptorEventPublisher}{DescriptorEventPublisher}
+
+    \umlassoc{select::EventMultiplexer}{select::DescriptorEventPublisher}
+    \umlassoc{poll::EventMultiplexer}{poll::DescriptorEventPublisher}
+    \umlassoc{epoll::EventMultiplexer}{epoll::DescriptorEventPublisher}
+  \end{tikzpicture}
+\end{frame}

@@ -9,10 +9,11 @@
 \usepackage[euler]{textgreek}
 \usepackage[utf8]{inputenc}
 \usepackage{eurosym}
-\usepackage[ngerman]{babel}
+%\usepackage[ngerman]{babel}
 \usepackage{braket}
 \usepackage{tkz-euclide}
 \usepackage{trfsigns}
+\usepackage{siunitx}
 \RequirePackage{svg}
 \RequirePackage{includesvg}
 \usepackage{stackengine}
@@ -144,6 +145,6 @@
 
 \begin{document}[without titlepage]%
 %  \begin{frame}{Frame Title}%
-    <>
+    <>%
 %  \end{frame}%
 \end{document}

@@ -1,0 +1,51 @@
+﻿\subsection[nosectionpage]{\texttt{\alert{topic\_level}}s and the JSON-Structure of the \alert{\texttt{mapping}} Section}
+
+\begin{frame}[fragile]{\alert{\texttt{topic\_level}}s and the JSON-Structure of the \alert{\texttt{mapping}} Section}
+  \begin{description}[topic\_levels]
+    \item[topic\_level] is either
+    \begin{itemize}
+      \item an \alert{object} describing one topic or
+      \item an \alert{array of objects} describing multiple \alert{sibling} topics.
+    \end{itemize}
+    \item[topic\_levels] can be recursively nested to create a \alert{topic\_level tree}.
+  \end{description}
+\begin{columns}[]
+  \begin{column}{0.5\textwidth}
+  \begin{jsoncode}[autogobble=true]
+      "mapping" : {
+          "topic_level" : {         // single topic level
+              "name" : "topic_level_name",
+              ...
+          }
+      }
+  \end{jsoncode}
+  \begin{jsoncode}[autogobble=true]
+      "mapping" : {
+          "topic_level" : {         // single topic level
+              "name" : "topic_level_name",
+              "topic_level" : {     // sub-topic level
+                  "name" : "sub_topic_level_name",
+              }
+          }
+      }
+  \end{jsoncode}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+  \begin{jsoncode}[autogobble=true]
+      "mapping" : {
+          "topic_level" : [{     // 1st sibling topic level
+              "name" : "sibling_1_topic_level_name",
+              ...
+          }, {                   // 2nd sibling topic level
+              "name" : "sibling_2_topic_level_name",
+              "topic_level" : {  // sub-topic level
+                  "name" : "sub_topic_level_name",
+                  ...
+              }
+          }]
+      }
+  \end{jsoncode}
+  \end{column}
+\end{columns}
+\end{frame}
+

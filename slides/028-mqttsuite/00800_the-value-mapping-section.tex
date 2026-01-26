@@ -1,0 +1,19 @@
+﻿\subsection{The \alert{\texttt{value}} Mapping Section}
+
+\begin{frame}[fragile]{The \alert{\texttt{value}} Mapping Section}
+  The \textcolor{fh-ooe-red}{\texttt{value}} mapping section describes the \alert{mapped topic} and the \alert{message mapping} where the \alert{incoming message} is \alert{interpreted as value} of an \alert{\href{https://github.com/pantor/inja/tree/master}{inja template}}.
+  \begin{itemize}
+  \item The \alert{incoming message} is available in the variable \texttt{\textcolor{grassgreen}{message}}
+  \end{itemize}
+
+  \begin{jsoncode}[gobble=8,morekeywords={[3]{message}},keywordstyle={[3]\textcolor{grassgreen}}]
+        "value" : {
+            "mapped_topic" : "test/onboard/set",
+            "mapping_template" : "{% if message == \"pressed\" %}on{% else if message == \"released\" %}off{% endif %}",
+            "retain" : false,
+            "qos" : 0
+        }
+  \end{jsoncode}
+  Have a look at the \alert{\href{https://github.com/pantor/inja/tree/master}{inja documentation}} for more details about templates.
+\end{frame}
+

@@ -1,0 +1,48 @@
+﻿\subsection{IPv4 and IPv6: Section \textcolor{fh-ooe-red}{\lstinline|remote|}}
+
+\begin{frame}[fragile]{Section \alert{\lstinline|remote|} of IPv4 or IPv6 Server and Client Instances}
+\begin{columns}[T, onlytextwidth]
+\begin{column}{0.5\textwidth}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoserver \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{remote} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+Remote side of connection for instance 'echo'
+
+Usage: echoserver echo remote [OPTIONS]
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{--numeric-reverse}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Suppress reverse host name lookup
+\end{Verbatim}
+\end{scriptsize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoclient \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{remote} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+Remote side of connection for instance 'echo'
+
+Usage: echoclient echo remote [OPTIONS] \textcolor{blue}{REQUIRED}
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{--host} hostname|IPv4:TEXT \textcolor{blue}{REQUIRED}
+       Host name or IPv4 address
+  \textcolor{fh-ooe-red}{--port} port:UINT in [0 - 65535] \textcolor{blue}{REQUIRED}
+       Port number
+  \textcolor{fh-ooe-red}{--numeric}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Suppress host name lookup
+  \textcolor{fh-ooe-red}{--numeric-reverse}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Suppress reverse host name lookup
+\end{Verbatim}
+\end{scriptsize}
+\end{column}
+\end{columns}
+\end{frame}

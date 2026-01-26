@@ -1,0 +1,38 @@
+\subsection{Persistent Application Configuration}
+
+\begin{frame}[fragile]{Persistent Application Configuration}
+%Vortsetzung
+%\vspace{0.2cm}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoserver --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+Options (\textcolor{fh-ooe-red}{nonpersistent}):
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{-l},\textcolor{fh-ooe-red}{--log-level} level:INT in [0 - 6] [\textcolor{lightblue}{4}]
+       Log level
+  \textcolor{fh-ooe-red}{-v},\textcolor{fh-ooe-red}{--verbose-level} level:INT in [0 - 10] [\textcolor{lightblue}{1}]
+       Verbose level
+  \textcolor{fh-ooe-red}{-q}\{\textcolor{cyan}{true}\},\textcolor{fh-ooe-red}{-u}\{\textcolor{cyan}{false}\},\textcolor{fh-ooe-red}{--quiet}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Quiet mode
+  \textcolor{fh-ooe-red}{--log-file} logfile:NOT DIR [\textcolor{lightblue}{/home/voc/.local/log/snode.c/echoserver.log}]
+       Log file path
+  \textcolor{fh-ooe-red}{-e}\{\textcolor{cyan}{true}\},\textcolor{fh-ooe-red}{-n}\{\textcolor{cyan}{false}\},\textcolor{fh-ooe-red}{--enforce-log-file}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Enforce writing of logs to file for foreground applications
+  \textcolor{fh-ooe-red}{-d}\{\textcolor{cyan}{true}\},\textcolor{fh-ooe-red}{-f}\{\textcolor{cyan}{false}\},\textcolor{fh-ooe-red}{--daemonize}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Start application as daemon
+  \textcolor{fh-ooe-red}{--user-name} username [\textcolor{lightblue}{voc}]    Needs: \textcolor{magenta}{--daemonize}
+       Run daemon under specific user permissions
+  \textcolor{fh-ooe-red}{--group-name} groupname [\textcolor{lightblue}{voc}]    Needs: \textcolor{magenta}{--daemonize}
+       Run daemon under specific group permissions
+
+Instances:
+  \textcolor{fh-ooe-red}{echo} \textcolor{blue}{REQUIRED}
+       Configuration for server instance '\textcolor{fh-ooe-red}{echo}'
+\end{Verbatim}
+\end{scriptsize}
+\end{frame}

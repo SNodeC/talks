@@ -1,0 +1,24 @@
+﻿\subsection{The RFCOMM Server Application}
+
+\begin{frame}[fragile]{The RFCOMM Server Application}
+  \begin{cppcode}[autogobble=true, caption={RFCOMM server application.},captionpos=b, morekeywords={[2]{SocketServer,EchoServerContextFactory,listen}}]
+    #include "EchoServerContextFactory.h"
+    #include <net/rc/stream/legacy/SocketServer.h>
+
+    int main(int argc, char* argv[]) {
+        core::SNodeC::init(argc, argv);
+
+        using EchoServer = net::rc::stream::legacy::SocketServer<EchoServerContextFactory>;
+        using SocketAddress = EchoServer::SocketAddress;
+
+        EchoServer echoServer;
+
+        echoServer.listen(1, [](const SocketAddress& socketAddress,
+                                const core::socket::State& state) -> void {
+            // State processing
+        });
+
+        return core::SNodeC::start();
+    }
+  \end{cppcode}
+\end{frame}

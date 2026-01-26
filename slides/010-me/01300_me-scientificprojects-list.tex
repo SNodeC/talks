@@ -1,0 +1,20 @@
+﻿\part{\tt{me->scientificProjects().list();}}
+
+\begin{frame}[fragile]{\tt{me->scientificProjects().list();}}
+  \begin{cppcode}[autogobble=true,captionpos=b,morekeywords={[2]project}]
+    for(const auto& project: me->scientificProjects().list()) {
+      std::cout << project.getNumber() << " -> " << project.getName() << std::endl;
+    }
+  \end{cppcode}
+
+  \begin{description}
+    \item[0] {\texttt{->}} The MATRIX
+    \item[1] {\texttt{->}} Context Framework
+    \item[2] {\texttt{->}} Bavarian Emergency Scenario
+    \item[3] {\texttt{->}} Repair
+    \item[4] {\texttt{->}} Instar
+    \item[5] {\texttt{->}} SNode.C
+    \item[6] {\texttt{->}} MQTTSuite
+  \end{description}
+\end{frame}
+

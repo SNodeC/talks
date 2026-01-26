@@ -1,0 +1,102 @@
+% Requires in your preamble:
+% \usepackage{graphicx}
+% (optional) \usepackage{ragged2e}
+\part{The ESP32 Microcontroller}
+
+\section[nosectionpage]{What it is}
+% --------------------------------------------------------------------
+\begin{frame}{What it is}
+\begin{columns}[T,onlytextwidth]
+  \begin{column}{0.62\textwidth}
+    \begin{itemize}
+      \item \textbf{ESP32 = low-cost microcontroller SoC} for IoT
+      \item Integrated \textbf{2.4\,GHz Wi-Fi} + \textbf{Bluetooth (Classic + BLE)}
+      \item 32-bit CPU (many ESP32 variants exist; classic ESP32 is Xtensa LX6)
+      \item Runs from \textbf{3.3\,V}, designed for battery / low-power use
+      \item Typical uses: sensors, smart home, robotics, wearables, gateways
+    \end{itemize}
+    \vspace{0.3em}
+    \footnotesize
+    Key idea: \textit{“One chip = CPU + radio + lots of peripherals.”}
+  \end{column}
+  \begin{column}{0.38\textwidth}
+    \centering
+    % Download a DevKitC photo and place it as: figures/esp32_devkitc.jpg
+    % Example page: https://www.espressif.com/en/products/devkits/esp32-devkitc
+    \includegraphics[width=\linewidth]{figures/esp32_devkitc}\\
+    \scriptsize Example dev board (ESP32-DevKitC)
+  \end{column}
+\end{columns}
+\end{frame}
+
+\section[nosectionpage]{Core Architecture}
+% --------------------------------------------------------------------
+\begin{frame}{Core Architecture (big picture)}
+\begin{columns}[T,onlytextwidth]
+  \begin{column}{0.55\textwidth}
+    \begin{itemize}
+      \item \textbf{CPU + memory}: ROM + SRAM on-chip, external flash via QSPI
+      \item \textbf{Radio blocks}: Wi-Fi MAC/Baseband + Bluetooth controller
+      \item \textbf{RTC + sleep modes}: deep-sleep with RTC domain alive
+      \item \textbf{ULP co-processor}: can sample sensors while main cores sleep
+      \item Hardware security building blocks (secure boot / flash encryption)
+    \end{itemize}
+    \vspace{0.3em}
+    \footnotesize
+    Good mental model: \textit{PC-like blocks, but optimized for embedded + wireless.}
+  \end{column}
+  \begin{column}{0.45\textwidth}
+    \centering
+    % Use a functional/block diagram (from datasheet or a teaching diagram)
+    % Example page with a diagram: https://www.circuitstate.com/tutorials/getting-started-with-espressif-esp32-wifi-bluetooth-soc-using-doit-esp32-devkit-v1-development-board/
+    \includegraphics[width=\linewidth]{figures/esp32_blockdiagram}\\
+    \scriptsize Functional block diagram (overview)
+  \end{column}
+\end{columns}
+\end{frame}
+
+\section[nosectionpage]{Peripherals \& I/O}
+% --------------------------------------------------------------------
+\begin{frame}{Peripherals \& I/O: Why Makers Love it}
+\begin{columns}[T,onlytextwidth]
+  \begin{column}{0.5\textwidth}
+    \begin{itemize}
+      \item \textbf{GPIO matrix}: many pins can be routed to many functions
+      \item Analog: \textbf{12-bit ADC} (multiple channels), \textbf{DAC} (2 ch)
+      \item Serial buses: \textbf{UART}, \textbf{SPI}, \textbf{I\textsuperscript{2}C}, \textbf{I\textsuperscript{2}S}
+      \item Timing/control: timers, watchdogs, \textbf{PWM} (LED/motor), \textbf{RMT}
+      \item Connectivity extras: \textbf{SD/SDIO}, \textbf{Ethernet MAC}, \textbf{TWAI (CAN)}
+      \item Human input: \textbf{capacitive touch} (on many ESP32 variants)
+    \end{itemize}
+    \footnotesize
+    Practical note: pins are \textbf{3.3\,V only} (use level shifters for 5\,V sensors).
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \centering
+    % Download an ESP32 module photo and place it as: figures/esp32_module.jpg
+    % Example page: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
+    \includegraphics[width=\linewidth]{figures/ESP32-Pinout}\\
+    \scriptsize ESP32 module (shield can + antenna)
+  \end{column}
+\end{columns}
+\end{frame}
+
+\section[nosectionpage]{Programming Ecosystem}
+% --------------------------------------------------------------------
+\begin{frame}{Programming Ecosystem (what students should remember)}
+\begin{itemize}
+  \item \textbf{ESP-IDF (official)}: C/C++ toolchain, drivers, Wi-Fi/BLE stacks, FreeRTOS
+  \item \textbf{Arduino core}: easiest entry, huge library ecosystem
+  \item \textbf{MicroPython}: fast prototyping, great for teaching
+  \item Typical workflow: write code \(\rightarrow\) flash via USB \(\rightarrow\) debug via serial monitor
+  \item Real-world concerns:
+    \begin{itemize}
+      \item Power modes (deep-sleep), battery life
+      \item Wireless reliability (RSSI, antennas), OTA updates
+      \item Basic security: credentials, encrypted transport (TLS), secure boot options
+    \end{itemize}
+\end{itemize}
+\vspace{0.3em}
+\footnotesize
+Mini demo idea: read a temperature sensor + publish via Wi-Fi (MQTT) or advertise via BLE.
+\end{frame}

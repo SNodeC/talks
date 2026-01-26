@@ -1,0 +1,24 @@
+\begin{frame}{The LoRa Physical Frame}
+
+  \begin{center}
+    Uplink Frame\\
+    \includegraphics[width=0.7\textwidth]{material/phy-downlink.png}\\
+    \vskip1em
+    Downlink Frame\\
+    \includegraphics[width=0.7\textwidth]{material/phy-uplink.png}
+  \end{center}
+  \begin{itemize}
+    \item The \alert{PHDR} encodes the
+    \begin{itemize}
+      \item Header Type (1 bit)
+      \item Payload Length incl. PHDR, PHDR\_CRC and CRC in symbols (8 bit),
+      \item Coding Rate (3 bits),
+      \item CRC Enabled (1 bit),
+      \item Reserved (1 bit),
+    \end{itemize}
+    \item The \alert{PHDR\_CRC} is 16 bit long.
+    \item The total length of PHDR + PHDR\_CRC is 8 bytes.
+    \item The maximum total frame size without the preamble is 255 symbols.
+    \item The CRC is appended in case requested via the PHDR.
+  \end{itemize}
+\end{frame}

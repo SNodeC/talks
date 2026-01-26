@@ -1,0 +1,36 @@
+\withsectionpage
+\section{Instance Configuration}
+\nosectionpage
+\subsection{Nonpersistent and Persistent Instance Configuration}
+
+\begin{frame}[fragile]{Nonpersistent and Persistent Instance Configuration}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoserver \textcolor{fh-ooe-red}{echo} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+Configuration for server instance '\textcolor{fh-ooe-red}{echo}'
+
+Usage: echoserver \textcolor{fh-ooe-red}{echo} [OPTIONS] [SECTIONS [--help]]
+
+Options (\textcolor{fh-ooe-red}{nonpersistent}):
+  \textcolor{fh-ooe-red}{-s},\textcolor{fh-ooe-red}{--show-config}
+       Show current configuration and exit
+  \textcolor{fh-ooe-red}{--command-line}\{\textcolor{cyan}{standard}\}=\{standard,required,full,default\}
+       Print a command line
+         standard (default): View all non-default and required options
+         required: View required options only
+         full: View the full set of options with their default or configured values
+         default: View the full set of options with their default values
+  \textcolor{fh-ooe-red}{-h}\{\textcolor{cyan}{standard}\},\textcolor{fh-ooe-red}{--help}\{\textcolor{cyan}{standard}\}={standard,expanded}
+       Print help message
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{--disabled}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Disable this instance
+
+Sections:
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+\end{Verbatim}
+\end{scriptsize}
+\end{frame}

@@ -1,0 +1,33 @@
+\begin{frame}[fragile]{Section \alert{\lstinline|socket|} for Client}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoclient \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{socket} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+Configuration of \textcolor{fh-ooe-red}{socket behavior} for instance '\textcolor{fh-ooe-red}{echo}'
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{--reuse-address}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Reuse socket address
+  \textcolor{fh-ooe-red}{--retry}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Automatically retry listen|connect
+  \textcolor{fh-ooe-red}{--retry-on-fatal}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]  Needs: \textcolor{magenta}{--retry}
+       Retry also on fatal errors
+  \textcolor{fh-ooe-red}{--retry-timeout} sec:NONNEGATIVE [\textcolor{lightblue}{1}]  Needs: \textcolor{magenta}{--retry}
+       Timeout of the retry timer
+  \textcolor{fh-ooe-red}{--retry-tries} tries:UINT [\textcolor{lightblue}{0}]  Needs: \textcolor{magenta}{--retry}
+       Number of retry attempts before giving up (0 = unlimited)
+  \textcolor{fh-ooe-red}{--retry-base} base:POSITIVE [\textcolor{lightblue}{1.8}]  Needs: \textcolor{magenta}{--retry}
+       Base of exponential backoff
+  \textcolor{fh-ooe-red}{--retry-jitter} jitter:FLOAT in [0 - 100] [\textcolor{lightblue}{0}]  Needs: --retry
+       Maximum jitter in percent to apply randomly to calculated retry timeout (0 to disable)
+  \textcolor{fh-ooe-red}{--retry-limit} sec:NONNEGATIVE [\textcolor{lightblue}{0}]  Needs: \textcolor{magenta}{--retry}
+       Upper limit in seconds of retry timeout (0 for infinite)
+  \textcolor{fh-ooe-red}{--reconnect}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Auto-reconnection in the event of a connection interruption
+  \textcolor{fh-ooe-red}{--reconnect-time} sec:NONNEGATIVE [\textcolor{lightblue}{1}]  Needs: \textcolor{magenta}{--reconnect}
+       Duration after disconnect before reconnect
+  \textcolor{fh-ooe-red}{--connect-timeout} timeout:NONNEGATIVE [\textcolor{lightblue}{10}]
+       Connect timeout
+\end{Verbatim}
+\end{scriptsize}
+\end{frame}

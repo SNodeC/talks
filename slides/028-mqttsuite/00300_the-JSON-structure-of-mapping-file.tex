@@ -1,0 +1,31 @@
+﻿\subsection{The \alert{JSON Structure} of the Mapping File used by MQTTIntegrator}
+
+\begin{frame}[fragile]{The \alert{JSON Structure} of the Mapping File used by \alert{\texttt{mqttintegrator}}}
+  The big Structure of the JSON mapping description consists of three objects:
+  \begin{description}[discover\_prefix]
+    \item[discover\_prefix] The prefix topic-level of the discover topics of an application (currently not used).
+    \item[connection] This object describes options for the MQTT connection.
+    \item[mapping] This object describes the mappings of incoming topics|messages to outgoing topics/messages.
+  \end{description}
+
+  \begin{jsoncode}[gobble=4]
+    {
+        "discover_prefix" : "snode.c",         // discover prefix of the application (not used currently)
+        "connection" : {                       // connection options
+            "keep_alive" : 60,                 // [60]    duration between two ping packets
+            "client_id" : "Client",            // [""]    logical name of the client
+            "clean_session" : true,            // [true]  start with clean session or pick up retained one
+            "will_topic" : "will/topic",       // [""]    last will topic
+            "will_message" : "Last Will",      // [""]    last will message
+            "will_qos": 0,                     // [0]     last will qos
+            "will_retain" : false,             // [false] retain last will or not
+            "username" : "Username",           // [""]    username
+            "password" : "Password"            // [""]    password
+        },
+        "mapping" : {                          // mapping descriptions of templates|messages mapping
+            ...
+        }
+    }
+  \end{jsoncode}
+\end{frame}
+

@@ -1,0 +1,36 @@
+﻿\section[withsectionpage]{The MQTTIntegrator}
+
+\begin{frame}[fragile]{The MQTTIntegrator}
+\begin{itemize}
+\item It is prepared to connect via
+    \begin{description}[xxxxxwss-mqtt]
+        \item [mqtt] via IPv4
+        \item [mqtts] via IPv4
+        \item [mqtt] via unix domain socket
+        \item [ws-mqtt] via IPv4
+        \item [wss-mqtt] via IPv4
+    \end{description}
+\item The corresponding instances are
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} mqttintegrator --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+\ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Instances:
+  \textcolor{fh-ooe-red}{in-mqtt}
+       Configuration for client instance 'in-mqtt'
+  \textcolor{fh-ooe-red}{in-mqtts}
+       Configuration for client instance 'in-mqtts'
+  \textcolor{fh-ooe-red}{un-mqtt}
+       Configuration for client instance 'un-mqtt'
+  \textcolor{fh-ooe-red}{in-wsmqtt}
+       Configuration for client instance 'in-wsmqtt'
+  \textcolor{fh-ooe-red}{in-wsmqtts}
+       Configuration for client instance 'in-wsmqtts'
+\end{Verbatim}
+\end{scriptsize}
+\end{itemize}
+\end{frame}
+

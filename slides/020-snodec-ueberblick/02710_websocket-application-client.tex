@@ -1,0 +1,30 @@
+﻿\begin{frame}[fragile]{WebSocket Client-Application}
+  \begin{cppcode}[autogobble=true, caption={WebSocket Client-Application.},captionpos=b,morekeywords={[2]{upgrade,connect,Request,Response}}]
+        #include "web/http/legacy/in/Client.h"
+
+        using LegacyClient = web::http::legacy::in::Client;
+        using Request = LegacyClient::Request;
+        using Response = LegacyClient::Response;
+
+        const LegacyClient legacyClient(
+            [](const std::shared_ptr<Request>& req) -> void { // Connection start and therefore also Request start
+                LOG(INFO) << "OnRequestBegin";
+                req->set("Sec-WebSocket-Protocol", "echo");
+                req->upgrade("/ws/", "websocket",
+                             [](const std::shared_ptr<Request>& req,
+                                const std::shared_ptr<Response>& res) -> void {
+                        VLOG(1) << "OnResponse";
+                        req->upgrade(res, [](bool success) -> void {
+                                // Failure processing (logging)
+                        });
+                    });
+            },
+            [](const std::shared_ptr<Request>& req) -> void {// Connection and therefore also Request end
+                LOG(INFO) << "OnRequestEnd";
+            }
+        );
+
+        legacyClient.connect("localhost", 8080, [] (const LegacyClient::SocketAddress& socketAddress,
+                                                    const core::socket::State& state) -> void {});
+  \end{cppcode}
+\end{frame}

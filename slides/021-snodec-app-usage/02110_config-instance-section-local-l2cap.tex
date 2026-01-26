@@ -1,0 +1,46 @@
+\subsection{L2CAP: Section \textcolor{fh-ooe-red}{\lstinline|local|}}
+
+\begin{frame}[fragile]{Section \alert{\lstinline|local|} of L2CAP Server and Client Instances}
+\begin{columns}[T, onlytextwidth]
+\begin{column}{0.5\textwidth}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoserver \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{local} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+Local side of connection for instance '\textcolor{fh-ooe-red}{echo}'
+
+Usage: echoserver \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{local} [OPTIONS] \textcolor{blue}{REQUIRED}
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{--host} xx:xx:xx:xx:xx:xx:TEXT [\textcolor{lightblue}{00:00:00:00:00:00}]
+       Bluetooth address
+  \textcolor{fh-ooe-red}{--psm} psm:UINT in [0 - 65535] \textcolor{blue}{REQUIRED}
+       Protocol service multiplexer
+\end{Verbatim}
+\end{scriptsize}
+\end{column}
+\hspace{-0.33cm}\begin{column}{0.5\textwidth}
+\begin{scriptsize}
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{grassgreen}{command@line~>} echoclient \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{local} --help
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
+Local side of connection for instance '\textcolor{fh-ooe-red}{echo}'
+
+Usage: echoclient \textcolor{fh-ooe-red}{echo} \textcolor{fh-ooe-red}{local} [OPTIONS]
+
+  \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
+
+Options (\textcolor{fh-ooe-red}{persistent}):
+  \textcolor{fh-ooe-red}{--host} xx:xx:xx:xx:xx:xx:TEXT [\textcolor{lightblue}{00:00:00:00:00:00}]
+       Bluetooth address
+  \textcolor{fh-ooe-red}{--psm} psm:UINT in [0 - 65535] [\textcolor{lightblue}{0}]
+       Protocol service multiplexer
+\end{Verbatim}
+\end{scriptsize}
+\end{column}
+\end{columns}
+\end{frame}

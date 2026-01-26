@@ -1,0 +1,22 @@
+﻿\subsection{Express: Functionality}
+
+\begin{frame}{Express: Functionalities}{Application Protocols}
+   The express module is modeled on the node.js express framework in terms of API and function.
+   \begin{itemize}
+     \item \texttt{Express} Class from Node.JS is \texttt{WebApp} class in SNode.C.
+     \item \texttt{Router} Class from Node.JS is \texttt{Router} class in SNode.C
+     \item Routing API with \texttt{.get(\ldots)}, \texttt{.post(\ldots)}, \ldots, \texttt{.use(\ldots)}, \texttt{.all (\ldots)}, \texttt{next()}, \texttt{next("route")} and \texttt{next("router")} is the same as in Node.JS/Express
+     \item \alert{Application} and \alert{middleware} callbacks are \texttt{std::function<>}s e.g. \alert{Lambda} expressions
+     \item Treatment of \alert{cookies}, \alert{queries} and \alert{header} the same as in node.js-express
+     \item \alert{Regular-Expression} route matching
+     \item Currently existing middlewares:
+     \begin{description}[BasicAuthentication]
+       \item [StaticMiddleware] Delivery of static HTML sites
+       \item [JsonMiddleware] Parses JSON body into JSON data structure
+       \item [VHost] Supports \alert{virtual hosts} incl. \alert{certificate switching} for encrypted connection
+       \item [BasicAuthentication] Legacy username/password authentication
+       \item [VerboseRequest] Verbose logging of a request\\
+       Method, Queries, Header, Cookies, Body, Trailer.
+     \end{description}
+   \end{itemize}
+\end{frame}
