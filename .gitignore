@@ -25,5 +25,5 @@
 *.dvi
 /PCO.synctex(busy)
 *.lol
-*.pdf
+/*.pdf
 /PCO.staged
