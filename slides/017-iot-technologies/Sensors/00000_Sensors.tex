@@ -22,7 +22,7 @@
   \end{column}
   \begin{column}{0.38\textwidth}
     \centering
-%    \includegraphics[width=\linewidth]{figures/tds_cqrobot.jpg}\\
+    \includegraphics[width=0.8\linewidth]{figures/TDS}\\
     \scriptsize Example: CQRobot TDS module + probe
   \end{column}
 \end{columns}
@@ -73,7 +73,7 @@
   \end{column}
   \begin{column}{0.38\textwidth}
     \centering
-%    \includegraphics[width=\linewidth]{figures/turbidity_tsw20m.jpg}\\
+    \includegraphics[width=0.8\linewidth]{figures/Turbidity}\\
     \scriptsize TSW-20M style turbidity sensor + board
   \end{column}
 \end{columns}
@@ -107,7 +107,7 @@
 \section[withsectionpage]{pH Sensor Kit}
 \begin{frame}{pH Sensor Kit (B0B7NN3TSC / B08T645TYQ): Overview}
 \begin{columns}[T,onlytextwidth]
-  \begin{column}{0.62\textwidth}
+  \begin{column}{0.5\textwidth}
     \begin{itemize}
       \item \textbf{pH} describes acidity/alkalinity: scale \textbf{0--14}
       \item A glass \textbf{pH electrode} outputs a tiny voltage (very high impedance)
@@ -120,9 +120,9 @@
       \item Needs \textbf{calibration} with buffer solutions (pH 4/7/10)
     \end{itemize}
   \end{column}
-  \begin{column}{0.38\textwidth}
+  \begin{column}{0.5\textwidth}
     \centering
-%    \includegraphics[width=\linewidth]{figures/ph_kit.jpg}\\
+    \includegraphics[width=0.49\linewidth]{figures/PH-Interface+Temperature} \includegraphics[width=0.49\linewidth]{figures/PH-Electrode}\\
     \scriptsize Typical pH-4502C style board + probe
   \end{column}
 \end{columns}
@@ -172,7 +172,7 @@
   \end{column}
   \begin{column}{0.38\textwidth}
     \centering
-%    \includegraphics[width=\linewidth]{figures/gtu7_module.jpg}\\
+    \includegraphics[width=0.7\linewidth]{figures/GPS-GT-U7}\\
     \scriptsize GT-U7 module (patch antenna + UART pins)
   \end{column}
 \end{columns}
@@ -199,4 +199,68 @@
     \scriptsize Pin labels help a lot in class
   \end{column}
 \end{columns}
+\end{frame}
+
+% ------------------------------------------------------------
+
+\section[withsectionpage]{LoRa Interface}
+\begin{frame}{LoRa SX1262: What it is}
+\begin{columns}[T,onlytextwidth]
+  \begin{column}{0.62\textwidth}
+    \begin{itemize}
+      \item \textbf{SX1262 = sub-GHz LoRa transceiver} (radio chip, not a MCU)
+      \item Supports \textbf{LoRa modulation} for long range + \textbf{(G)FSK} for legacy modes
+      \item Key feature: \textbf{up to +22\,dBm TX power} (vs SX1261 typically +15\,dBm)
+      \item Optimized for \textbf{low power} LPWAN applications
+      \item Typical frequency bands: \textbf{EU868}, \textbf{US915}, others (depends on module + antenna)
+      \item Used in: sensors, trackers, buoys, remote meters, industrial telemetry
+    \end{itemize}
+    \vspace{0.3em}
+    \footnotesize
+    Mental model: ESP32 does the application + protocol; SX1262 does the RF link.
+  \end{column}
+
+  \begin{column}{0.38\textwidth}
+    \centering
+    % Put a photo of a SX1262 module here (e.g., Waveshare Core1262-868M).
+    \includegraphics[width=0.8\linewidth]{figures/SX1262}\\
+    \scriptsize SX1262 module (example)
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{SX1262 + ESP32: Wiring \& Software Pattern}
+\begin{columns}[T,onlytextwidth]
+  \begin{column}{0.62\textwidth}
+    \begin{itemize}
+      \item Interface is \textbf{SPI} + a few control/status pins:
+        \begin{itemize}
+          \item \textbf{NSS/CS}, \textbf{SCK}, \textbf{MOSI}, \textbf{MISO}
+          \item \textbf{DIO1} (IRQ line, signals TX done / RX done / timeouts)
+          \item \textbf{BUSY} (chip is busy, host must wait before SPI command)
+          \item \textbf{NRST} (reset)
+        \end{itemize}
+      \item Antenna: keep it \textbf{50\,\(\Omega\)} and use the correct band (EU868 antenna for EU868)
+      \item Software options:
+        \begin{itemize}
+          \item \textbf{Radio-only} (P2P LoRa): RadioLib, SX126x driver
+          \item \textbf{LoRaWAN} (TTN): LoRaWAN stack + SX1262 radio driver
+        \end{itemize}
+      \item Typical RadioLib constructor pattern: \texttt{Module(NSS, DIO1, RST, BUSY)}
+    \end{itemize}
+  \end{column}
+
+  \begin{column}{0.38\textwidth}
+    \centering
+    % Put a pinout/connection diagram here (e.g., Waveshare wiki pinout).
+    \includegraphics[width=\linewidth]{figures/SX1262-pinout}\\
+    \scriptsize Pinout / wiring overview (example)
+  \end{column}
+\end{columns}
+\end{frame}
+
+\section[withsectionpage]{Wiring Everything together}
+\begin{frame}[plain]
+\makebox[\linewidth]{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{figures/ESP32-SX1262-PH-Temp-TDS-Turbidity}}
 \end{frame}
