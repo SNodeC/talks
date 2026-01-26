@@ -1,0 +1,25 @@
+﻿\section{Typical Message Flow and Security}
+
+\begin{frame}{Typical Message Flow and Security (Big Picture)}
+  \begin{columns}[T]
+    \column{0.4\textwidth}
+      \textbf{Flow example (QoS 0):}
+      \vspace{0.5ex}
+
+      \centering
+      % Convert SVG to PDF/PNG if needed, then include here:
+      \includegraphics[width=1\linewidth]{images/MQTT_protocol_example_without_QoS.pdf}
+
+    \column{0.4\textwidth}
+      \textbf{Security essentials:}
+      \begin{itemize}
+        \item Use \textbf{TLS} (encrypted transport)
+        \item Authenticate clients (username/password or certificates)
+        \item Authorize with broker-side \textbf{ACLs} (which topics a client may pub/sub)
+        \item Optional: \textbf{mutual TLS} (client cert + server cert)
+      \end{itemize}
+
+      \centering
+      \includegraphics[width=\linewidth]{images/MQTT_single_broker_multiple_listener_tls_client.svg.pdf}
+  \end{columns}
+\end{frame}
