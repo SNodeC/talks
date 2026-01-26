@@ -8,9 +8,9 @@
         \item \alert{\textit{Bob} also sends a certificate} to \textit{Alice}. In case no \alert{client} certificate is configured for \textit{Bob} a public/private key pair is generated randomly.
         \item \textit{Bob} can now \alert{prove} the \alert{validity} of \textit{Alices} \alert{certificate} if he is tolled so (depends on \alert{configuration}):
         \begin{itemize}
-            \item If \textit{Bob} \alert{trusts} certificate authority \alert{EXCA} than its \alert{CA certificate (public key) is knowen} by \textit{Bob}. E.g. it is installed on the system and made been knowen to \textit{Bob} by the \alert{administrator}.
+            \item If \textit{Bob} \alert{trusts} certificate authority \alert{EXCA} then its \alert{CA certificate (public key) is knowen} by \textit{Bob}. E.g. it is installed on the system and made been knowen to \textit{Bob} by the \alert{administrator}.
             \item \textit{Bob} can now \alert{use the EXCA certificate} to \alert{validate} the \alert{certificate of \textit{Alice}}.
-            \item If \textit{Alice} certificate is \alert{proven valid} than \textit{Bob} \alert{can trust} \textit{Alice},
+            \item If \textit{Alice} certificate is \alert{proven valid} then \textit{Bob} \alert{can trust} \textit{Alice},
             \begin{description}[$\Rightarrow$]
                 \item [$\Rightarrow$] In case \textit{Bob} \alert{didn't trust} \textit{Alice} certificate he shall \alert{terminate the connection}.
                 \item [$\Rightarrow$] In case \textit{Bob} \alert{trusts} \textit{Alice} he can use \alert{\textit{Alice} public key and his private key} for encryption.

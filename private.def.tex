@@ -11,8 +11,8 @@
 \RequirePackage[dvipsnames]{xcolor}
 
 \author[Volker Christian]{Volker Christian}
-\degree[GA-IT]{\Huge Global Acting in IT}
-\title[IoT]{\Huge The Internet of Things}
+\degree[SHD]{\Large Spirit of Hit Days 2026}
+\title[ISCIS]{\Huge The Internet of Things and Sensors\hspace{2cm} for Controlling Invasive Species}
 \institute[FH-O\"O -- Hagenberg]{FH Upper Austria -- Campus Hagenberg\\School of Informatics, Communications and Media\\Softwarepark 11,\\4232 Hagenberg/Austria}
 \semester[WS 2024/25]{Winter Semester 2025/26}
 \date[03.09.2024]{02. September 2025}
@@ -82,3 +82,34 @@
     \immediate\openout\tf@lol\jobname.lol\relax
   \fi
 }
+
+
+\defbeamertemplate*{title page}{fh-ooe-local}[1][]
+{
+  \vbox{}
+  \vfill
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+      \ifx\insertdegree\@empty%
+      \else%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertdegree\par}%
+        \vskip0.25em%
+      \fi%
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    \vskip0em\par
+    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{date}\insertsemester
+    \end{beamercolorbox}\vskip0.5em
+  \end{centering}
+  \vfill
+}
+
+\setbeamertemplate{title page}[fh-ooe-local][colsep=-4bp]
