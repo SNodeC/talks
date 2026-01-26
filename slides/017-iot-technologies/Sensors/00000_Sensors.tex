@@ -7,7 +7,7 @@
 % ============================================================
 % Device 1: CQRobot TDS sensor (ASIN B08KXRHK7H)
 % ============================================================
-\section[withsectionpage]{Totaly Disolved Solids (TDS) Sensor}
+\section[nosectionpage]{Totaly Disolved Solids (TDS) Sensor}
 \begin{frame}{TDS Sensor (B08KXRHK7H): What it Measures}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.62\textwidth}
@@ -28,35 +28,35 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{TDS sensor + ESP32: Wiring \& Usage}
-\begin{columns}[T,onlytextwidth]
-  \begin{column}{0.62\textwidth}
-    \begin{itemize}
-      \item \textbf{Power:} connect to 3.3\,V (or 5\,V if required) + GND
-      \item \textbf{Signal:} analog OUT $\rightarrow$ \textbf{ESP32 ADC1 pin}
-            \begin{itemize}
-              \item Use \textbf{ADC1} (ADC2 conflicts with Wi-Fi on ESP32)
-              \item Oversample + average (e.g., 50--200 samples)
-            \end{itemize}
-      \item \textbf{Conversion:} voltage $\rightarrow$ conductivity/TDS using vendor formula
-      \item Optional: use an \textbf{external ADC (ADS1115)} for better resolution
-    \end{itemize}
-    \vspace{0.3em}
-    \footnotesize
-    Tip: keep the probe clean; avoid bubbles; measure in flowing water for stability.
-  \end{column}
-  \begin{column}{0.38\textwidth}
-    \centering
-%    \includegraphics[width=\linewidth]{figures/tds_wiring_ads1115.png}\\
-    \scriptsize Example wiring with external ADC
-  \end{column}
-\end{columns}
-\end{frame}
+% \begin{frame}{TDS sensor + ESP32: Wiring \& Usage}
+% \begin{columns}[T,onlytextwidth]
+%   \begin{column}{0.62\textwidth}
+%     \begin{itemize}
+%       \item \textbf{Power:} connect to 3.3\,V (or 5\,V if required) + GND
+%       \item \textbf{Signal:} analog OUT $\rightarrow$ \textbf{ESP32 ADC1 pin}
+%             \begin{itemize}
+%               \item Use \textbf{ADC1} (ADC2 conflicts with Wi-Fi on ESP32)
+%               \item Oversample + average (e.g., 50--200 samples)
+%             \end{itemize}
+%       \item \textbf{Conversion:} voltage $\rightarrow$ conductivity/TDS using vendor formula
+%       \item Optional: use an \textbf{external ADC (ADS1115)} for better resolution
+%     \end{itemize}
+%     \vspace{0.3em}
+%     \footnotesize
+%     Tip: keep the probe clean; avoid bubbles; measure in flowing water for stability.
+%   \end{column}
+%   \begin{column}{0.38\textwidth}
+%     \centering
+% %    \includegraphics[width=\linewidth]{figures/tds_wiring_ads1115.png}\\
+%     \scriptsize Example wiring with external ADC
+%   \end{column}
+% \end{columns}
+% \end{frame}
 
 % ============================================================
 % Device 2: Turbidity sensor module (ASIN B07SLRRX38 / TSW-20M)
 % ============================================================
-\section[withsectionpage]{Turbidity Sensor}
+\section[nosectionpage]{Turbidity Sensor}
 \begin{frame}{Turbidity Sensor (B07SLRRX38 / TSW-20M): Overview}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.62\textwidth}
@@ -79,32 +79,32 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{Turbidity + ESP32: Practical Integration}
-\begin{columns}[T,onlytextwidth]
-  \begin{column}{0.62\textwidth}
-    \begin{itemize}
-      \item \textbf{Power:} 5\,V + GND (share GND with ESP32)
-      \item \textbf{Analog OUT:}
-            \begin{itemize}
-              \item If output can exceed 3.3\,V: use a \textbf{voltage divider} into ADC1
-              \item Calibrate: “clear water” vs “known cloudy water” samples
-            \end{itemize}
-      \item \textbf{Digital OUT:} use for simple \textbf{clear/cloudy} threshold trigger
-      \item Maintenance: keep optical window clean (biofilm strongly affects readings)
-    \end{itemize}
-  \end{column}
-  \begin{column}{0.38\textwidth}
-    \centering
-%    \includegraphics[width=\linewidth]{figures/turbidity_board_pins.jpg}\\
-    \scriptsize Typical pins: V, G, A(analog), D(digital)
-  \end{column}
-\end{columns}
-\end{frame}
+% \begin{frame}{Turbidity + ESP32: Practical Integration}
+% \begin{columns}[T,onlytextwidth]
+%   \begin{column}{0.62\textwidth}
+%     \begin{itemize}
+%       \item \textbf{Power:} 5\,V + GND (share GND with ESP32)
+%       \item \textbf{Analog OUT:}
+%             \begin{itemize}
+%               \item If output can exceed 3.3\,V: use a \textbf{voltage divider} into ADC1
+%               \item Calibrate: “clear water” vs “known cloudy water” samples
+%             \end{itemize}
+%       \item \textbf{Digital OUT:} use for simple \textbf{clear/cloudy} threshold trigger
+%       \item Maintenance: keep optical window clean (biofilm strongly affects readings)
+%     \end{itemize}
+%   \end{column}
+%   \begin{column}{0.38\textwidth}
+%     \centering
+% %    \includegraphics[width=\linewidth]{figures/turbidity_board_pins.jpg}\\
+%     \scriptsize Typical pins: V, G, A(analog), D(digital)
+%   \end{column}
+% \end{columns}
+% \end{frame}
 
 % ============================================================
 % Device 3: pH sensor module + electrode (ASIN B0B7NN3TSC and/or B08T645TYQ)
 % ============================================================
-\section[withsectionpage]{pH Sensor Kit}
+\section[nosectionpage]{pH Sensor Kit}
 \begin{frame}{pH Sensor Kit (B0B7NN3TSC / B08T645TYQ): Overview}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.5\textwidth}
@@ -128,36 +128,36 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{pH + ESP32: Wiring \& Measurement Workflow}
-\begin{columns}[T,onlytextwidth]
-  \begin{column}{0.62\textwidth}
-    \begin{itemize}
-      \item \textbf{Power:} many boards expect \textbf{5\,V} (check yours) + GND
-      \item \textbf{Analog OUT $\rightarrow$ ESP32 ADC1}
-            \begin{itemize}
-              \item If OUT may exceed 3.3\,V: \textbf{divider} into ESP32
-              \item Use averaging + stable sampling time (electrodes are slow)
-            \end{itemize}
-      \item \textbf{Calibration:}
-            \begin{itemize}
-              \item measure buffers, adjust offset/slope (often 2 trim pots)
-              \item store calibration constants in flash/NVS
-            \end{itemize}
-      \item Optional: temperature sensor for \textbf{temperature compensation}
-    \end{itemize}
-  \end{column}
-  \begin{column}{0.38\textwidth}
-    \centering
-%    \includegraphics[width=\linewidth]{figures/ph_board_closeup.jpg}\\
-    \scriptsize BNC + analog output to ADC
-  \end{column}
-\end{columns}
-\end{frame}
+% \begin{frame}{pH + ESP32: Wiring \& Measurement Workflow}
+% \begin{columns}[T,onlytextwidth]
+%   \begin{column}{0.62\textwidth}
+%     \begin{itemize}
+%       \item \textbf{Power:} many boards expect \textbf{5\,V} (check yours) + GND
+%       \item \textbf{Analog OUT $\rightarrow$ ESP32 ADC1}
+%             \begin{itemize}
+%               \item If OUT may exceed 3.3\,V: \textbf{divider} into ESP32
+%               \item Use averaging + stable sampling time (electrodes are slow)
+%             \end{itemize}
+%       \item \textbf{Calibration:}
+%             \begin{itemize}
+%               \item measure buffers, adjust offset/slope (often 2 trim pots)
+%               \item store calibration constants in flash/NVS
+%             \end{itemize}
+%       \item Optional: temperature sensor for \textbf{temperature compensation}
+%     \end{itemize}
+%   \end{column}
+%   \begin{column}{0.38\textwidth}
+%     \centering
+% %    \includegraphics[width=\linewidth]{figures/ph_board_closeup.jpg}\\
+%     \scriptsize BNC + analog output to ADC
+%   \end{column}
+% \end{columns}
+% \end{frame}
 
 % ============================================================
 % Device 4: GT-U7 GPS module (ASIN B0CNGWV7MN)
 % ============================================================
-\section[withsectionpage]{Global Positioning System (GPS)}
+\section[nosectionpage]{Global Positioning System (GPS)}
 \begin{frame}{GT-U7 GPS Module (B0CNGWV7MN): What it Gives You}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.62\textwidth}
@@ -178,32 +178,32 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{GT-U7 + ESP32: Wiring \& Decoding}
-\begin{columns}[T,onlytextwidth]
-  \begin{column}{0.62\textwidth}
-    \begin{itemize}
-      \item \textbf{Power:} module supply (often 3.3--5\,V) + GND
-      \item \textbf{UART wiring:}
-            \begin{itemize}
-              \item GPS \textbf{TX} $\rightarrow$ ESP32 \textbf{RX} (e.g., UART2)
-              \item GPS \textbf{RX} $\leftarrow$ ESP32 \textbf{TX} (optional)
-              \item Check logic levels; level-shift if your module TX is 5\,V
-            \end{itemize}
-      \item \textbf{Software:} parse NMEA with TinyGPSPlus (Arduino) or ESP-IDF parser
-      \item Use-case idea: add GPS position to MQTT telemetry (asset tracking / buoys)
-    \end{itemize}
-  \end{column}
-  \begin{column}{0.38\textwidth}
-    \centering
-%    \includegraphics[width=\linewidth]{figures/gtu7_pins.jpg}\\
-    \scriptsize Pin labels help a lot in class
-  \end{column}
-\end{columns}
-\end{frame}
+% \begin{frame}{GT-U7 + ESP32: Wiring \& Decoding}
+% \begin{columns}[T,onlytextwidth]
+%   \begin{column}{0.62\textwidth}
+%     \begin{itemize}
+%       \item \textbf{Power:} module supply (often 3.3--5\,V) + GND
+%       \item \textbf{UART wiring:}
+%             \begin{itemize}
+%               \item GPS \textbf{TX} $\rightarrow$ ESP32 \textbf{RX} (e.g., UART2)
+%               \item GPS \textbf{RX} $\leftarrow$ ESP32 \textbf{TX} (optional)
+%               \item Check logic levels; level-shift if your module TX is 5\,V
+%             \end{itemize}
+%       \item \textbf{Software:} parse NMEA with TinyGPSPlus (Arduino) or ESP-IDF parser
+%       \item Use-case idea: add GPS position to MQTT telemetry (asset tracking / buoys)
+%     \end{itemize}
+%   \end{column}
+%   \begin{column}{0.38\textwidth}
+%     \centering
+% %    \includegraphics[width=\linewidth]{figures/gtu7_pins.jpg}\\
+%     \scriptsize Pin labels help a lot in class
+%   \end{column}
+% \end{columns}
+% \end{frame}
 
 % ------------------------------------------------------------
 
-\section[withsectionpage]{LoRa Interface}
+\section[nosectionpage]{LoRa Interface}
 \begin{frame}{LoRa SX1262: What it is}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.62\textwidth}
@@ -230,35 +230,35 @@
 \end{frame}
 
 % ------------------------------------------------------------
-\begin{frame}{SX1262 + ESP32: Wiring \& Software Pattern}
-\begin{columns}[T,onlytextwidth]
-  \begin{column}{0.55\textwidth}
-    \begin{itemize}
-      \item Interface is \textbf{SPI} + a few control/status pins:
-        \begin{itemize}
-          \item \textbf{NSS/CS}, \textbf{SCK}, \textbf{MOSI}, \textbf{MISO}
-          \item \textbf{DIO1} (IRQ line, signals TX done / RX done / timeouts)
-          \item \textbf{BUSY} (chip is busy, host must wait before SPI command)
-          \item \textbf{NRST} (reset)
-        \end{itemize}
-      \item Antenna: keep it \textbf{50\,\(\Omega\)} and use the correct band (EU868 antenna for EU868)
-      \item Software options:
-        \begin{itemize}
-          \item \textbf{Radio-only} (P2P LoRa): RadioLib, SX126x driver
-          \item \textbf{LoRaWAN} (TTN): LoRaWAN stack + SX1262 radio driver
-        \end{itemize}
-      \item Typical RadioLib constructor pattern: \texttt{Module(NSS, DIO1, RST, BUSY)}
-    \end{itemize}
-  \end{column}
-
-  \begin{column}{0.45\textwidth}
-    \centering
-    % Put a pinout/connection diagram here (e.g., Waveshare wiki pinout).
-    \includegraphics[width=0.9\linewidth]{figures/SX1262-pinout}\\
-    \scriptsize Pinout / wiring overview (example)
-  \end{column}
-\end{columns}
-\end{frame}
+% \begin{frame}{SX1262 + ESP32: Wiring \& Software Pattern}
+% \begin{columns}[T,onlytextwidth]
+%   \begin{column}{0.55\textwidth}
+%     \begin{itemize}
+%       \item Interface is \textbf{SPI} + a few control/status pins:
+%         \begin{itemize}
+%           \item \textbf{NSS/CS}, \textbf{SCK}, \textbf{MOSI}, \textbf{MISO}
+%           \item \textbf{DIO1} (IRQ line, signals TX done / RX done / timeouts)
+%           \item \textbf{BUSY} (chip is busy, host must wait before SPI command)
+%           \item \textbf{NRST} (reset)
+%         \end{itemize}
+%       \item Antenna: keep it \textbf{50\,\(\Omega\)} and use the correct band (EU868 antenna for EU868)
+%       \item Software options:
+%         \begin{itemize}
+%           \item \textbf{Radio-only} (P2P LoRa): RadioLib, SX126x driver
+%           \item \textbf{LoRaWAN} (TTN): LoRaWAN stack + SX1262 radio driver
+%         \end{itemize}
+%       \item Typical RadioLib constructor pattern: \texttt{Module(NSS, DIO1, RST, BUSY)}
+%     \end{itemize}
+%   \end{column}
+%
+%   \begin{column}{0.45\textwidth}
+%     \centering
+%     % Put a pinout/connection diagram here (e.g., Waveshare wiki pinout).
+%     \includegraphics[width=0.9\linewidth]{figures/SX1262-pinout}\\
+%     \scriptsize Pinout / wiring overview (example)
+%   \end{column}
+% \end{columns}
+% \end{frame}
 
 \section[withsectionpage]{Wiring Everything together}
 \begin{frame}[plain]

@@ -29,32 +29,6 @@
 \end{columns}
 \end{frame}
 
-\section[nosectionpage]{Core Architecture}
-% --------------------------------------------------------------------
-\begin{frame}{Core Architecture (big picture)}
-\begin{columns}[T,onlytextwidth]
-  \begin{column}{0.55\textwidth}
-    \begin{itemize}
-      \item \textbf{CPU + memory}: ROM + SRAM on-chip, external flash via QSPI
-      \item \textbf{Radio blocks}: Wi-Fi MAC/Baseband + Bluetooth controller
-      \item \textbf{RTC + sleep modes}: deep-sleep with RTC domain alive
-      \item \textbf{ULP co-processor}: can sample sensors while main cores sleep
-      \item Hardware security building blocks (secure boot / flash encryption)
-    \end{itemize}
-    \vspace{0.3em}
-    \footnotesize
-    Good mental model: \textit{PC-like blocks, but optimized for embedded + wireless.}
-  \end{column}
-  \begin{column}{0.45\textwidth}
-    \centering
-    % Use a functional/block diagram (from datasheet or a teaching diagram)
-    % Example page with a diagram: https://www.circuitstate.com/tutorials/getting-started-with-espressif-esp32-wifi-bluetooth-soc-using-doit-esp32-devkit-v1-development-board/
-    \includegraphics[width=\linewidth]{figures/esp32_blockdiagram}\\
-    \scriptsize Functional block diagram (overview)
-  \end{column}
-\end{columns}
-\end{frame}
-
 \section[nosectionpage]{Peripherals \& I/O}
 % --------------------------------------------------------------------
 \begin{frame}{Peripherals \& I/O: Why Makers Love it}
