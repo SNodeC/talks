@@ -43,6 +43,11 @@
 
 \setbeamerfont{lecture in toc}{size=\normalsize}
 
+\let\orig@@alert=\alert%
+\def\alert#1{%
+\textbf{\orig@@alert{#1}}
+}
+
 \let\orig@@maketitle=\maketitle%
 \def\maketitle{%
   \orig@@maketitle%
