@@ -2,14 +2,14 @@
 \part{\tt{me->techArtProjects().list();}}
 \withpartpage
 
-\begin{frame}[fragile]{\tt{me->techArtProjects().list();}}
-   Während meiner Tätigkeit als technischer Direktor des Entwicklungslabors \alert{Futurelab} am \alert{Ars Electronica Center} in Linz (1999 - 2002)
+\begin{frame}[t, fragile]{\tt{me->techArtProjects().list();}}
+\vspace*{0.5em}%
+   Während meiner Tätigkeit als technischer Direktor des Entwicklungslabors \alert{Futurelab} am \alert{Ars Electronica Center} in Linz (1999 - 2001)
   \begin{cppcode}[autogobble=true,captionpos=b,morekeywords={[2]project}]
     for(const auto& project: me->techArtProjects().list()) {
       std::cout << project.getNumber() << " -> " << project.getName() << std::endl;
     }
   \end{cppcode}
-
    \begin{description}
      \item[0] {\texttt{->}} Resonator
      \item[1] {\texttt{->}} Klangtheater GANZOHR

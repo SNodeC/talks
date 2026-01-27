@@ -2,15 +2,14 @@
 \part{\tt{me->scientificProjects().list();}}
 \withpartpage
 
-\begin{frame}[fragile]{\tt{me->scientificProjects().list();}}
-Während meiner Anstellung als Universitätsassistent an der \alert{Johannes Kepler University} in Linz\\(2002 - 2005)
-
+\begin{frame}[t, fragile]{\tt{me->scientificProjects().list();}}
+\vspace*{0.5em}%
+Während meiner Anstellung als Universitätsassistent an der \alert{Johannes Kepler University} in Linz (2001 - 2005)
   \begin{cppcode}[autogobble=true,captionpos=b,morekeywords={[2]project}]
     for(const auto& project: me->scientificProjects().list()) {
       std::cout << project.getNumber() << " -> " << project.getName() << std::endl;
     }
   \end{cppcode}
-
   \begin{description}
     \item[0] {\texttt{->}} The MATRIX
     \item[1] {\texttt{->}} Context Framework
