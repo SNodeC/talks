@@ -1,8 +1,9 @@
-﻿\part{\tt{me->artProjects().list();}}
+﻿\part{\tt{me->techArtProjects().list();}}
 
-\begin{frame}[fragile]{\tt{me->artProjects().list();}}
+\begin{frame}[fragile]{\tt{me->techArtProjects().list();}}
+  During my employment as Deputy Director of the development laboratory \alert{Futurelab} at the \alert{Ars Electronica Center} in Linz (1999 - 2002)
   \begin{cppcode}[autogobble=true,captionpos=b,morekeywords={[2]project}]
-    for(const auto& project: me->artProjects().list()) {
+    for(const auto& project: me->techArtProjects().list()) {
       std::cout << project.getNumber() << " -> " << project.getName() << std::endl;
     }
   \end{cppcode}
