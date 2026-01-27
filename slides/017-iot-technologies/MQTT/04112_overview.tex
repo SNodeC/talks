@@ -2,39 +2,39 @@
 
 \begin{frame}{Topics, QoS, Retained Messages und Last Will}
   \begin{itemize}
-\item \textbf{Topics sind hierarchisch}:
+\item \alert{Topics sind hierarchisch}:
 	\begin{itemize}
 \item \texttt{home/kitchen/temp},
 \item \texttt{factory/line1/motor/rpm}
 	\end{itemize}
-\item \textbf{Wildcards} (common):
+\item \alert{Wildcards} (häufig):
 	\begin{itemize}
-\item \texttt{+} = one level (\texttt{home/+/temp})
-\item \texttt{\#} = many levels (\texttt{home/\#})
+\item \texttt{+} = eine Ebene (\texttt{home/+/temp})
+\item \texttt{\#} = mehrere Ebenen (\texttt{home/\#})
 	\end{itemize}
-\item \textbf{QoS (Quality of Service)} = delivery guarantee level:
+\item \alert{QoS (Quality of Service)} = Zustellgarantie-Stufe:
 
   \vspace{0.5ex}
   \begin{tabular}{lll}
     \toprule
-    \textbf{QoS} & \textbf{Name} & \textbf{Meaning} \\
+    \alert{QoS} & \alert{Bezeichnung} & \alert{Bedeutung} \\
     \midrule
-    0 & At most once  & Fastest, no retries; message may be lost \\
-    1 & At least once & Retries until ACK; duplicates possible \\
-    2 & Exactly once  & Highest reliability; more overhead/handshakes \\
+    0 & At most once  & Am schnellsten, keine Wiederholungen; Nachricht kann verloren gehen \\
+    1 & At least once & Wiederholt bis ACK; Duplikate möglich \\
+    2 & Exactly once  & Höchste Zuverlässigkeit; mehr Overhead/Handshakes \\
     \bottomrule
   \end{tabular}
 
   \vspace{0.5ex}
-\item \textbf{Retained messages} (often used)
+\item \alert{Retained Messages} (häufig verwendet)
   \begin{itemize}
-\item Broker stores last value per topic
+\item Broker speichert den letzten Wert pro Topic
   \end{itemize}
 
   \vspace{0.5ex}
-\item \textbf{Last Will}
+\item \alert{Last Will}
   \begin{itemize}
-\item Broker publishes a “client died” message if a client disconnects unexpectedly
+\item Der Broker publiziert eine „Client ist ausgefallen“-Nachricht, wenn ein Client unerwartet die Verbindung verliert
   \end{itemize}
   \end{itemize}
 \end{frame}

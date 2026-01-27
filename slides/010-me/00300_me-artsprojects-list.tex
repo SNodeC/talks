@@ -1,7 +1,9 @@
-﻿\part{\tt{me->techArtProjects().list();}}
+﻿\nopartpage
+\part{\tt{me->techArtProjects().list();}}
+\withpartpage
 
 \begin{frame}[fragile]{\tt{me->techArtProjects().list();}}
-   Während meiner Tätigkeit als technischer Deputy Director des Entwicklungslabors \alert{Futurelab} at the \alert{Ars Electronica Center} in Linz (1999 - 2002)
+   Während meiner Tätigkeit als technischer Direktor des Entwicklungslabors \alert{Futurelab} am \alert{Ars Electronica Center} in Linz (1999 - 2002)
   \begin{cppcode}[autogobble=true,captionpos=b,morekeywords={[2]project}]
     for(const auto& project: me->techArtProjects().list()) {
       std::cout << project.getNumber() << " -> " << project.getName() << std::endl;

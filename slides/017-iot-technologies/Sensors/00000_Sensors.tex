@@ -7,39 +7,40 @@
 % ============================================================
 % Device 1: CQRobot TDS sensor (ASIN B08KXRHK7H)
 % ============================================================
-\section[nosectionpage]{Totaly Disolved Solids (TDS) Sensor}
-\begin{frame}{TDS Sensor (B08KXRHK7H): What it Measures}
+\section[nosectionpage]{Sensor für Total Dissolved Solids (TDS)}
+\begin{frame}{TDS-Sensor (B08KXRHK7H): Was er misst}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.62\textwidth}
     \begin{itemize}
-\item \textbf{TDS = Total Dissolved Solids} (ppm) \\
-            $\rightarrow$ proxy via \textbf{electrical conductivity}
+\item \alert{TDS = Total Dissolved Solids} (ppm) \\
+            $\rightarrow$ Proxy über die \alert{elektrische Leitfähigkeit}
 \item Typischer Einsatz: Monitoring der Wasserqualität (Süßwasser / Hydroponik / Labore)
-\item Dieses Board liefert \textbf{analoge Spannungsausgänge} für einen Mikrocontroller
-\item Versorgungsspannungsbereich: funktioniert mit \textbf{3.3\,V bis 5\,V‑Klasse}‑Versorgungen
-\item Practical note: \textbf{temperature compensation} improves accuracy
+\item Dieses Board liefert \alert{analoge Spannungsausgänge} für einen Mikrocontroller
+\item Versorgungsspannungsbereich: funktioniert mit \alert{\SIrange{3.3}{5}{\volt}}-Versorgung
+\item Praktischer Hinweis: \alert{Temperaturkompensation} erhöht die Genauigkeit
     \end{itemize}
   \end{column}
   \begin{column}{0.38\textwidth}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/TDS}\\
-    \scriptsize Example: CQRobot TDS module + probe
+    \scriptsize Beispiel: CQRobot TDS-Modul + Sonde
   \end{column}
 \end{columns}
 \end{frame}
+
 
 % \begin{frame}{TDS sensor + ESP32: Wiring \& Usage}
 % \begin{columns}[T,onlytextwidth]
 %   \begin{column}{0.62\textwidth}
 %     \begin{itemize}
-% \item \textbf{Versorgung:} an 3.3\,V (oder 5\,V falls erforderlich) + GND anschließen
-% \item \textbf{Signal:} analog OUT $\rightarrow$ \textbf{ESP32 ADC1 pin}
+% \item \alert{Versorgung:} an 3.3\,V (oder 5\,V falls erforderlich) + GND anschließen
+% \item \alert{Signal:} analog OUT $\rightarrow$ \alert{ESP32 ADC1 pin}
 % %             \begin{itemize}
-% \item Verwenden Sie \textbf{ADC1} (ADC2 kollidiert beim ESP32 mit Wi‑Fi)
+% \item Verwenden Sie \alert{ADC1} (ADC2 kollidiert beim ESP32 mit Wi‑Fi)
 % \item Oversample + average (e.g., 50--200 samples)
 % %             \end{itemize}
-% \item \textbf{Umrechnung:} Spannung \$\rightarrow\$ Leitfähigkeit/TDS mittels Herstellerformel
-% \item Optional: \textbf{externen ADC (ADS1115)} für bessere Auflösung verwenden
+% \item \alert{Umrechnung:} Spannung \$\rightarrow\$ Leitfähigkeit/TDS mittels Herstellerformel
+% \item Optional: \alert{externen ADC (ADS1115)} für bessere Auflösung verwenden
 %     \end{itemize}
 %     \vspace{0.3em}
 %     \footnotesize
@@ -61,35 +62,36 @@
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.62\textwidth}
     \begin{itemize}
-\item \textbf{Trübung} = „Trübheit“ durch Partikel im Wasser (optische Methode)
+\item \alert{Trübung} = „Trübheit“ durch Partikel im Wasser (optische Methode)
 \item Einsatzbereiche: Abwasser, Flüsse/Seen, Monitoring von Wasch-/Geschirrspülvorgängen
-\item Module typically provides:
+\item Das Modul stellt typischerweise bereit:
             \begin{itemize}
-\item \textbf{Analog output} (continuous turbidity signal)
-\item \textbf{Digital output} (threshold comparator)
+\item \alert{Analogausgang} (kontinuierliches Trübungs-Signal)
+\item \alert{Digitalausgang} (Schwellwert-Komparator)
             \end{itemize}
-\item Häufig versorgt über \textbf{5\,V} (Sensor + Conditioning-Board)
+\item Häufig versorgt über \alert{\SI{5}{\volt}} (Sensor + Conditioning-Board)
     \end{itemize}
   \end{column}
   \begin{column}{0.38\textwidth}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Turbidity}\\
-    \scriptsize TSW-20M style turbidity sensor + board
+    \scriptsize Trübungssensor im TSW-20M-Stil + Board
   \end{column}
 \end{columns}
 \end{frame}
+
 
 % \begin{frame}{Turbidity + ESP32: Practical Integration}
 % \begin{columns}[T,onlytextwidth]
 %   \begin{column}{0.62\textwidth}
 %     \begin{itemize}
-% \item \textbf{Versorgung:} 5\,V + GND (GND mit dem ESP32 gemeinsam)
-% \item \textbf{Analog OUT:}
+% \item \alert{Versorgung:} 5\,V + GND (GND mit dem ESP32 gemeinsam)
+% \item \alert{Analog OUT:}
 % %             \begin{itemize}
-% \item If output can exceed 3.3\,V: use a \textbf{voltage divider} into ADC1
+% \item If output can exceed 3.3\,V: use a \alert{voltage divider} into ADC1
 % \item Calibrate: “clear water” vs “known cloudy water” samples
 % %             \end{itemize}
-% \item \textbf{Digital OUT:} für einen einfachen \textbf{klar/trüb}-Schwellwert-Trigger verwenden
+% \item \alert{Digital OUT:} für einen einfachen \alert{klar/trüb}-Schwellwert-Trigger verwenden
 % \item Maintenance: keep optical window clean (biofilm strongly affects readings)
 %     \end{itemize}
 %   \end{column}
@@ -105,25 +107,25 @@
 % Device 3: pH sensor module + electrode (ASIN B0B7NN3TSC and/or B08T645TYQ)
 % ============================================================
 \section[nosectionpage]{pH Sensor Kit}
-\begin{frame}{pH Sensor Kit (B0B7NN3TSC / B08T645TYQ): Überblick}
+\begin{frame}{pH-Sensor-Kit (B0B7NN3TSC / B08T645TYQ): Überblick}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.5\textwidth}
     \begin{itemize}
-\item \textbf{pH} describes acidity/alkalinity: scale \textbf{0--14}
-\item A glass \textbf{pH electrode} outputs a tiny voltage (very high impedance)
+\item \alert{pH} beschreibt den Säure-/Basengrad: Skala \alert{0--14}
+\item Eine \alert{pH-Glaselektrode} liefert eine sehr kleine Spannung (sehr hohe Impedanz)
 \item Das Interface-Board:
             \begin{itemize}
 \item versorgt/konditioniert das Elektroden-Signal
-\item liefert einen \textbf{analogen Spannungsausgang} für den ADC eines Mikrocontrollers
-\item verwendet häufig einen \textbf{BNC‑Stecker} für die Sonde
+\item liefert einen \alert{analogen Spannungsausgang} für den ADC eines Mikrocontrollers
+\item verwendet häufig einen \alert{BNC-Stecker} für die Sonde
             \end{itemize}
-\item Benötigt \textbf{Kalibrierung} mit Pufferlösungen (pH 4/7/10)
+\item Benötigt \alert{Kalibrierung} mit Pufferlösungen (pH 4/7/10)
     \end{itemize}
   \end{column}
   \begin{column}{0.5\textwidth}
     \centering
     \includegraphics[width=0.49\linewidth]{figures/PH-Interface+Temperature} \includegraphics[width=0.49\linewidth]{figures/PH-Electrode}\\
-    \scriptsize Typical pH-4502C style board + probe
+    \scriptsize Typisches Board im pH-4502C-Stil + Sonde
   \end{column}
 \end{columns}
 \end{frame}
@@ -132,18 +134,18 @@
 % \begin{columns}[T,onlytextwidth]
 %   \begin{column}{0.62\textwidth}
 %     \begin{itemize}
-% \item \textbf{Power:} many boards expect \textbf{5\,V} (check yours) + GND
-% \item \textbf{Analog OUT $\rightarrow$ ESP32 ADC1}
+% \item \alert{Power:} many boards expect \alert{5\,V} (check yours) + GND
+% \item \alert{Analog OUT $\rightarrow$ ESP32 ADC1}
 % %             \begin{itemize}
-% \item If OUT may exceed 3.3\,V: \textbf{divider} into ESP32
+% \item If OUT may exceed 3.3\,V: \alert{divider} into ESP32
 % \item Mittelung + stabile Abtastzeit verwenden (Elektroden reagieren langsam)
 % %             \end{itemize}
-% \item \textbf{Calibration:}
+% \item \alert{Calibration:}
 % %             \begin{itemize}
 % \item measure buffers, adjust offset/slope (often 2 trim pots)
 % \item store calibration constants in flash/NVS
 % %             \end{itemize}
-% \item Optional: Temperatursensor für \textbf{Temperaturkompensation}
+% \item Optional: Temperatursensor für \alert{Temperaturkompensation}
 %     \end{itemize}
 %   \end{column}
 %   \begin{column}{0.38\textwidth}
@@ -158,22 +160,22 @@
 % Device 4: GT-U7 GPS module (ASIN B0CNGWV7MN)
 % ============================================================
 \section[nosectionpage]{Global Positioning System (GPS)}
-\begin{frame}{GT-U7 GPS Module (B0CNGWV7MN): What it Gives You}
+\begin{frame}{GT-U7 GPS-Modul (B0CNGWV7MN): Was es liefert}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.62\textwidth}
     \begin{itemize}
-\item Liefert \textbf{Position + Zeit} von GNSS‑Satelliten
-\item Outputs standard \textbf{NMEA sentences} over \textbf{UART serial}
-\item Die Standard-Baudrate ist häufig \textbf{9600 bps}
+\item Liefert \alert{Position + Zeit} von GNSS-Satelliten
+\item Gibt standardisierte \alert{NMEA-Sätze} über \alert{UART (seriell)} aus
+\item Die Standard-Baudrate ist häufig \alert{\SI{9600}{\bit\per\second}}
 \item Benötigt eine gute Antennenplatzierung (nahe Fenster / im Freien für den schnellsten Fix)
-\item Typische Ausgänge:
-            latitude, longitude, altitude, speed, UTC time, satellites in view
+\item Typische Ausgaben:
+            Latitude, Longitude, Höhe, Geschwindigkeit, UTC-Zeit, sichtbare Satelliten
     \end{itemize}
   \end{column}
   \begin{column}{0.38\textwidth}
     \centering
     \includegraphics[width=0.7\linewidth]{figures/GPS-GT-U7}\\
-    \scriptsize GT-U7 module (patch antenna + UART pins)
+    \scriptsize GT-U7-Modul (Patch-Antenne + UART-Pins)
   \end{column}
 \end{columns}
 \end{frame}
@@ -182,14 +184,14 @@
 % \begin{columns}[T,onlytextwidth]
 %   \begin{column}{0.62\textwidth}
 %     \begin{itemize}
-% \item \textbf{Power:} module supply (often 3.3--5\,V) + GND
-% \item \textbf{UART wiring:}
+% \item \alert{Power:} module supply (often 3.3--5\,V) + GND
+% \item \alert{UART wiring:}
 % %             \begin{itemize}
-% \item GPS \textbf{TX} $\rightarrow$ ESP32 \textbf{RX} (e.g., UART2)
-% \item GPS \textbf{RX} $\leftarrow$ ESP32 \textbf{TX} (optional)
+% \item GPS \alert{TX} $\rightarrow$ ESP32 \alert{RX} (e.g., UART2)
+% \item GPS \alert{RX} $\leftarrow$ ESP32 \alert{TX} (optional)
 % \item Logikpegel prüfen; Pegelwandlung einsetzen, wenn TX des Moduls 5\,V ist
 % %             \end{itemize}
-% \item \textbf{Software:} NMEA mit TinyGPSPlus (Arduino) oder dem ESP‑IDF‑Parser auswerten
+% \item \alert{Software:} NMEA mit TinyGPSPlus (Arduino) oder dem ESP‑IDF‑Parser auswerten
 % \item Use-Case-Idee: GPS-Position zu MQTT-Telemetrie hinzufügen (Asset-Tracking / Bojen)
 %     \end{itemize}
 %   \end{column}
@@ -203,49 +205,49 @@
 
 % ------------------------------------------------------------
 
-\section[nosectionpage]{LoRa Interface}
+\section[nosectionpage]{LoRa-Interface}
 \begin{frame}{LoRa SX1262: Was es ist}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.62\textwidth}
     \begin{itemize}
-\item \textbf{SX1262 = sub-GHz LoRa transceiver} (radio chip, not a MCU)
-\item Unterstützt \textbf{LoRa-Modulation} für große Reichweite + \textbf{(G)FSK} für Legacy-Modi
-\item Kernmerkmal: \textbf{bis zu +22\,dBm Sendeleistung} (SX1261 typischerweise +15\,dBm)
-\item Optimiert für \textbf{Low-Power}‑LPWAN‑Anwendungen
-\item Typische Frequenzbänder: \textbf{EU868}, \textbf{US915}, weitere (abhängig von Modul + Antenne)
-\item Used in: sensors, trackers, buoys, remote meters, industrial telemetry
+\item \alert{SX1262 = Sub-GHz-LoRa-Transceiver} (Funkchip, keine MCU)
+\item Unterstützt \alert{LoRa-Modulation} für große Reichweite sowie \alert{(G)FSK} für Legacy-Modi
+\item Kernmerkmal: \alert{bis zu \SI{22}{\dBm} Sendeleistung} (SX1261 typischerweise \SI{15}{\dBm})
+\item Optimiert für \alert{Low-Power}-LPWAN-Anwendungen
+\item Typische Frequenzbänder: \alert{EU868}, \alert{US915}, weitere (abhängig von Modul + Antenne)
+\item Einsatz in: Sensoren, Tracker, Bojen, Zähler/Fernablesung, industrielle Telemetrie
     \end{itemize}
     \vspace{0.3em}
     \footnotesize
-    Mental model: ESP32 does the application + protocol; SX1262 does the RF link.
+    Mentales Modell: Der ESP32 übernimmt Applikation und Protokoll; der SX1262 realisiert die Funkstrecke.
   \end{column}
 
   \begin{column}{0.38\textwidth}
     \centering
     % Put a photo of a SX1262 module here (e.g., Waveshare Core1262-868M).
     \includegraphics[width=0.8\linewidth]{figures/SX1262}\\
-    \scriptsize SX1262 module (example)
+    \scriptsize SX1262-Modul (Beispiel)
   \end{column}
 \end{columns}
 \end{frame}
 
 % ------------------------------------------------------------
-\begin{frame}{SX1262 + ESP32: Wiring \& Software Pattern}
+\begin{frame}{SX1262 + ESP32: Verdrahtung \& Software-Pattern}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.55\textwidth}
     \begin{itemize}
-\item Schnittstelle: \textbf{SPI} + einige Control-/Status-Pins:
+\item Schnittstelle: \alert{SPI} + einige Control-/Status-Pins:
         \begin{itemize}
-\item \textbf{NSS/CS}, \textbf{SCK}, \textbf{MOSI}, \textbf{MISO}
-\item \textbf{DIO1} (IRQ line, signals TX done / RX done / timeouts)
-\item \textbf{BUSY} (Chip ist beschäftigt; Host muss vor dem SPI-Befehl warten)
-\item \textbf{NRST} (reset)
+\item \alert{NSS/CS}, \alert{SCK}, \alert{MOSI}, \alert{MISO}
+\item \alert{DIO1} (IRQ-Leitung: signalisiert TX done / RX done / Timeouts)
+\item \alert{BUSY} (Chip ist beschäftigt; Host muss vor dem SPI-Befehl warten)
+\item \alert{NRST} (Reset)
          \end{itemize}
-\item Antenne: auf \textbf{50\,($\Omega$)} auslegen und das richtige Band verwenden (EU868‑Antenne für EU868)
-\item Software options:
+\item Antenne: auf \alert{\SI{50}{\ohm}} auslegen und das richtige Band verwenden (EU868-Antenne für EU868)
+\item Software-Optionen:
          \begin{itemize}
-\item \textbf{Radio-only} (P2P LoRa): RadioLib, SX126x driver
-\item \textbf{LoRaWAN} (TTN): LoRaWAN stack + SX1262 radio driver
+\item \alert{Nur Radio} (P2P LoRa): RadioLib, SX126x-Treiber
+\item \alert{LoRaWAN} (TTN): LoRaWAN-Stack + SX1262-Radio-Treiber
         \end{itemize}
 \item Typisches RadioLib-Konstruktor-Pattern: \texttt{Module(NSS, DIO1, RST, BUSY)}
     \end{itemize}
@@ -255,12 +257,13 @@
     \centering
     % Put a pinout/connection diagram here (e.g., Waveshare wiki pinout).
     \includegraphics[width=0.9\linewidth]{figures/SX1262-pinout}\\
-    \scriptsize Pinout / wiring overview (example)
+    \scriptsize Pinout / Verdrahtungsübersicht (Beispiel)
   \end{column}
 \end{columns}
 \end{frame}
 
-\section[withsectionpage]{Wiring Everything together}
+
+\section[withsectionpage]{Gesamtverdrahtung}
 \begin{frame}[plain]
 \makebox[\linewidth]{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{figures/ESP32-SX1262-PH-Temp-TDS-Turbidity}}
 \end{frame}

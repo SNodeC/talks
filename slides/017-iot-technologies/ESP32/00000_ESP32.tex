@@ -9,10 +9,10 @@
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.62\textwidth}
     \begin{itemize}
-\item \textbf{ESP32 = kostengünstiger Mikrocontroller-SoC} für IoT
-\item Integrated \textbf{2.4\,GHz Wi-Fi} + \textbf{Bluetooth (Classic + BLE)}
+\item \alert{ESP32 = kostengünstiger Mikrocontroller-SoC} für IoT
+\item Integrated \alert{2.4\,GHz Wi-Fi} + \alert{Bluetooth (Classic + BLE)}
 \item 32-Bit-CPU (es gibt viele ESP32-Varianten; der klassische ESP32 ist Xtensa LX6)
-\item Läuft mit \textbf{3.3\,V} und ist für Batteriebetrieb / Low-Power ausgelegt
+\item Läuft mit \alert{3.3\,V} und ist für Batteriebetrieb / Low-Power ausgelegt
 \item Typische Einsatzbereiche: Sensorik, Smart Home, Robotik, Wearables, Gateways
     \end{itemize}
     \vspace{0.3em}
@@ -31,46 +31,46 @@
 
 \section[nosectionpage]{Peripherals \& I/O}
 % --------------------------------------------------------------------
-\begin{frame}{Peripherals \& I/O: Why Makers Love it}
+\begin{frame}{Peripherie \& I/O: Warum Maker es lieben}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.5\textwidth}
     \begin{itemize}
-\item \textbf{GPIO-Matrix}: viele Pins können auf viele Funktionen geroutet werden
-\item Analog: \textbf{12-bit ADC} (multiple channels), \textbf{DAC} (2 ch)
-\item Serial buses: \textbf{UART}, \textbf{SPI}, \textbf{I\textsuperscript{2}C}, \textbf{I\textsuperscript{2}S}
-\item Timing/Steuerung: Timer, Watchdogs, \textbf{PWM} (LED/Motor), \textbf{RMT}
-\item Connectivity extras: \textbf{SD/SDIO}, \textbf{Ethernet MAC}, \textbf{TWAI (CAN)}
-\item Human input: \textbf{capacitive touch} (on many ESP32 variants)
+\item \alert{GPIO-Matrix}: Viele Pins können auf viele Funktionen geroutet werden
+\item Analog: \alert{12-bit ADC} (mehrere Kanäle), \alert{DAC} (2 Kanäle)
+\item Serielle Busse: \alert{UART}, \alert{SPI}, \alert{I\textsuperscript{2}C}, \alert{I\textsuperscript{2}S}
+\item Timing/Steuerung: Timer, Watchdogs, \alert{PWM} (LED/Motor), \alert{RMT}
+\item Connectivity-Extras: \alert{SD/SDIO}, \alert{Ethernet MAC}, \alert{TWAI (CAN)}
+\item Mensch-Maschine-Eingabe: \alert{kapazitiver Touch} (bei vielen ESP32-Varianten)
     \end{itemize}
     \footnotesize
-    Practical note: pins are \textbf{3.3\,V only} (use level shifters for 5\,V sensors).
+    Praktischer Hinweis: Pins sind \alert{nur 3{,}3\,V} (für 5\,V-Sensoren Pegelwandler verwenden).
   \end{column}
   \begin{column}{0.5\textwidth}
     \centering
     % Download an ESP32 module photo and place it as: figures/esp32_module.jpg
     % Example page: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
     \includegraphics[width=\linewidth]{figures/ESP32-Pinout}\\
-    \scriptsize ESP32 module (shield can + antenna)
+    \scriptsize ESP32-Modul (Schirmblech + Antenne)
   \end{column}
 \end{columns}
 \end{frame}
 
 \section[nosectionpage]{Programming Ecosystem}
 % --------------------------------------------------------------------
-\begin{frame}{Programming Ecosystem (what students should remember)}
+\begin{frame}{Programmier-Ökosystem (was Studierende mitnehmen sollen)}
 \begin{itemize}
-\item \textbf{ESP-IDF (official)}: C/C++ toolchain, drivers, Wi-Fi/BLE stacks, FreeRTOS
-\item \textbf{Arduino core}: easiest entry, huge library ecosystem
-\item \textbf{MicroPython}: schnelles Prototyping, sehr gut für die Lehre
+\item \alert{ESP-IDF (offiziell)}: C/C++-Toolchain, Treiber, Wi-Fi/BLE-Stacks, FreeRTOS
+\item \alert{Arduino Core}: einfachster Einstieg, sehr großes Bibliotheks-Ökosystem
+\item \alert{MicroPython}: schnelles Prototyping, sehr gut für die Lehre
 \item Typischer Ablauf: Code schreiben \(\rightarrow\) per USB flashen \(\rightarrow\) über Serial Monitor debuggen
-\item Real-world concerns:
+\item Praxisrelevante Aspekte:
     \begin{itemize}
-\item Power modes (deep-sleep), battery life
-\item Wireless reliability (RSSI, antennas), OTA updates
-\item Basic security: credentials, encrypted transport (TLS), secure boot options
+\item Energiemodi (Deep-Sleep), Batterielaufzeit
+\item Zuverlässigkeit der Funkverbindung (RSSI, Antennen), OTA-Updates
+\item Grundlegende Sicherheit: Zugangsdaten, verschlüsselter Transport (TLS), Secure-Boot-Optionen
     \end{itemize}
 \end{itemize}
 \vspace{0.3em}
 \footnotesize
-Mini-Demo-Idee: read a temperature sensor + publish via Wi-Fi (MQTT) or advertise via BLE.
+Mini-Demo-Idee: Einen Temperatursensor auslesen + per Wi-Fi (MQTT) publizieren oder per BLE announcen.
 \end{frame}
