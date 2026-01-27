@@ -2,7 +2,7 @@
 % \usepackage{graphicx}
 % \usepackage{siunitx}
 
-\part{Sensors for IoT}
+\part{Sensoren für IoT}
 
 % ============================================================
 % Device 1: CQRobot TDS sensor (ASIN B08KXRHK7H)
@@ -12,12 +12,12 @@
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.62\textwidth}
     \begin{itemize}
-      \item \textbf{TDS = Total Dissolved Solids} (ppm) \\
+\item \textbf{TDS = Total Dissolved Solids} (ppm) \\
             $\rightarrow$ proxy via \textbf{electrical conductivity}
-      \item Typical use: water quality monitoring (freshwater / hydroponics / labs)
-      \item This board provides \textbf{analog voltage output} for a microcontroller
-      \item Input supply range: works from \textbf{3.3\,V to 5\,V-class} supplies
-      \item Practical note: \textbf{temperature compensation} improves accuracy
+\item Typischer Einsatz: Monitoring der Wasserqualität (Süßwasser / Hydroponik / Labore)
+\item Dieses Board liefert \textbf{analoge Spannungsausgänge} für einen Mikrocontroller
+\item Versorgungsspannungsbereich: funktioniert mit \textbf{3.3\,V bis 5\,V‑Klasse}‑Versorgungen
+\item Practical note: \textbf{temperature compensation} improves accuracy
     \end{itemize}
   \end{column}
   \begin{column}{0.38\textwidth}
@@ -32,14 +32,14 @@
 % \begin{columns}[T,onlytextwidth]
 %   \begin{column}{0.62\textwidth}
 %     \begin{itemize}
-%       \item \textbf{Power:} connect to 3.3\,V (or 5\,V if required) + GND
-%       \item \textbf{Signal:} analog OUT $\rightarrow$ \textbf{ESP32 ADC1 pin}
-%             \begin{itemize}
-%               \item Use \textbf{ADC1} (ADC2 conflicts with Wi-Fi on ESP32)
-%               \item Oversample + average (e.g., 50--200 samples)
-%             \end{itemize}
-%       \item \textbf{Conversion:} voltage $\rightarrow$ conductivity/TDS using vendor formula
-%       \item Optional: use an \textbf{external ADC (ADS1115)} for better resolution
+% \item \textbf{Versorgung:} an 3.3\,V (oder 5\,V falls erforderlich) + GND anschließen
+% \item \textbf{Signal:} analog OUT $\rightarrow$ \textbf{ESP32 ADC1 pin}
+% %             \begin{itemize}
+% \item Verwenden Sie \textbf{ADC1} (ADC2 kollidiert beim ESP32 mit Wi‑Fi)
+% \item Oversample + average (e.g., 50--200 samples)
+% %             \end{itemize}
+% \item \textbf{Umrechnung:} Spannung \$\rightarrow\$ Leitfähigkeit/TDS mittels Herstellerformel
+% \item Optional: \textbf{externen ADC (ADS1115)} für bessere Auflösung verwenden
 %     \end{itemize}
 %     \vspace{0.3em}
 %     \footnotesize
@@ -57,18 +57,18 @@
 % Device 2: Turbidity sensor module (ASIN B07SLRRX38 / TSW-20M)
 % ============================================================
 \section[nosectionpage]{Turbidity Sensor}
-\begin{frame}{Turbidity Sensor (B07SLRRX38 / TSW-20M): Overview}
+\begin{frame}{Turbidity Sensor (B07SLRRX38 / TSW-20M): Überblick}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.62\textwidth}
     \begin{itemize}
-      \item \textbf{Turbidity} = “cloudiness” from particles in water (optical method)
-      \item Used for: wastewater, rivers/lakes, washing/dishwasher monitoring
-      \item Module typically provides:
+\item \textbf{Trübung} = „Trübheit“ durch Partikel im Wasser (optische Methode)
+\item Einsatzbereiche: Abwasser, Flüsse/Seen, Monitoring von Wasch-/Geschirrspülvorgängen
+\item Module typically provides:
             \begin{itemize}
-              \item \textbf{Analog output} (continuous turbidity signal)
-              \item \textbf{Digital output} (threshold comparator)
+\item \textbf{Analog output} (continuous turbidity signal)
+\item \textbf{Digital output} (threshold comparator)
             \end{itemize}
-      \item Often powered from \textbf{5\,V} (sensor + conditioning board)
+\item Häufig versorgt über \textbf{5\,V} (Sensor + Conditioning-Board)
     \end{itemize}
   \end{column}
   \begin{column}{0.38\textwidth}
@@ -83,14 +83,14 @@
 % \begin{columns}[T,onlytextwidth]
 %   \begin{column}{0.62\textwidth}
 %     \begin{itemize}
-%       \item \textbf{Power:} 5\,V + GND (share GND with ESP32)
-%       \item \textbf{Analog OUT:}
-%             \begin{itemize}
-%               \item If output can exceed 3.3\,V: use a \textbf{voltage divider} into ADC1
-%               \item Calibrate: “clear water” vs “known cloudy water” samples
-%             \end{itemize}
-%       \item \textbf{Digital OUT:} use for simple \textbf{clear/cloudy} threshold trigger
-%       \item Maintenance: keep optical window clean (biofilm strongly affects readings)
+% \item \textbf{Versorgung:} 5\,V + GND (GND mit dem ESP32 gemeinsam)
+% \item \textbf{Analog OUT:}
+% %             \begin{itemize}
+% \item If output can exceed 3.3\,V: use a \textbf{voltage divider} into ADC1
+% \item Calibrate: “clear water” vs “known cloudy water” samples
+% %             \end{itemize}
+% \item \textbf{Digital OUT:} für einen einfachen \textbf{klar/trüb}-Schwellwert-Trigger verwenden
+% \item Maintenance: keep optical window clean (biofilm strongly affects readings)
 %     \end{itemize}
 %   \end{column}
 %   \begin{column}{0.38\textwidth}
@@ -105,19 +105,19 @@
 % Device 3: pH sensor module + electrode (ASIN B0B7NN3TSC and/or B08T645TYQ)
 % ============================================================
 \section[nosectionpage]{pH Sensor Kit}
-\begin{frame}{pH Sensor Kit (B0B7NN3TSC / B08T645TYQ): Overview}
+\begin{frame}{pH Sensor Kit (B0B7NN3TSC / B08T645TYQ): Überblick}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.5\textwidth}
     \begin{itemize}
-      \item \textbf{pH} describes acidity/alkalinity: scale \textbf{0--14}
-      \item A glass \textbf{pH electrode} outputs a tiny voltage (very high impedance)
-      \item The interface board:
+\item \textbf{pH} describes acidity/alkalinity: scale \textbf{0--14}
+\item A glass \textbf{pH electrode} outputs a tiny voltage (very high impedance)
+\item Das Interface-Board:
             \begin{itemize}
-              \item powers/conditions the electrode signal
-              \item provides an \textbf{analog voltage output} for a microcontroller ADC
-              \item often uses a \textbf{BNC connector} for the probe
+\item versorgt/konditioniert das Elektroden-Signal
+\item liefert einen \textbf{analogen Spannungsausgang} für den ADC eines Mikrocontrollers
+\item verwendet häufig einen \textbf{BNC‑Stecker} für die Sonde
             \end{itemize}
-      \item Needs \textbf{calibration} with buffer solutions (pH 4/7/10)
+\item Benötigt \textbf{Kalibrierung} mit Pufferlösungen (pH 4/7/10)
     \end{itemize}
   \end{column}
   \begin{column}{0.5\textwidth}
@@ -132,18 +132,18 @@
 % \begin{columns}[T,onlytextwidth]
 %   \begin{column}{0.62\textwidth}
 %     \begin{itemize}
-%       \item \textbf{Power:} many boards expect \textbf{5\,V} (check yours) + GND
-%       \item \textbf{Analog OUT $\rightarrow$ ESP32 ADC1}
-%             \begin{itemize}
-%               \item If OUT may exceed 3.3\,V: \textbf{divider} into ESP32
-%               \item Use averaging + stable sampling time (electrodes are slow)
-%             \end{itemize}
-%       \item \textbf{Calibration:}
-%             \begin{itemize}
-%               \item measure buffers, adjust offset/slope (often 2 trim pots)
-%               \item store calibration constants in flash/NVS
-%             \end{itemize}
-%       \item Optional: temperature sensor for \textbf{temperature compensation}
+% \item \textbf{Power:} many boards expect \textbf{5\,V} (check yours) + GND
+% \item \textbf{Analog OUT $\rightarrow$ ESP32 ADC1}
+% %             \begin{itemize}
+% \item If OUT may exceed 3.3\,V: \textbf{divider} into ESP32
+% \item Mittelung + stabile Abtastzeit verwenden (Elektroden reagieren langsam)
+% %             \end{itemize}
+% \item \textbf{Calibration:}
+% %             \begin{itemize}
+% \item measure buffers, adjust offset/slope (often 2 trim pots)
+% \item store calibration constants in flash/NVS
+% %             \end{itemize}
+% \item Optional: Temperatursensor für \textbf{Temperaturkompensation}
 %     \end{itemize}
 %   \end{column}
 %   \begin{column}{0.38\textwidth}
@@ -162,11 +162,11 @@
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.62\textwidth}
     \begin{itemize}
-      \item Provides \textbf{position + time} from GNSS satellites
-      \item Outputs standard \textbf{NMEA sentences} over \textbf{UART serial}
-      \item Default baud rate is commonly \textbf{9600 bps}
-      \item Needs good antenna placement (near window / outdoors for fastest lock)
-      \item Typical outputs:
+\item Liefert \textbf{Position + Zeit} von GNSS‑Satelliten
+\item Outputs standard \textbf{NMEA sentences} over \textbf{UART serial}
+\item Die Standard-Baudrate ist häufig \textbf{9600 bps}
+\item Benötigt eine gute Antennenplatzierung (nahe Fenster / im Freien für den schnellsten Fix)
+\item Typische Ausgänge:
             latitude, longitude, altitude, speed, UTC time, satellites in view
     \end{itemize}
   \end{column}
@@ -182,15 +182,15 @@
 % \begin{columns}[T,onlytextwidth]
 %   \begin{column}{0.62\textwidth}
 %     \begin{itemize}
-%       \item \textbf{Power:} module supply (often 3.3--5\,V) + GND
-%       \item \textbf{UART wiring:}
-%             \begin{itemize}
-%               \item GPS \textbf{TX} $\rightarrow$ ESP32 \textbf{RX} (e.g., UART2)
-%               \item GPS \textbf{RX} $\leftarrow$ ESP32 \textbf{TX} (optional)
-%               \item Check logic levels; level-shift if your module TX is 5\,V
-%             \end{itemize}
-%       \item \textbf{Software:} parse NMEA with TinyGPSPlus (Arduino) or ESP-IDF parser
-%       \item Use-case idea: add GPS position to MQTT telemetry (asset tracking / buoys)
+% \item \textbf{Power:} module supply (often 3.3--5\,V) + GND
+% \item \textbf{UART wiring:}
+% %             \begin{itemize}
+% \item GPS \textbf{TX} $\rightarrow$ ESP32 \textbf{RX} (e.g., UART2)
+% \item GPS \textbf{RX} $\leftarrow$ ESP32 \textbf{TX} (optional)
+% \item Logikpegel prüfen; Pegelwandlung einsetzen, wenn TX des Moduls 5\,V ist
+% %             \end{itemize}
+% \item \textbf{Software:} NMEA mit TinyGPSPlus (Arduino) oder dem ESP‑IDF‑Parser auswerten
+% \item Use-Case-Idee: GPS-Position zu MQTT-Telemetrie hinzufügen (Asset-Tracking / Bojen)
 %     \end{itemize}
 %   \end{column}
 %   \begin{column}{0.38\textwidth}
@@ -204,16 +204,16 @@
 % ------------------------------------------------------------
 
 \section[nosectionpage]{LoRa Interface}
-\begin{frame}{LoRa SX1262: What it is}
+\begin{frame}{LoRa SX1262: Was es ist}
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.62\textwidth}
     \begin{itemize}
-      \item \textbf{SX1262 = sub-GHz LoRa transceiver} (radio chip, not a MCU)
-      \item Supports \textbf{LoRa modulation} for long range + \textbf{(G)FSK} for legacy modes
-      \item Key feature: \textbf{up to +22\,dBm TX power} (vs SX1261 typically +15\,dBm)
-      \item Optimized for \textbf{low power} LPWAN applications
-      \item Typical frequency bands: \textbf{EU868}, \textbf{US915}, others (depends on module + antenna)
-      \item Used in: sensors, trackers, buoys, remote meters, industrial telemetry
+\item \textbf{SX1262 = sub-GHz LoRa transceiver} (radio chip, not a MCU)
+\item Unterstützt \textbf{LoRa-Modulation} für große Reichweite + \textbf{(G)FSK} für Legacy-Modi
+\item Kernmerkmal: \textbf{bis zu +22\,dBm Sendeleistung} (SX1261 typischerweise +15\,dBm)
+\item Optimiert für \textbf{Low-Power}‑LPWAN‑Anwendungen
+\item Typische Frequenzbänder: \textbf{EU868}, \textbf{US915}, weitere (abhängig von Modul + Antenne)
+\item Used in: sensors, trackers, buoys, remote meters, industrial telemetry
     \end{itemize}
     \vspace{0.3em}
     \footnotesize
@@ -230,35 +230,35 @@
 \end{frame}
 
 % ------------------------------------------------------------
-% \begin{frame}{SX1262 + ESP32: Wiring \& Software Pattern}
-% \begin{columns}[T,onlytextwidth]
-%   \begin{column}{0.55\textwidth}
-%     \begin{itemize}
-%       \item Interface is \textbf{SPI} + a few control/status pins:
-%         \begin{itemize}
-%           \item \textbf{NSS/CS}, \textbf{SCK}, \textbf{MOSI}, \textbf{MISO}
-%           \item \textbf{DIO1} (IRQ line, signals TX done / RX done / timeouts)
-%           \item \textbf{BUSY} (chip is busy, host must wait before SPI command)
-%           \item \textbf{NRST} (reset)
-%         \end{itemize}
-%       \item Antenna: keep it \textbf{50\,\(\Omega\)} and use the correct band (EU868 antenna for EU868)
-%       \item Software options:
-%         \begin{itemize}
-%           \item \textbf{Radio-only} (P2P LoRa): RadioLib, SX126x driver
-%           \item \textbf{LoRaWAN} (TTN): LoRaWAN stack + SX1262 radio driver
-%         \end{itemize}
-%       \item Typical RadioLib constructor pattern: \texttt{Module(NSS, DIO1, RST, BUSY)}
-%     \end{itemize}
-%   \end{column}
-%
-%   \begin{column}{0.45\textwidth}
-%     \centering
-%     % Put a pinout/connection diagram here (e.g., Waveshare wiki pinout).
-%     \includegraphics[width=0.9\linewidth]{figures/SX1262-pinout}\\
-%     \scriptsize Pinout / wiring overview (example)
-%   \end{column}
-% \end{columns}
-% \end{frame}
+\begin{frame}{SX1262 + ESP32: Wiring \& Software Pattern}
+\begin{columns}[T,onlytextwidth]
+  \begin{column}{0.55\textwidth}
+    \begin{itemize}
+\item Schnittstelle: \textbf{SPI} + einige Control-/Status-Pins:
+        \begin{itemize}
+\item \textbf{NSS/CS}, \textbf{SCK}, \textbf{MOSI}, \textbf{MISO}
+\item \textbf{DIO1} (IRQ line, signals TX done / RX done / timeouts)
+\item \textbf{BUSY} (Chip ist beschäftigt; Host muss vor dem SPI-Befehl warten)
+\item \textbf{NRST} (reset)
+         \end{itemize}
+\item Antenne: auf \textbf{50\,($\Omega$)} auslegen und das richtige Band verwenden (EU868‑Antenne für EU868)
+\item Software options:
+         \begin{itemize}
+\item \textbf{Radio-only} (P2P LoRa): RadioLib, SX126x driver
+\item \textbf{LoRaWAN} (TTN): LoRaWAN stack + SX1262 radio driver
+        \end{itemize}
+\item Typisches RadioLib-Konstruktor-Pattern: \texttt{Module(NSS, DIO1, RST, BUSY)}
+    \end{itemize}
+  \end{column}
+
+  \begin{column}{0.45\textwidth}
+    \centering
+    % Put a pinout/connection diagram here (e.g., Waveshare wiki pinout).
+    \includegraphics[width=0.9\linewidth]{figures/SX1262-pinout}\\
+    \scriptsize Pinout / wiring overview (example)
+  \end{column}
+\end{columns}
+\end{frame}
 
 \section[withsectionpage]{Wiring Everything together}
 \begin{frame}[plain]

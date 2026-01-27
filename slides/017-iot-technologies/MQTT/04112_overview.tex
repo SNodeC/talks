@@ -1,18 +1,18 @@
-﻿\section{Topics, QoS, Retained Messages and Last Will}
+﻿\section{Topics, QoS, Retained Messages und Last Will}
 
-\begin{frame}{Topics, QoS, Retained Messages and Last Will}
+\begin{frame}{Topics, QoS, Retained Messages und Last Will}
   \begin{itemize}
-    \item \textbf{Topics are hierarchical}:
+\item \textbf{Topics sind hierarchisch}:
 	\begin{itemize}
-		\item \texttt{home/kitchen/temp},
-		\item \texttt{factory/line1/motor/rpm}
+\item \texttt{home/kitchen/temp},
+\item \texttt{factory/line1/motor/rpm}
 	\end{itemize}
-    \item \textbf{Wildcards} (common):
+\item \textbf{Wildcards} (common):
 	\begin{itemize}
-      \item \texttt{+} = one level (\texttt{home/+/temp})
-      \item \texttt{\#} = many levels (\texttt{home/\#})
+\item \texttt{+} = one level (\texttt{home/+/temp})
+\item \texttt{\#} = many levels (\texttt{home/\#})
 	\end{itemize}
-    \item \textbf{QoS (Quality of Service)} = delivery guarantee level:
+\item \textbf{QoS (Quality of Service)} = delivery guarantee level:
 
   \vspace{0.5ex}
   \begin{tabular}{lll}
@@ -26,15 +26,15 @@
   \end{tabular}
 
   \vspace{0.5ex}
-  \item \textbf{Retained messages} (often used)
+\item \textbf{Retained messages} (often used)
   \begin{itemize}
-    \item Broker stores last value per topic
+\item Broker stores last value per topic
   \end{itemize}
 
   \vspace{0.5ex}
-  \item \textbf{Last Will}
+\item \textbf{Last Will}
   \begin{itemize}
-    \item Broker publishes a “client died” message if a client disconnects unexpectedly
+\item Broker publishes a “client died” message if a client disconnects unexpectedly
   \end{itemize}
   \end{itemize}
 \end{frame}
