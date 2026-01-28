@@ -1,26 +1,26 @@
 \begin{frame}{Wie können \alert{IoT und LoRaWAN} die Forschung der Stakeholder unterstützen?}{Die Grundidee}
 \begin{description}[Messung der Wasserchemie]
-\item[Messung der Wasserchemie]
-\begin{itemize}
-\item Platzieren Sie mehrere LoRaWAN-Gateways rund um den Victoriasee, ausgestattet mit
+\item[Messung der Wasserchemie] \begin{itemize}
+    \item Platzierung von LoRaWAN-Gateways rund um den Hartbeespoort-Damm, ausgestattet mit einem
     \begin{itemize}
-\item einem GPS-Empfänger zur Bestimmung der exakten Position sowie
-\item Solarzellen und Akkumulatoren für einen autonomen Betrieb,
+        \item GPS-Empfänger, um deren exakte Position zu bestimmen, und
+        \item Solarzellen und Akkumulatoren, um die Gateways autonom zu betreiben, und
+        \item Integration in \emph{The Things Network}.
     \end{itemize}
-    und integrieren Sie diese in \emph{The Things Network}.
-\item Entwicklung eines schwimmenden LoRaWAN-Nodes, ausgestattet mit
+    \item Entwicklung von schwimmenden LoRaWAN-Nodes, ausgestattet mit
     \begin{itemize}
-\item einem GPS-Empfänger zur Bestimmung der exakten Position sowie
-\item Solarzellen und Akkumulatoren für einen autonomen Betrieb,
+        \item GPS-Empfänger, um dessen exakte Position zu bestimmen, und
+        \item Solarzellen und Akkumulatoren, um den Node autonom zu betreiben
     \end{itemize}
-    und zur Messung von
+    zur Messung von
     \begin{itemize}
-\item Wasserqualitätsparametern,
-\item der Nährstoffkonzentration im Wasser,
-\item \ldots
+        \item Wasserqualität
+        \item Nährstoffgehalt im Wasser
+        \item \ldots
     \end{itemize}
-\item Integration des Nodes in \emph{The Things Network} sowie Übertragung der Messdaten und der GPS-Position an das Gateway (und damit auch an \emph{The Things Network}).
-\item Entwicklung einer Weboberfläche für Management und Datenerfassung.
+    \item Integration in das \emph{The Things Network}.
+    \item Abholen der Daten per MQTT und Speicherung dieser in MariaDB.
+    \item Entwicklung einer Weboberfläche für Management und Datenerfassung.
 \end{itemize}
 \end{description}
 \end{frame}
