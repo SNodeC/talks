@@ -1,4 +1,4 @@
-\withsectionpage
+﻿\withsectionpage
 \section{Application Configuration}
 \nosectionpage
 \subsection{Nonpersistent Application Configuration}
@@ -11,29 +11,32 @@
 \begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
 Configuration for Application '\textcolor{fh-ooe-red}{echoserver}'
 
-\textcolor{grassgreen}{Usage:} \textcolor{fh-ooe-red}{echoserver [OPTIONS] [INSTANCE [--help]]}
+\textcolor{grassgreen}{Usage:} \textcolor{fh-ooe-red}{echoserver [OPTIONS] [SECTION [--help]] REQUIRED}
 
 \textcolor{grassgreen}{Options} (\textcolor{fh-ooe-red}{nonpersistent}):
+  \textcolor{fh-ooe-red}{-h}\{\textcolor{cyan}{exact}\},\textcolor{fh-ooe-red}{--help}\{\textcolor{cyan}{exact}\}=\{standard,exact,expanded\} \{\textcolor{cyan}{exact}\}
+       Print help message and exit
+       * standard: display help for the last command processed
+       * exact: display help for the command directly preceding --help
+       * expanded: display help including all descendant sections
+  \textcolor{fh-ooe-red}{-s},\textcolor{fh-ooe-red}{--show-config}
+       Show current configuration and exit
+  \textcolor{fh-ooe-red}{--command-line}\{\textcolor{cyan}{standard}\}=\{standard,active,complete,required\}
+       Print command-line
+       * standard (default): Show all non-default and required options
+       * active: Show all active options
+       * complete: Show the complete option set with default values
+       * required: Show only required options
   \textcolor{fh-ooe-red}{-c},\textcolor{fh-ooe-red}{--config-file} configfile:NOT DIR [\textcolor{lightblue}{/home/voc/.config/snode.c/echoserver.conf}]
        Read a config file
-  \textcolor{fh-ooe-red}{-w},\textcolor{fh-ooe-red}{--write-config} [configfile]:NOT DIR [\textcolor{lightblue}{/home/voc/.config/snode.c/echoserver.conf}]
+  \textcolor{fh-ooe-red}{-w},\textcolor{fh-ooe-red}{--write-config} configfile:NOT DIR [\textcolor{lightblue}{/home/voc/.config/snode.c/echoserver.conf}]
        Write config file and exit
   \textcolor{fh-ooe-red}{-k},\textcolor{fh-ooe-red}{--kill}
        Kill running daemon
-  \textcolor{fh-ooe-red}{-i},\textcolor{fh-ooe-red}{--instance-alias} instance=instance_alias [instance=instance_alias [...]]
+  \textcolor{fh-ooe-red}{-a},\textcolor{fh-ooe-red}{--aliases} instance=instance_alias [instance=instance_alias [...]]:TEXT
        Make an instance also known as an alias in configuration files
-  \textcolor{fh-ooe-red}{-s},\textcolor{fh-ooe-red}{--show-config}
-       Show current configuration and exit
-  \textcolor{fh-ooe-red}{--command-line}\{\textcolor{cyan}{standard}\}=\{standard,required,full,default\}
-       Print a command line
-         standard (default): View all non-default and required options
-         required: View required options only
-         full: View the full set of options with their default or configured values
-         default: View the full set of options with their default values
-  \textcolor{fh-ooe-red}{--version}
+  \textcolor{fh-ooe-red}{-v},\textcolor{fh-ooe-red}{--version}
        Framework version
-  \textcolor{fh-ooe-red}{-h}\{\textcolor{cyan}{standard}\},\textcolor{fh-ooe-red}{--help}\{\textcolor{cyan}{standard}\}=\{standard,expanded\}
-       Print help message
 \end{Verbatim}
 \end{scriptsize}
 \end{frame}

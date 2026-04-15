@@ -6,9 +6,9 @@ The \alert{scope resolution operator} \textcolor{fh-ooe-red}{\lstinline|Tls::|} 
 \end{description}
 \begin{footnotesize}
 \begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
-\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{tlsClient}.\textcolor{grassgreen!60!black}{getConfig}();
+\textcolor{purple}{auto} \textcolor{blue}{\bf{}config} = \textcolor{blue}{tlsClient}.\textcolor{grassgreen!60!black}{getConfig}();
 
-\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setSni}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{config}->[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setSni}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
 \end{Verbatim}
 \end{footnotesize}
 \end{frame}

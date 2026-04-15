@@ -1,14 +1,14 @@
-\subsection{Configuration Sections of Server Instances}
+\subsection{Configuration Sections of Client Instances}
 
 \begin{frame}[fragile]{Configuration Sections of Server and Client Instances}
 \begin{scriptsize}
 \begin{Verbatim}[commandchars=\\\{\}]
-\textcolor{grassgreen}{command@line~>} echoserver \textcolor{fh-ooe-red}{echo} --help
+\textcolor{grassgreen}{command@line~>} echoclient \textcolor{fh-ooe-red}{echo} --help
 \end{Verbatim}
 \begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
-Configuration for server instance '\textcolor{fh-ooe-red}{echo}'
+Configuration for client instance '\textcolor{fh-ooe-red}{echo}'
 
-Usage: echoserver \textcolor{fh-ooe-red}{echo} [OPTIONS] [SECTIONS [--help]] \textcolor{blue}{REQUIRED}
+Usage: echoclient \textcolor{fh-ooe-red}{echo} [OPTIONS] [SECTIONS [--help]] \textcolor{blue}{REQUIRED}
 
 Options (\textcolor{fh-ooe-red}{nonpersistent}):
 
@@ -19,10 +19,10 @@ Options (\textcolor{fh-ooe-red}{persistent}):
   \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
 
 Sections:
-  \textcolor{fh-ooe-red}{local} \textcolor{blue}{REQUIRED}
-       Local side of connection for instance 'echo'
-  \textcolor{fh-ooe-red}{remote}
+  \textcolor{fh-ooe-red}{remote} \textcolor{blue}{REQUIRED}
        Remote side of connection for instance 'echo'
+  \textcolor{fh-ooe-red}{local}
+       Local side of connection for instance 'echo'
   \textcolor{fh-ooe-red}{connection}
        Configuration of established connections for instance
        'echo'

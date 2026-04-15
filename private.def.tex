@@ -9,13 +9,14 @@
 \RequirePackage{makecell}
 \RequirePackage{mathrsfs}
 \RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{wasysym}
 
 \author[Volker Christian]{Volker Christian}
-\degree[SHD]{\Large Spirit of Hit Days 2026}
+\degree[SHD]{\Large Pervasive Computing}
 \title[ISCIS]{\Huge The Internet of Things and Sensors\hspace{2cm} for Controlling Invasive Species}
 \institute[FH-O\"O -- Hagenberg]{FH Upper Austria -- Campus Hagenberg\\School of Informatics, Communications and Media\\Softwarepark 11,\\4232 Hagenberg/Austria}
-\semester[WS 2024/25]{Winter Semester 2025/26}
-\date[03.09.2024]{02. September 2025}
+\semester[SS 2026]{Summer Semester 2026}
+\date[03.09.2025]{02. September 2025}
 
 %\def\insertlecturepartnumbername{Global Acting in IT}
 %\mode<presentation>{\subject{Global Acting in IT}}
@@ -42,6 +43,11 @@
 \counterwithin{table}{lecture}
 
 \setbeamerfont{lecture in toc}{size=\normalsize}
+
+\let\orig@@alert=\alert%
+\def\alert#1{%
+\textbf{\orig@@alert{#1}}%
+}%
 
 \let\orig@@maketitle=\maketitle%
 \def\maketitle{%

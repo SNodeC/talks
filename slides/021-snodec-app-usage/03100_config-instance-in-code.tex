@@ -7,9 +7,9 @@ The \alert{scope resolution operator} \textcolor{fh-ooe-red}{\lstinline|Instance
 \vskip0.5em
 \begin{footnotesize}
 \begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
-\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{serverOrClient}.\textcolor{grassgreen!60!black}{getConfig}();
+\textcolor{purple}{auto} \textcolor{blue}{\bf{}config} = \textcolor{blue}{serverOrClient}.\textcolor{grassgreen!60!black}{getConfig}();
 
-\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Instance}::]\textcolor{grassgreen!60!black}{setDisabled}(\textcolor{purple}{bool} = true);
+\textcolor{blue}{config}->[\textcolor{fh-ooe-red}{Instance}::]\textcolor{grassgreen!60!black}{setDisabled}(\textcolor{purple}{bool} = true);
 \end{Verbatim}
 \end{footnotesize}
 \end{frame}

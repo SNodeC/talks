@@ -9,30 +9,31 @@
 \end{Verbatim}
 \begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
 Options (\textcolor{fh-ooe-red}{nonpersistent}):
-
   \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
 
 Options (\textcolor{fh-ooe-red}{persistent}):
-  \textcolor{fh-ooe-red}{-l},\textcolor{fh-ooe-red}{--log-level} level:INT in [0 - 6] [\textcolor{lightblue}{4}]
+  \textcolor{fh-ooe-red}{--log-level} level:INT in [0 - 6] [\textcolor{lightblue}{4}]
        Log level
-  \textcolor{fh-ooe-red}{-v},\textcolor{fh-ooe-red}{--verbose-level} level:INT in [0 - 10] [\textcolor{lightblue}{1}]
+  \textcolor{fh-ooe-red}{--verbose-level} level:INT in [0 - 10] [\textcolor{lightblue}{2}]
        Verbose level
-  \textcolor{fh-ooe-red}{-q}\{\textcolor{cyan}{true}\},\textcolor{fh-ooe-red}{-u}\{\textcolor{cyan}{false}\},\textcolor{fh-ooe-red}{--quiet}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+  \textcolor{fh-ooe-red}{-l},\textcolor{fh-ooe-red}{--log-file} logFile:NOT DIR [\textcolor{lightblue}{/home/voc/.local/log/snode.c/echoserver-legacy-in.log}]
+       Log file
+  \textcolor{fh-ooe-red}{-m}\{\textcolor{cyan}{true}\},\textcolor{fh-ooe-red}{--monochrom-logmonochromLogOption}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+       Monochrom log output
+  \textcolor{fh-ooe-red}{-q}\{\textcolor{cyan}{true}\},\textcolor{fh-ooe-red}{--quiet}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
        Quiet mode
-  \textcolor{fh-ooe-red}{--log-file} logfile:NOT DIR [\textcolor{lightblue}{/home/voc/.local/log/snode.c/echoserver.log}]
-       Log file path
-  \textcolor{fh-ooe-red}{-e}\{\textcolor{cyan}{true}\},\textcolor{fh-ooe-red}{-n}\{\textcolor{cyan}{false}\},\textcolor{fh-ooe-red}{--enforce-log-file}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+  \textcolor{fh-ooe-red}{-e}\{\textcolor{cyan}{true}\},\textcolor{fh-ooe-red}{--enforce-log-file}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
        Enforce writing of logs to file for foreground applications
-  \textcolor{fh-ooe-red}{-d}\{\textcolor{cyan}{true}\},\textcolor{fh-ooe-red}{-f}\{\textcolor{cyan}{false}\},\textcolor{fh-ooe-red}{--daemonize}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
+  \textcolor{fh-ooe-red}{-d}\{\textcolor{cyan}{true}\},\textcolor{fh-ooe-red}{--daemonize}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
        Start application as daemon
-  \textcolor{fh-ooe-red}{--user-name} username [\textcolor{lightblue}{voc}]    Needs: \textcolor{magenta}{--daemonize}
+  \textcolor{fh-ooe-red}{-u},\textcolor{fh-ooe-red}{--user-name} username:TEXT [\textcolor{lightblue}{voc}]
        Run daemon under specific user permissions
-  \textcolor{fh-ooe-red}{--group-name} groupname [\textcolor{lightblue}{voc}]    Needs: \textcolor{magenta}{--daemonize}
+  \textcolor{fh-ooe-red}{-g},\textcolor{fh-ooe-red}{--group-name} groupname:TEXT [\textcolor{lightblue}{voc}]
        Run daemon under specific group permissions
 
 Instances:
   \textcolor{fh-ooe-red}{echo} \textcolor{blue}{REQUIRED}
-       Configuration for server instance '\textcolor{fh-ooe-red}{echo}'
+       Configuration for server instance '\textcolor{fh-ooe-red}{echoserver}'
 \end{Verbatim}
 \end{scriptsize}
 \end{frame}
