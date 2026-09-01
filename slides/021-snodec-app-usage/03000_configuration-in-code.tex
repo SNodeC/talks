@@ -4,27 +4,28 @@
 
 \begin{frame}[fragile]{Base Classes of all \lstinline|Config| Objects}
 \begin{itemize}
-    \item The type of the \alert{configuration object} of each instance retrieved using \lstinline|getConfig()|
+    \item The type of the \alert{configuration object (pointer)} of each instance retrieved using \lstinline|getConfig()|
 \begin{small}
-\begin{Verbatim}[frame=leftline,rulecolor=\color{fh-ooe-red}]
-ServerOrClientType serverOrClientIntance;
-auto& serverOrClientConfigType = serverOrClientIntance.getConfig();
+\begin{Verbatim}[commandchars=\\\{\}, frame=leftline,rulecolor=\color{fh-ooe-red}]
+\textcolor{purple}{\bf{}ServerOrClientType} \textcolor{blue}{serverOrClient};
+\textcolor{purple}{ServerOrClientType::\bf{}Config} \textcolor{blue}{\bf{}config} = \textcolor{blue}{serverOrClient}.\textcolor{grassgreen!60!black}{getConfig()};
+\textcolor{purple}{auto} \textcolor{blue}{\bf{}config} = \textcolor{blue}{serverOrClient}.\textcolor{grassgreen!60!black}{getConfig()};
 \end{Verbatim}
 \end{small}
     is constructed for each individual \alert{server} and \alert{client} type using \alert{multiple inheritance}.
     \item Base configuration classes
 \begin{small}
-\begin{Verbatim}[frame=leftline,rulecolor=\color{fh-ooe-red}]
-ConfigInstance
-ConfigAddressLocal
-ConfigAddressRemote
-ConfigAddressReverse
-ConfigConnection
-ConfigPhyiscalSocketClient
-ConfigPhysicalSocketServer
-ConfigLegacy
-ConfigTlsClient
-ConfigTlsServer
+\begin{Verbatim}[commandchars=\\\{\}, frame=leftline,rulecolor=\color{fh-ooe-red}, obeytabs=true,tabsize=4]
+\textcolor{blue}{ConfigInstance}                Alias: \textcolor{blue}{\bf{}Instance}
+\textcolor{blue}{ConfigAddressLocal}            Alias: \textcolor{blue}{\bf{}Local}
+\textcolor{blue}{ConfigAddressRemote}           Alias: \textcolor{blue}{\bf{}Remote} (client)
+\textcolor{blue}{ConfigAddressReverse}          Alias: \textcolor{blue}{\bf{}Remote} (server)
+\textcolor{blue}{ConfigConnection}              Alias: \textcolor{blue}{\bf{}Connection}
+\textcolor{blue}{ConfigPhyiscalSocketClient}    Alias: \textcolor{blue}{\bf{}Socket}
+\textcolor{blue}{ConfigPhysicalSocketServer}    Alias: \textcolor{blue}{\bf{}Socket}
+\textcolor{blue}{ConfigLegacy}                  Alias: \textcolor{blue}{\bf{}Lecacy}
+\textcolor{blue}{ConfigTlsClient}               Alias: \textcolor{blue}{\bf{}Tls}
+\textcolor{blue}{ConfigTlsServer}               Alias: \textcolor{blue}{\bf{}Tls}
 \end{Verbatim}
 \end{small}
 \item Every \alert{network layer subclasses} the \lstinline|ConfigAddress| classes to \alert{inject} its \alert{individual configuration} items.

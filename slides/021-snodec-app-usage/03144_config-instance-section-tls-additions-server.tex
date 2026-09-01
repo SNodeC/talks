@@ -6,14 +6,14 @@ The \alert{scope resolution operator} \textcolor{fh-ooe-red}{\lstinline|Tls::|} 
 \end{description}
 \begin{footnotesize}
 \begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
-\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{tlsServer}.\textcolor{grassgreen!60!black}{getConfig}();
+\textcolor{purple}{auto} \textcolor{blue}{\bf{}config} = \textcolor{blue}{tlsServer}.\textcolor{grassgreen!60!black}{getConfig}();
 
-\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{addSniCert}(
+\textcolor{blue}{config}->[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{addSniCert}(
     \textcolor{olive}{const} \textcolor{purple}{std::string},
     \textcolor{olive}{const} \textcolor{purple}{std::map}<\textcolor{purple}{std::string}, \textcolor{purple}{std::variant}<\textcolor{purple}{std::string}, \textcolor{purple}{bool}, \textcolor{purple}{ssl_option_t}>>&);
-\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{addSniCerts}(
+\textcolor{blue}{config}->[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{addSniCerts}(
     \textcolor{olive}{const} \textcolor{purple}{std::map}<\textcolor{purple}{std::string}, \textcolor{purple}{std::map}<\textcolor{purple}{std::string}, \textcolor{purple}{std::variant}<\textcolor{purple}{std::string}, \textcolor{purple}{bool}, \textcolor{purple}{ssl_option_t}>>>&);
-\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setForceSni}(\textcolor{purple}{bool} = true);
+\textcolor{blue}{config}->[\textcolor{fh-ooe-red}{Tls}::]\textcolor{grassgreen!60!black}{setForceSni}(\textcolor{purple}{bool} = true);
 \end{Verbatim}
 \end{footnotesize}
 \end{frame}

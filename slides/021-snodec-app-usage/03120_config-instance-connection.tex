@@ -8,13 +8,13 @@ The \alert{scope resolution operator} \textcolor{fh-ooe-red}{\lstinline|Connecti
 \end{description}
 \begin{footnotesize}
 \begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
-\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{serverOrClient}.\textcolor{grassgreen!60!black}{getConfig}();
+\textcolor{purple}{auto} \textcolor{blue}{\bf{}config} = \textcolor{blue}{serverOrClient}.\textcolor{grassgreen!60!black}{getConfig}();
 
-\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setReadBlockSize}(\textcolor{purple}{std::size_t});
-\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setWriteBlockSize}(\textcolor{purple}{std::size_t});
-\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setReadTimeout}(\textcolor{olive}{const} \textcolor{purple}{utils::Timeval}&);
-\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setWriteTimeout}(\textcolor{olive}{const} \textcolor{purple}{utils::Timeval}&);
-\textcolor{blue}{configObject}.[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setTerminateTimeout}(\textcolor{olive}{const} \textcolor{purple}{utils::Timeval}&);
+\textcolor{blue}{config}->[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setReadBlockSize}(\textcolor{purple}{std::size_t});
+\textcolor{blue}{config}->[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setWriteBlockSize}(\textcolor{purple}{std::size_t});
+\textcolor{blue}{config}->[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setReadTimeout}(\textcolor{olive}{const} \textcolor{purple}{utils::Timeval}&);
+\textcolor{blue}{config}->[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setWriteTimeout}(\textcolor{olive}{const} \textcolor{purple}{utils::Timeval}&);
+\textcolor{blue}{config}->[\textcolor{fh-ooe-red}{Connection}::]\textcolor{grassgreen!60!black}{setTerminateTimeout}(\textcolor{olive}{const} \textcolor{purple}{utils::Timeval}&);
 \end{Verbatim}
 \end{footnotesize}
 \end{frame}

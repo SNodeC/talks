@@ -10,10 +10,10 @@ The \alert{scope resolution operators} \textcolor{fh-ooe-red}{\lstinline|Local::
 \end{description}
 \begin{footnotesize}
 \begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
-\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{ipServer}.\textcolor{grassgreen!60!black}{getConfig}();
+\textcolor{purple}{auto} \textcolor{blue}{\bf{}config} = \textcolor{blue}{ipServer}.\textcolor{grassgreen!60!black}{getConfig}();
 
-\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setHost}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
-\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setPsm}(\textcolor{purple}{uint32_t});
+\textcolor{blue}{config}->\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setHost}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{config}->\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setPsm}(\textcolor{purple}{uint32_t});
 \end{Verbatim}
 \end{footnotesize}
 \vskip1em
@@ -28,10 +28,10 @@ The \alert{scope resolution operators} \textcolor{fh-ooe-red}{\lstinline|Local::
 \end{description}
 \begin{footnotesize}
 \begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
-\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{ipClient}.\textcolor{grassgreen!60!black}{getConfig}();
+\textcolor{purple}{auto} \textcolor{blue}{\bf{}config} = \textcolor{blue}{ipClient}.\textcolor{grassgreen!60!black}{getConfig}();
 
-\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setHost}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
-\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setPsm}(\textcolor{purple}{uint32_t});
+\textcolor{blue}{config}->\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setHost}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{config}->\textcolor{fh-ooe-red}{Local}::\textcolor{grassgreen!60!black}{setPsm}(\textcolor{purple}{uint32_t});
 \end{Verbatim}
 \end{footnotesize}
 \vskip1em
@@ -40,10 +40,10 @@ The \alert{scope resolution operators} \textcolor{fh-ooe-red}{\lstinline|Local::
 \end{description}
 \begin{footnotesize}
 \begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
-\textcolor{purple}{auto}& \textcolor{blue}{\bf{}configObject} = \textcolor{blue}{ipClient}.\textcolor{grassgreen!60!black}{getConfig}();
+\textcolor{purple}{auto} \textcolor{blue}{\bf{}config} = \textcolor{blue}{ipClient}.\textcolor{grassgreen!60!black}{getConfig}();
 
-\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Remote}::\textcolor{grassgreen!60!black}{setHost}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
-\textcolor{blue}{configObject}.\textcolor{fh-ooe-red}{Remote}::\textcolor{grassgreen!60!black}{setPsm}(\textcolor{purple}{uint32_t});
+\textcolor{blue}{config}->\textcolor{fh-ooe-red}{Remote}::\textcolor{grassgreen!60!black}{setHost}(\textcolor{olive}{const} \textcolor{purple}{std::string}&);
+\textcolor{blue}{config}->\textcolor{fh-ooe-red}{Remote}::\textcolor{grassgreen!60!black}{setPsm}(\textcolor{purple}{uint32_t});
 \end{Verbatim}
 \end{footnotesize}
 \end{column}

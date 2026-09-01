@@ -11,25 +11,28 @@
 \begin{Verbatim}[commandchars=\\\{\},frame=leftline,rulecolor=\color{fh-ooe-red}]
 Configuration for server instance '\textcolor{fh-ooe-red}{echo}'
 
-Usage: echoserver \textcolor{fh-ooe-red}{echo} [OPTIONS] [SECTIONS [--help]]
+\textcolor{grassgreen}{Usage:} \textcolor{fh-ooe-red}{echoserver [OPTIONS] [SECTIONS [--help]] REQUIRED}
 
-Options (\textcolor{fh-ooe-red}{nonpersistent}):
+\textcolor{grassgreen}{Options} (\textcolor{fh-ooe-red}{nonpersistent}):
+  \textcolor{fh-ooe-red}{-h}\{\textcolor{cyan}{exact}\},\textcolor{fh-ooe-red}{--help}\{\textcolor{cyan}{exact}\}=\{standard,exact,expanded\} \{\textcolor{cyan}{exact}\}
+       Print help message and exit
+       * standard: display help for the last command processed
+       * exact: display help for the command directly preceding --help
+       * expanded: display help including all descendant sections
   \textcolor{fh-ooe-red}{-s},\textcolor{fh-ooe-red}{--show-config}
        Show current configuration and exit
-  \textcolor{fh-ooe-red}{--command-line}\{\textcolor{cyan}{standard}\}=\{standard,required,full,default\}
-       Print a command line
-         standard (default): View all non-default and required options
-         required: View required options only
-         full: View the full set of options with their default or configured values
-         default: View the full set of options with their default values
-  \textcolor{fh-ooe-red}{-h}\{\textcolor{cyan}{standard}\},\textcolor{fh-ooe-red}{--help}\{\textcolor{cyan}{standard}\}={standard,expanded}
-       Print help message
+  \textcolor{fh-ooe-red}{--command-line}\{\textcolor{cyan}{standard}\}=\{standard,active,complete,required\}
+       Print command-line
+       * standard (default): Show all non-default and required options
+       * active: Show all active options
+       * complete: Show the complete option set with default values
+       * required: Show only required options
 
-Options (\textcolor{fh-ooe-red}{persistent}):
+\textcolor{grassgreen}{Options} (\textcolor{fh-ooe-red}{persistent}):
   \textcolor{fh-ooe-red}{--disabled}\{\textcolor{cyan}{true}\}=\{true,false\} [\textcolor{lightblue}{false}]
        Disable this instance
 
-Sections:
+\textcolor{grassgreen}{Sections}:
   \ldots{} \ldots{} \ldots{} \ldots{} \ldots{} \ldots{}
 \end{Verbatim}
 \end{scriptsize}
