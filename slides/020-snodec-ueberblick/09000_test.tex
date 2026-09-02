@@ -33,6 +33,8 @@
 %  \begin{cppcode}[autogobble=true,alsoletter={?_},
 %    columns=fullflexible,
 %    morekeywords={using},morekeywords={[2]{SocketContext,Test}}]
+%    #include <SemanticLog.h>
+%
 %    class EchoServerContext : public core::socket::stream::SocketContext {
 %    public:
 %        using core::socket::stream::SocketContext::SocketContext<Test>; // constructor inheritance (since C++11)
@@ -43,7 +45,7 @@
 %
 %            std::size_t<int> junkLen = readFromPeer(junk, 4096);
 %            if (junkLen > 0) {
-%                VLOG(0) << "Data to reflect: " << std::string(junk, junkLen);
+%                snode::semantic::appLog().trace() << "Data to reflect: " << std::string(junk, junkLen);
 %                sendToPeer(junk, junkLen);
 %            }
 %            return junkLen;

@@ -3,6 +3,7 @@
 \begin{frame}[fragile]{The IPv4 Client Application}
   \begin{cppcode}[autogobble=true, caption={IPv4 client application.},captionpos=b,, morekeywords={[2]{SocketClient,EchoClientContextFactory,connect}}]
     #include "EchoClientContextFactory.h"
+    #include <SemanticLog.h>
     #include <net/in/stream/legacy/SocketClient.h>
 
     int main(int argc, char* argv[]) {
@@ -15,16 +16,16 @@
                                                   const core::socket::State& state) -> void {
         switch (state) {
             case core::socket::State::OK:
-                VLOG(1) << "EchoClient: connected to '" << socketAddress.toString() << "'";
+                snode::semantic::appLog().trace() << "EchoClient: connected to '" << socketAddress.toString() << "'";
                 break;
             case core::socket::State::DISABLED:
-                VLOG(1) << "EchoClient: disabled";
+                snode::semantic::appLog().trace() << "EchoClient: disabled";
                 break;
             case core::socket::State::ERROR:
-                LOG(ERROR) << "EchoClient: " << socketAddress.toString() << ": " << state.what();
+                snode::semantic::appLog().error() << "EchoClient: " << socketAddress.toString() << ": " << state.what();
                 break;
             case core::socket::State::FATAL:
-                LOG(FATAL) << "EchoClient: " << socketAddress.toString() << ": " << state.what();
+                snode::semantic::appLog().critical() << "EchoClient: " << socketAddress.toString() << ": " << state.what();
                 break;
         }
         return core::SNodeC::start();
