@@ -12,12 +12,12 @@
 \RequirePackage{wasysym}
 
 \author[Volker Christian]{Volker Christian}
-\degree[SHD]{\Large Pervasive Computing}
-\title[Green Energy]{\Huge Green Energy Through Play}
-\subtitle{Exploring Green Energy with IoT}
-\institute[FH-O\"O -- Hagenberg]{FH Upper Austria -- Campus Hagenberg\\School of Informatics, Communications and Media\\Softwarepark 11,\\4232 Hagenberg/Austria}
-\semester[WS 2026]{Winter Semester 2026}
-\date[19.10.2026]{19 October 2026}
+\degree[IoT]{The Hagenberg Module -- Connecting Ideas to the Physical World}
+\title[International Minor]{International Minor}
+\subtitle{Global Acting in IT}
+\institute[FH-O\"O -- Hagenberg]{FH Upper Austria -- Campus Hagenberg}
+\semester[]{}
+\date[]{}
 
 %\def\insertlecturepartnumbername{Global Acting in IT}
 %\mode<presentation>{\subject{Global Acting in IT}}
@@ -50,9 +50,11 @@
 \textbf{\orig@@alert{#1}}%
 }%
 
-\let\orig@@maketitle=\maketitle%
 \def\maketitle{%
-  \orig@@maketitle%
+  \begin{frame}[plain]
+    \pdfbookmark[0]{\inserttitle}{titlepage}\titlepage
+  \end{frame}
+  \global\advance\c@framenumber by-1\relax%
   \IfFileExists{\jobname.lol}{%
     \global\advance\c@framenumber by-1\relax%
     \begin{frame}{Overview}%
@@ -93,31 +95,43 @@
 
 \defbeamertemplate*{title page}{fh-ooe-local}[1][]
 {
-  \vbox{}
   \vfill
-  \begin{centering}
-    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
-      \ifx\insertdegree\@empty%
-      \else%
-        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertdegree\par}%
-        \vskip0.25em%
-      \fi%
-      \usebeamerfont{title}\inserttitle\par%
-      {\usebeamerfont{subtitle}\insertsubtitle\par}%
-    \end{beamercolorbox}%
-    \vskip0em\par
-    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
-      \usebeamerfont{author}\insertauthor
-    \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
-      \usebeamerfont{institute}\insertinstitute
-    \end{beamercolorbox}
-    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
-    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
-      \usebeamerfont{date}\insertsemester
-    \end{beamercolorbox}\vskip0.5em
-  \end{centering}
+  {\color{fh-ooe-red}\Huge\inserttitle\par}
+  \vspace{.4em}
+  {\color{fh-ooe-red}\LARGE\insertsubtitle\par}
+  \vspace{1.4em}
+  {\large\insertdegree\par}
+  \vfill
+  \begin{columns}[b,onlytextwidth]
+    \column{.74\textwidth}
+    {\large\insertauthor\par}
+    \vspace{.35em}
+    {\small\insertinstitute\par}
+    \column{.22\textwidth}
+    \raggedleft\inserttitlegraphic
+  \end{columns}
+  \vspace{1em}
+}
+\setbeamertemplate{title page}[fh-ooe-local]
+
+\defbeamertemplate*{lecture page}{fh-ooe-local}[1][]
+{
+  \vfill
+  \centering
+  {\large\insertlecturepartnumbername~\insertlecturenumber\par}
+  \vspace{1em}
+  {\color{fh-ooe-red}\LARGE\insertlecture\par}
+  \vspace{1em}
+  {\large\insertsemester\par}
   \vfill
 }
+\setbeamertemplate{lecture page}[fh-ooe-local]
 
-\setbeamertemplate{title page}[fh-ooe-local][colsep=-4bp]
+% Keep visible part numbering; use titles alone in the PDF outline.
+\makeatletter
+\patchcmd{\beamer@atbeginlecture}
+  {\insertlecturepartnumbername\ \insertlecturenumber\ifx\insertlecturenumbername\@empty\else: \insertlecturenumbername\fi}
+  {\insertlecturenumbername}
+  {}
+  {\PackageError{slides}{Bookmark title patch failed}{Check the FH-OOE lecture hook.}}
+\makeatother
