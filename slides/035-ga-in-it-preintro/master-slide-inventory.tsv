@@ -1,0 +1,65 @@
+master_revision	master_source	master_frame	overlay_pages	destination_source	destination_frame	verified_images	adaptation
+23772b2428c4303e26fd2f5880927accf40753b4	00000_international-minor-intro.tex	1	1	00070_programme-background.tex	1	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	00000_international-minor-intro.tex	2	1	00070_programme-background.tex	2	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	00000_international-minor-intro.tex	3	1	00510_students-2024.tex	1	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	00000_international-minor-intro.tex	4	1	00035_problem-to-project.tex	1	0	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00169_water-hyacinths-section-intro.tex	1	1	01000_previous-project-intro.tex	1	0	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00170_how-fit-into-project.tex	1	1	01100_real-problem.tex	1	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00170_how-fit-into-project.tex	2	1	01100_real-problem.tex	2	2	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00170_how-fit-into-project.tex	3	2	01100_real-problem.tex	3	3	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00170_how-fit-into-project.tex	4	2	01100_real-problem.tex	4	2	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00170_how-fit-into-project.tex	5	2	01100_real-problem.tex	5	2	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00170_how-fit-into-project.tex	6	2	01100_real-problem.tex	6	3	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00170_how-fit-into-project.tex	7	1	01100_real-problem.tex	7	0	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00170_how-fit-into-project.tex	8	1	01100_real-problem.tex	8	0	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00170_how-fit-into-project.tex	9	1	01100_real-problem.tex	9	0	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00170_how-fit-into-project.tex	10	1	01100_real-problem.tex	10	0	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00170_how-fit-into-project.tex	11	1	01100_real-problem.tex	11	0	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00170_how-fit-into-project.tex	12	1	01100_real-problem.tex	12	0	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00170_how-fit-into-project.tex	13	1	01100_real-problem.tex	13	0	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00180_how-fit-into-project-idea.tex	1	1	01305_lorawan-concept.tex	1	0	Reformatted in columns; Victoria lake corrected to Hartbeespoort Dam; all concept elements retained.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00181_Idea.tex	1	1	01310_buoy-vision.tex	1	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/00190_lecture-style.tex	1	1	00060_workshop-responsibilities.tex	1	0	Reformatted in columns; all lecturer/student responsibilities and named technologies retained.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/05002_detailed-steps.tex	1	1	01400_students-built-it-1.tex	1	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	202425/05002_detailed-steps.tex	2	11	01400_students-built-it-1.tex	2	11	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/02000_green-energy-intro.tex	1	1	02010_green-energy-opening.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/02100_project-brief.tex	1	1	02100_project-brief.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/02110_open-by-design.tex	1	1	02110_open-by-design.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/02200_four-directions.tex	1	1	02200_four-directions.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/03000_greenshare.tex	1	1	03000_greenshare.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/03010_greenshare-graphic.tex	1	1	03010_greenshare-graphic.tex	1	1	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/03020_greenshare-function.tex	1	1	03020_greenshare-function.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/03030_greenshare-resources.tex	1	1	03030_greenshare-resources.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/04000_solarscout.tex	1	1	04000_solarscout.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/04010_solarscout-graphic.tex	1	1	04010_solarscout-graphic.tex	1	1	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/04020_solarscout-function.tex	1	1	04020_solarscout-function.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/04030_solarscout-resources.tex	1	1	04030_solarscout-resources.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/05000_suncharge.tex	1	1	05000_suncharge.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/05010_suncharge-graphic.tex	1	1	05010_suncharge-graphic.tex	1	1	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/05020_suncharge-function.tex	1	1	05020_suncharge-function.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/05030_suncharge-resources.tex	1	1	05030_suncharge-resources.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/06000_energyflex.tex	1	1	06000_energyflex.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/06010_energyflex-graphic.tex	1	1	06010_energyflex-graphic.tex	1	1	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/06020_energyflex-function.tex	1	1	06020_energyflex-function.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/06030_energyflex-resources.tex	1	1	06030_energyflex-resources.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/07000_expectations.tex	1	1	07000_expectations.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	2026/07120_closing.tex	1	1	07120_closing.tex	1	0	Existing 2026 content retained.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	1	1	00520_2024-impressions.tex	1	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	2	1	00520_2024-impressions.tex	2	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	3	1	00520_2024-impressions.tex	3	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	4	1	00520_2024-impressions.tex	4	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	5	1	00520_2024-impressions.tex	5	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	6	1	00520_2024-impressions.tex	6	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	7	1	00520_2024-impressions.tex	7	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	8	1	00520_2024-impressions.tex	8	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	9	1	00520_2024-impressions.tex	9	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	10	1	00520_2024-impressions.tex	10	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	11	1	00520_2024-impressions.tex	11	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	12	1	00520_2024-impressions.tex	12	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	13	1	00520_2024-impressions.tex	13	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	14	1	00520_2024-impressions.tex	14	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	15	1	00520_2024-impressions.tex	15	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	16	1	00520_2024-impressions.tex	16	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	17	1	00520_2024-impressions.tex	17	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	18	1	00520_2024-impressions.tex	18	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
+23772b2428c4303e26fd2f5880927accf40753b4	impressions/20010_gait-2024-impressions.tex	19	1	00520_2024-impressions.tex	19	1	Content retained; local paths, hierarchy and image sizing adapted as needed.
